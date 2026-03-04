@@ -10,7 +10,7 @@ Great! So you have now looked at `docker container run`, played with Docker cont
 
 ## Task 1: Docker Images
 
-In this section, we dive into Docker images. You will build your own image, use that image to run an application locally, and finally, push the newly create images to Docker Cloud.
+In this section, we dive into Docker images. You will build your own image, use that image to run an application locally, and finally, push the newly created images to Docker Hub.
 
 The [Docker documentation](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/) gives a great explanation on how storage works with Docker images and containers, but here's the highlights.
 
@@ -26,17 +26,17 @@ The [Docker documentation](https://docs.docker.com/engine/userguide/storagedrive
 A Docker image is built up from a series of layers. Each layer represents an instruction in the image’s Dockerfile. Each layer except the very last one is read-only. Consider the following Dockerfile:
 
 ```
-    FROM ubuntu:15.04
+    FROM ubuntu:24.04
     COPY . /app
     RUN make /app
     CMD python /app/app.py
 ```
 
-This Dockerfile contains four commands, each of which creates a layer. The `FROM` statement starts out by creating a layer from the ubuntu:15.04 image. The `COPY` command adds some files from your Docker client’s current directory. The `RUN` command builds your application using the make command. Finally, the last layer specifies what command to run within the container.
+This Dockerfile contains four commands, each of which creates a layer. The `FROM` statement starts out by creating a layer from the ubuntu:24.04 image. The `COPY` command adds some files from your Docker client’s current directory. The `RUN` command builds your application using the make command. Finally, the last layer specifies what command to run within the container.
 
 <center><img src="../images/container-layers.jpg" title="Container Layers"></center>
 
-Multiple Containers can use the same Image. Each container has its own writable container layer, and all changes are stored in this container layer, multiple containers can share access to the same underlying image and yet have their own data state. The diagram below shows multiple containers sharing the same Ubuntu 15.04 image.
+Multiple Containers can use the same Image. Each container has its own writable container layer, and all changes are stored in this container layer, multiple containers can share access to the same underlying image and yet have their own data state. The diagram below shows multiple containers sharing the same Ubuntu image.
 
 <center><img src="../images/sharing-layers.jpg" title="Sharing Layers"></center>
 
@@ -68,7 +68,7 @@ For simplicity, you can think of an image functions similarly to a git repositor
 1. Pull a specific version of `ubuntu` image as follows:
 
    ```
-   $ docker image pull ubuntu:12.04
+   $ docker image pull ubuntu:22.04
    ```
 
    _Note_ If you do not specify the version number of the image then, as mentioned, the Docker client will default to a version named `latest`.
@@ -95,7 +95,7 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 ## Task 2: Layers and Copy on Write
 
-1. Pull the Debian:Buster image
+1. Pull the Ubuntu Jammy image
 
    ```
    $ docker image pull ubuntu:jammy
@@ -124,26 +124,26 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
    docker.io/library/mariadb:11
    ```
 
-   What do you notice about the output from the Docker pull request for MySQL?
+   What do you notice about the output from the Docker pull request for MariaDB?
 
    The first layer pulled says:
 
    `6c7698a779f6: Already exists`
 
-   Notice that the layer id (`6c7698a779f6`) is the same for the first layer of the MySQl image and the only layer in the Debian:Jessie image. And because we already had pulled that layer when we pulled the Debian image, we didn't have to pull it again.
+   Notice that the layer id (`6c7698a779f6`) is the same for the first layer of the MariaDB image and the only layer in the Ubuntu Jammy image. And because we already had pulled that layer when we pulled the Ubuntu image, we didn't have to pull it again.
 
-   So, what does that tell us about the MySQL image? Since each layer is created by a line in the image's _Dockerfile_, we know that the MySQL image is based on the Debian:Jessie base image. We can confirm this by looking at the [Dockerfile for the Docker Hub](https://github.com/MariaDB/mariadb-docker/blob/e56b3a008e9c47c7199d28db6d77d2cfecde526d/11.0/Dockerfile).
+   So, what does that tell us about the MariaDB image? Since each layer is created by a line in the image's _Dockerfile_, we know that the MariaDB image is based on the Ubuntu Jammy base image. We can confirm this by looking at the [Dockerfile on Docker Hub](https://github.com/MariaDB/mariadb-docker/blob/e56b3a008e9c47c7199d28db6d77d2cfecde526d/11.0/Dockerfile).
 
-   The first line in the the Dockerfile is: `FROM ubuntu:jammy` This will import that layer into the MySQL image.
+   The first line in the Dockerfile is: `FROM ubuntu:jammy` This will import that layer into the MariaDB image.
 
    So layers are created by the Dockerfile and are shared between images. When you start a container, a writeable layer is added to the base image.
 
    Next you will create a file in our container, and see how that's represented on the host file system.
 
-3. Start a Debian container, shell into it.
+3. Start an Ubuntu container, shell into it.
 
    ```
-   $ docker run --tty --interactive --name debian debian:stretch-slim bash
+   $ docker run --tty --interactive --name myubuntu ubuntu:jammy bash
    root@e09203d84deb:/#
    ```
 
@@ -155,9 +155,9 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
    bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  test-file  tmp  usr  var
    ```
 
-   We can see `test-file` exists in the root of the containers file system.
+   We can see `test-file` exists in the root of the container's file system.
 
-   What has happened is that when a new file was written to the disk, the Docker storage driver placed that file in it's own layer. This is called _copy on write_ - as soon as a change is detected the change is copied into the writeable layer. That layers is represented by a directory on the host file system. All of this is managed by the Docker storage driver.
+   What has happened is that when a new file was written to the disk, the Docker storage driver placed that file in its own layer. This is called _copy on write_ - as soon as a change is detected the change is copied into the writeable layer. That layer is represented by a directory on the host file system. All of this is managed by the Docker storage driver.
 
 5. Exit the container but leave it running by pressing `ctrl-p` and then `ctrl-q`
 
@@ -170,27 +170,27 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 6. Stop the container
 
    ```
-   $ docker container stop debian
+   $ docker container stop myubuntu
    ```
 
-7. Ensure that your debian container still exists
+7. Ensure that your container still exists
 
    ```
    $ docker container ls --all
    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS           PORTS               NAMES
-   674d7abf10c6        debian:stretch-slim "bash"              36 minutes ago      Exited (0) 2 minutes ago                       debian
+   674d7abf10c6        ubuntu:jammy        "bash"              36 minutes ago      Exited (0) 2 minutes ago                       myubuntu
    ```
 
-8. Start the Debian container again
+8. Start the Ubuntu container again
 
    ```
-   $ docker container start debian
+   $ docker container start myubuntu
    ```
 
-9. Attach to the Debian container hit `enter` twice after completing the command
+9. Attach to the container, hit `enter` twice after completing the command
 
    ```
-   $ docker container attach debian
+   $ docker container attach myubuntu
    ```
 
    Because the container still exists, the files are still available on your file system. At this point the file we created previously still exists.
@@ -200,8 +200,8 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 10. Remove the container and list the directory contents
 
     ```
-    $ docker container rm debian
-    debian
+    $ docker container rm myubuntu
+    myubuntu
     ```
 
     The files that were created are now gone and the container now reverts back to the base image which it was created from if we start it again.
@@ -352,7 +352,7 @@ This line sets up an anonymous volume in order to increase database performance 
    Connection id:    4
    Current database: sample
 
-   myslq> show tables;
+   mysql> show tables;
    +------------------+
    | Tables_in_sample |
    +------------------+
