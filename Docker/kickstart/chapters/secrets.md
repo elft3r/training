@@ -17,7 +17,7 @@ part of a service.
 
 You will need all of the following to complete this lab:
 
-- A Docker Swarm cluster running **Docker 1.13** or higher
+- A Docker Swarm cluster (Docker Swarm mode must be enabled)
 
 ## <a name="Task_1"></a>Task 1: Create a Secret
 
@@ -43,7 +43,7 @@ Perform the following command from a *manager* node in your Swarm. This lab will
     $ ls -l
     
     total 4
-    "-rw-r--r-- 1 root root 10 Mar 21 18:40 sec.txt
+    -rw-r--r-- 1 root root 10 Mar 21 18:40 sec.txt
     ```
 
 3. Use the `docker secret create` command to create a new secret using the file
@@ -226,7 +226,7 @@ a the container ID form your environment (see output of previous step).
     ```
     node1$ ls -l /run/secrets
     total 4
-    "-r--r--r--  1   root   root     10 Mar 21 19:37 sec1
+    -r--r--r--  1   root   root     10 Mar 21 19:37 sec1
     ```
 
   Secrets are only shared to *service tasks/containers* that are granted access
@@ -291,10 +291,6 @@ In this step you will remove all secrets and services,as well as clean up any ot
     $ rm sec.txt
     ```
 
-## Docker & Kubernetes
+## Next Steps
 
-A brief demo on Docker & Kubernetes
-
-## Next Steps, Docker Monitoring with Prometheus
-
-For the next step in the tutorial, head over to [Docker monitoring](https://github.com/vegasbrianc/prometheus)
+For the next step in the tutorial, head over to [Build and Deploy a Monitoring Stack](https://github.com/56kcloud/Training/blob/master/DockerCon/readme.md) or check out the [Next Steps](./nextsteps.md) page for further learning resources.

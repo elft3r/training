@@ -24,16 +24,16 @@ Now that Docker is set up, it's time to get our hands dirty. In this section, yo
    Status: Downloaded newer image for alpine:latest
    ```
 
-> **Note:** Depending on how you've installed docker on your system, you might see a `permission denied` error after running the above command. Try the commands from the Getting Started tutorial to [verify your installation](https://docs.docker.com/engine/getstarted/step_one/#/step-3-verify-your-installation). If you're on Linux, you may need to prefix your `docker` commands with `sudo`. Alternatively you can [create a docker group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/create-a-docker-group) to get rid of this issue.
+> **Note:** Depending on how you've installed docker on your system, you might see a `permission denied` error after running the above command. If you're on Linux, you may need to prefix your `docker` commands with `sudo`. Alternatively you can [create a docker group](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) to get rid of this issue.
 
 2. The `pull` command fetches the alpine **image** from the **Docker registry** and saves it in your system. You can use the `docker image ls` command to see a list of all images on your system.
 
    ```
    $ docker image ls
 
-   REPOSITORY              TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-   alpine                  latest              3fd9065eaf02        2 weeks ago         4.15MB
-   hello-world             latest              f2a91732366c        2 months ago        1.85kB
+   REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+   alpine                  latest              3fd9065eaf02        2 weeks ago         7.8MB
+   hello-world             latest              f2a91732366c        2 months ago        13.3kB
    ```
 
 ### Run a single-task Alpine Linux Container
@@ -108,7 +108,7 @@ You are now inside the container shell, and you can try out a few commands like 
    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
    36171a5da744        alpine              "/bin/sh"                5 minutes ago       Exited (0) 2 minutes ago                        fervent_newton
    a6a9d46d0b2f        alpine              "echo 'hello from alp"   6 minutes ago       Exited (0) 6 minutes ago                        lonely_kilby
-   ff0a5c3750b9        alpine              "ls -l"                  8 minutes ago       Exited (0) 8 minutes ago                        elated_ramanujan
+   888e89a3b36b        alpine              "hostname"               8 minutes ago       Exited (0) 8 minutes ago                        elated_ramanujan
    c317d0a9e3d2        hello-world         "/hello"                 34 seconds ago      Exited (0) 12 minutes ago                       stupefied_mcclintock
    ```
 
@@ -156,21 +156,21 @@ In the following example, we will run an Ubuntu Linux container.
 
    - `ls /` - lists the contents of the root directory
    - `ps aux` - shows all running processes in the container.
-   - `cat /etc/issue` - shows which Linux distro the container is running, in this case Ubuntu 16.04.3 LTS
+   - `cat /etc/issue` - shows which Linux distro the container is running (e.g., `Ubuntu 24.04 LTS`)
 
 3. Type `exit` to leave the shell session. This will terminate the `bash` process, causing your container to exit.
 
    > **Note:** As we used the `--rm` flag when we started the container, Docker removed that container when it stopped. This means if you run another `docker container ls --all` you won't see the Ubuntu container.
 
-4. For fun, let's check the version of our host VM
+4. For fun, let's check the version of our host OS
 
    ```
    $ cat /etc/issue
 
-   Ubuntu 16.04.3 LTS \n \l
+   Ubuntu 24.04 LTS \n \l
    ```
 
-   Notice that our host VM is Ubuntu, yet we can run an Ubuntu container. As previously mentioned, the distribution of Linux in the container does not need to match the distribution of Linux running on the Docker host.
+   > **Note:** On macOS or Windows, this file won't exist on your host since Docker Desktop runs containers inside a Linux VM. The key takeaway is that the distribution of Linux inside the container does not need to match the host OS.
 
 Interactive containers are helpful when you are putting together your image. You can run a container, verify all the steps you need to deploy your app and capture them in a Dockerfile.
 
@@ -254,22 +254,24 @@ Background containers are how you'll run most applications. Here's a simple exam
    root       139     0  0 08:30 ?        00:00:00 ps -ef
    ```
 
-   > **Note:** If the `ps` command is not install, you can install it with the following command: `apt update && apt install -y procps`
+   > **Note:** If the `ps` command is not installed, you can install it with the following command: `apt update && apt install -y procps`
 
    Although MariaDB runs, it is isolated within the container because no network ports have been published to the host. Network traffic cannot reach containers from the host unless ports are explicitly published.
 
 4. List the MariaDB version using `docker container exec`.
 
-   `docker container exec` allows you to run a command inside a container. In this example, we'll use `docker container exec` to run the command-line equivalent of `mariadb --user=root --password=$MARIADB_ROOT_PASSWORD --version` inside our MariaDB container.
+   `docker container exec` allows you to run a command inside a container. In this example, we'll use `docker container exec` to run the command-line equivalent of `mariadb --user=root --password=my-secret-pw --version` inside our MariaDB container.
 
    ```
    $ docker container exec -it mydb \
-   mariadb --user=root --password=$MARIADB_ROOT_PASSWORD --version
+   mariadb --user=root --password=my-secret-pw --version
 
    mariadb from 11.0.2-MariaDB, client 15.2 for debian-linux-gnu (aarch64) using  EditLine wrapper
    ```
 
    The output above shows the MariaDB version number, as well as a handy warning.
+
+   > **Note:** We use the actual password value here because `$MARIADB_ROOT_PASSWORD` is an environment variable inside the container, not on the host. If you prefer, you can use `docker container exec` to start a shell inside the container first and then reference the variable there (as shown in step 6).
 
 5. You can also use `docker container exec` to connect to a new shell process inside an already-running container. The command below will give you an interactive shell (`sh`) in your MariaDB container.
 
@@ -319,7 +321,7 @@ Let's clean up for the next lab.
 In the last section, you saw a lot of Docker-specific jargon that might confuse some. So, before you go further, let's clarify some terminology used frequently in the Docker ecosystem.
 
 - _Images_ - The file system and configuration of our application, which are used to create containers. To learn more about a Docker image, run `docker image inspect alpine`. You used the `docker image pull` command to download the **alpine** image. When you executed the command `docker container run hello-world`, it also did a `docker image pull` behind the scenes to download the **hello-world** image.
-- _Containers_ - Running instances of Docker images &mdash; containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers and runs as an isolated process in user space on the host OS. You created a container using `docker container run`, which you did using the alpine image you downloaded. You can see a list of running containers by using the `docker container ps` command.
+- _Containers_ - Running instances of Docker images &mdash; containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers and runs as an isolated process in user space on the host OS. You created a container using `docker container run`, which you did using the alpine image you downloaded. You can see a list of running containers by using the `docker container ls` command.
 - _Docker daemon_ - The background service running on the host, that manages building, running and distributing Docker containers.
 - _Docker client_ - The command line tool that allows the user to interact with the Docker daemon.
 - _Docker Hub_ - A [registry](https://hub.docker.com/) of Docker images where you can find trusted and enterprise-ready containers, plugins, and Docker editions. You'll be using this later in this tutorial.

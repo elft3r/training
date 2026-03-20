@@ -31,25 +31,29 @@ For this application we will use the [Docker Example Voting App](https://github.
 
 ### <a name="Task_2"></a>Task 2: Initiate Docker Swarm
 
-For this first stage, we will use existing images that are in Docker Store.
+For this first stage, we will use existing images that are on Docker Hub.
 
-This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). Swarm mode is the cluster management and orchestration features embedded in the Docker engine. You can easily deploy to a swarm using a file that declares your desired state for the app. Swarm allows you to run your containers on more than one machine. In this tutorial, you can run on just one machine, or you can use something like [Docker for AWS](https://beta.docker.com/) or [Docker for Azure](https://beta.docker.com/) to quickly create a multiple node machine. Alternately, you can use Docker Machine to create a number of local nodes on your development machine. See [the Swarm Mode lab](../../swarm-mode/beginner-tutorial/README.md#creating-the-nodes-and-swarm) for more information.
+This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). Swarm mode is the cluster management and orchestration features embedded in the Docker engine. You can easily deploy to a swarm using a file that declares your desired state for the app. Swarm allows you to run your containers on more than one machine. In this tutorial, you can run on just one machine, or you can use a cloud provider to create multiple nodes. See [the Swarm Mode lab](../../swarm-mode/beginner-tutorial/README.md#creating-the-nodes-and-swarm) for more information.
 
 1. Query your IP Address
 
+   On **macOS**:
    ```
-   $ ifconfig -a |grep -A 4 en0
-
-   en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
-   ether 3c:15:c2:d8:28:42
-   inet6 fe80::1080:9acb:32c6:54a0%en0 prefixlen 64 secured scopeid 0x5
-   inet 192.168.2.159 netmask 0xffffff00 broadcast 192.168.2.255
-   nd6 options=201<PERFORMNUD,DAD>
-   media: autoselect
-   status: active
+   $ ipconfig getifaddr en0
+   192.168.2.159
    ```
 
-   _NOTE_ For Windows users please use the `ipconfig`command to retrieve your IP address
+   On **Linux**:
+   ```
+   $ hostname -I | awk '{print $1}'
+   192.168.2.159
+   ```
+
+   On **Windows** (CMD or PowerShell):
+   ```
+   $ ipconfig
+   ```
+   Look for the IPv4 address of your active network adapter.
 
 2. Create a Docker Swarm using the IP Address from step 1.
 
@@ -87,7 +91,7 @@ This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). S
          restart_policy:
            condition: on-failure
      db:
-       image: postgres:9.4
+       image: postgres:15-alpine
        volumes:
          - db-data:/var/lib/postgresql/data
        networks:
@@ -169,7 +173,7 @@ If you take a look at `docker-stack.yml`, you will see that the file defines
 - .NET based worker app based on a .NET image
 - Postgres container based on a postgres image
 
-The Compose file also defines two networks, front-tier and back-tier. Each container is placed on one or two networks. Once on those networks, they can access other services on that network in code just by using the name of the service. Services can be on any number of networks. Services are isolated on their network. Services are only able to discover each other by name if they are on the same network. To learn more about networking check out the [Networking Lab](https://github.com/docker/labs/tree/master/networking).
+The Compose file also defines two networks, front-tier and back-tier. Each container is placed on one or two networks. Once on those networks, they can access other services on that network in code just by using the name of the service. Services can be on any number of networks. Services are isolated on their network. Services are only able to discover each other by name if they are on the same network. To learn more about networking check out the [Networking Basics](./networking-basics.md) chapter.
 
 Take a look at the file again. You'll see it starts with
 
@@ -224,20 +228,20 @@ The `deploy` key is new in version 3. It allows you to specify various propertie
    $ docker stack services vote
 
    ID            NAME         MODE        REPLICAS  IMAGE
-   25wo6p7fltyn  vote_db      replicated  1/1       postgres:9.4
+   25wo6p7fltyn  vote_db      replicated  1/1       postgres:15-alpine
    2ot4sz0cgvw3  vote_worker  replicated  1/1       dockersamples/examplevotingapp_worker:latest
    9faz4wbvxpck  vote_redis   replicated  2/2       redis:alpine
    ocm8x2ijtt88  vote_vote    replicated  2/2       dockersamples/examplevotingapp_vote:before
    p1dcwi0fkcbb  vote_result  replicated  2/2       dockersamples/examplevotingapp_result:before
    ```
 
-6. We can also check the services this which also provides the published ports:
+6. We can also list the services which also shows the published ports:
 
    ```
    $ docker service ls
 
    ID                  NAME                MODE                REPLICAS            IMAGE                                          PORTS
-   praz62mx8pis        vote_db             replicated          1/1                 postgres:9.4
+   praz62mx8pis        vote_db             replicated          1/1                 postgres:15-alpine
    kn9m4pbgampm        vote_redis          replicated          1/1                 redis:alpine                                   *:30000->6379/tcp
    vboktn2bpb82        vote_result         replicated          1/1                 dockersamples/examplevotingapp_result:before   *:5001->80/tcp
    jqg43scwua0b        vote_visualizer     replicated          1/1                 dockersamples/visualizer:stable                *:8080->8080/tcp
