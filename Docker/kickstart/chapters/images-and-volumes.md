@@ -624,6 +624,6 @@ A named volume can be created on the command line, in a docker-compose file, and
 
     If a new container was started with the previous command, it would create a new empty volume.
 
-## Let's Take a Break then continue to WebApps Part 2
+## Let's Take a Break then continue to Multi-Stage Builds
 
-For the next step in the tutorial, head over to [Webapps with Docker - Part Two](./webapps-part2.md)
+For the next step in the tutorial, head over to [Multi-Stage Builds](./multistage-builds.md)
