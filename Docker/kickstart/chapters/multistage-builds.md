@@ -15,11 +15,13 @@ When you build an application inside a Docker image, you often need compilers, b
 
 In this task you will build a small Go web application using a traditional single-stage Dockerfile and observe the resulting image size.
 
-1. Clone the training repository (if you haven't already) and navigate to the example app:
+1. Navigate to the example app directory inside the training repository:
 
    ```
-   $ cd ~/Training/Docker/kickstart/multistage-app
+   $ cd Docker/kickstart/multistage-app
    ```
+
+   > **Note:** If you cloned the repository to a different location, adjust the path accordingly (e.g., `cd ~/Training/Docker/kickstart/multistage-app`).
 
 2. Have a look at the Go application:
 
@@ -242,7 +244,7 @@ FROM golang:1.23 AS healthchecker
 
 WORKDIR /hc
 
-RUN echo 'package main\nimport ("net/http"; "os")\nfunc main() { resp, err := http.Get("http://localhost:8080/"); if err != nil || resp.StatusCode != 200 { os.Exit(1) } }' > healthcheck.go && \
+RUN printf 'package main\nimport ("net/http"; "os")\nfunc main() { resp, err := http.Get("http://localhost:8080/"); if err != nil || resp.StatusCode != 200 { os.Exit(1) } }\n' > healthcheck.go && \
     CGO_ENABLED=0 go build -o healthcheck healthcheck.go
 
 # Stage 3: Create the minimal production image
