@@ -11,7 +11,7 @@ This is the **56K.Cloud Training Repository** — an open-source, community-driv
 ```
 ├── Docker/                   # Docker tutorials (primary content area)
 │   ├── kickstart/            # Main Docker course with progressive chapters
-│   │   ├── chapters/         # Course chapters (setup → alpine → webapps → devops → compose → swarm)
+│   │   ├── chapters/         # Course chapters (setup → alpine → images & volumes → webapps → networking → devops → compose (voting app) → swarm (voting app) → secrets)
 │   │   ├── flask-app/        # Python Flask example application
 │   │   ├── static-site/      # Static website example
 │   │   └── REVIEW.md         # Detailed content quality review/feedback
@@ -31,6 +31,7 @@ This is the **56K.Cloud Training Repository** — an open-source, community-driv
 ├── _config.yml               # Jekyll site configuration
 ├── CNAME                     # DNS: training.56kcloud.io
 ├── contribute.md             # Contribution guidelines
+├── README.md                 # Main tutorials index & site overview
 └── LICENSE                   # Apache 2.0
 ```
 
@@ -62,7 +63,7 @@ Quality is managed through manual review and community feedback. `Docker/kicksta
 
 - All tutorials are written in Markdown
 - Follow the existing chapter structure in `Docker/kickstart/chapters/` as a reference
-- Use fenced code blocks with language hints for all code examples
+- Prefer fenced code blocks with language hints for code examples; indented blocks are acceptable for simple command/output transcripts where consistent with existing chapters
 - Prefix shell commands with `$` prompt to distinguish commands from output
 - Use modern Docker CLI syntax (`docker container run`, `docker image ls`) over legacy (`docker run`, `docker ps`)
 - Keep base images up to date (avoid EOL versions like `ubuntu:12.04`, `alpine:3.5`)
