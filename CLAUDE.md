@@ -11,16 +11,17 @@ This is the **56K.Cloud Training Repository** — an open-source, community-driv
 ```
 ├── Docker/                   # Docker tutorials (primary content area)
 │   ├── kickstart/            # Main Docker course with progressive chapters
-│   │   ├── chapters/         # Course chapters (setup → containers → compose → swarm)
+│   │   ├── chapters/         # Course chapters (setup → alpine → webapps → devops → compose → swarm)
 │   │   ├── flask-app/        # Python Flask example application
-│   │   └── static-site/      # Static website example
+│   │   ├── static-site/      # Static website example
+│   │   └── REVIEW.md         # Detailed content quality review/feedback
 │   ├── security/             # Security deep-dives (AppArmor, seccomp, capabilities, etc.)
 │   ├── networking/           # Docker networking tutorials
 │   ├── 12factor/             # 12-factor app methodology
 │   ├── swarm-mode/           # Docker Swarm tutorials
 │   ├── Docker-Orchestration/ # Orchestration tutorials
 │   ├── registry/             # Docker registry tutorials
-│   └── additional-ressources/# Supplementary Docker resources
+│   └── additional-ressources/ # Supplementary Docker resources
 ├── Kubernetes/               # Kubernetes tutorials (kickstart, Helm, Minikube)
 ├── DockerCon/                # Logging & Monitoring workshops
 ├── DevOpsDays/               # Docker training materials
@@ -30,20 +31,21 @@ This is the **56K.Cloud Training Repository** — an open-source, community-driv
 ├── _config.yml               # Jekyll site configuration
 ├── CNAME                     # DNS: training.56kcloud.io
 ├── contribute.md             # Contribution guidelines
-├── REVIEW.md                 # Docker kickstart review/feedback
 └── LICENSE                   # Apache 2.0
 ```
 
 ## Content Type
 
-This is a **documentation and tutorial repository**, not a software application. There is:
+This is a **documentation and tutorial repository**, not a software application. At the repository level there is:
 
-- **No build system** (no package.json, Makefile, etc.)
+- **No build system** (no top-level package.json, Makefile, etc.)
 - **No automated test suite**
 - **No CI/CD pipeline**
 - **No linter/formatter configuration**
 
-Quality is managed through manual review and community feedback. `REVIEW.md` contains detailed content quality feedback.
+Individual sample applications (e.g., Node.js debugging, Java debugging) may contain their own `package.json` or `pom.xml`, but these are tutorial examples, not part of a repository-wide build.
+
+Quality is managed through manual review and community feedback. `Docker/kickstart/REVIEW.md` contains detailed content quality feedback.
 
 ## Key Technologies Covered
 
@@ -78,7 +80,7 @@ The site uses the **Cayman** Jekyll theme. Configuration in `_config.yml` exclud
 
 ## Known Content Issues
 
-See `REVIEW.md` for a detailed list including:
+See `Docker/kickstart/REVIEW.md` for a detailed list including:
 - Some broken navigation links between chapters
 - Outdated base images in Dockerfile examples
 - Inconsistent Docker command syntax (legacy vs modern CLI)
