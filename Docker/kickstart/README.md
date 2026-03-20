@@ -13,6 +13,7 @@ This Docker tutorial consists of the following sections:
 - [Running your first container](chapters/alpine.md)
 - [Webapps with Docker - Part One](chapters/webapps-part1.md)
 - [Docker Images and Volumes](chapters/images-and-volumes.md)
+- [Multi-Stage Builds](chapters/multistage-builds.md)
 - [Webapps with Docker - Part Two](chapters/webapps-part2.md)
 - [Docker & DevOps](chapters/devops.md)
 - [Deploying an app with Docker Compose](chapters/votingapp-compose.md)
