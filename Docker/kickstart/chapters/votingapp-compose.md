@@ -25,7 +25,7 @@ For this application we will use the [Docker Example Voting App](https://github.
 
 1. Clone the repository onto your machine and `cd` into the directory:
 
-   ```
+   ```console
    $ git clone https://github.com/docker/example-voting-app.git
 
    $ cd example-voting-app
@@ -194,7 +194,7 @@ With the `healthcheck` key, you can define a check to figure out if the containe
 
 To start the app in the background you can run the following command:
 
-```
+```console
 $ docker compose up -d
 
 [+] Running 7/7
@@ -209,7 +209,7 @@ $ docker compose up -d
 
 Find out more about the running containers:
 
-```
+```console
 $ docker compose ps
 NAME                          IMAGE                       COMMAND                  SERVICE             CREATED              STATUS                        PORTS
 example-voting-app-db-1       postgres:15-alpine          "docker-entrypoint.s…"   db                  About a minute ago   Up About a minute (healthy)   5432/tcp
@@ -249,7 +249,7 @@ In this step, you will customize the app and learn how you can use Docker Compos
 
 To remove the container you can run the following command:
 
-```
+```console
 $ docker compose down
 [+] Running 7/7
  ✔ Container example-voting-app-result-1  Removed     0.4s

@@ -15,7 +15,7 @@ The `docker network` command is the main command for configuring and managing co
 
 Run `docker network --help` to see the available sub-commands.
 
-```
+```console
 $ docker network --help
 Usage:  docker network COMMAND
 
@@ -39,7 +39,7 @@ The key operations are: **create** and **rm** to manage networks, **connect** an
 
 Run `docker network ls` to view existing container networks on your Docker host.
 
-```
+```console
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 1befe23acd58        bridge              bridge              local
@@ -61,7 +61,7 @@ Each network has a unique `ID` and `NAME`, and is associated with a single drive
 
 Use `docker network inspect` to view configuration details of a network. These details include the name, ID, driver, subnet info, connected containers, and more.
 
-```
+```console
 $ docker network inspect bridge
 [
     {
@@ -126,7 +126,7 @@ Docker uses a pluggable networking architecture. The built-in drivers handle mos
 
 You can see which drivers are available with `docker info`.
 
-```
+```console
 $ docker info --format '{{.Plugins.Network}}'
 [bridge host ipvlan macvlan null overlay]
 ```

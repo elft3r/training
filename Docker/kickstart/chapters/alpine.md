@@ -15,7 +15,7 @@ Now that Docker is set up, it's time to get our hands dirty. In this section, yo
 
 1. To get started, let's run the following in our terminal:
 
-   ```
+   ```console
    $ docker image pull alpine
    Unable to find image 'alpine:latest' locally
    latest: Pulling from library/alpine
@@ -28,7 +28,7 @@ Now that Docker is set up, it's time to get our hands dirty. In this section, yo
 
 2. The `pull` command fetches the alpine **image** from the **Docker registry** and saves it in your system. You can use the `docker image ls` command to see a list of all images on your system.
 
-   ```
+   ```console
    $ docker image ls
 
    REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
@@ -40,7 +40,7 @@ Now that Docker is set up, it's time to get our hands dirty. In this section, yo
 
 1. Great! Let's now run a Docker **container** based on this image. To do that, you use the `docker container run` command.
 
-   ```
+   ```console
    $ docker container run alpine hostname
 
    888e89a3b36
@@ -59,7 +59,7 @@ When you run `docker container run alpine hostname`, you provided the command (`
 
    List all containers:
 
-   ```
+   ```console
    $ docker container ls -a
    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS            PORTS               NAMES
    888e89a3b36b        alpine              "hostname"          50 seconds ago      Exited (0) 49 seconds ago             awesome_elion
@@ -73,7 +73,7 @@ Containers that do one task and then exit can be handy. You could build a Docker
 
 1. Let's try something more exciting.
 
-   ```
+   ```console
    $ docker container run alpine echo "hello from alpine"
    hello from alpine
    ```
@@ -82,13 +82,13 @@ Containers that do one task and then exit can be handy. You could build a Docker
 
 1. Try another command:
 
-   ```
+   ```console
    $ docker container run alpine /bin/sh
    ```
 
    Wait, nothing happened! Is that a bug? Well, no. These interactive shells will exit after running any scripted commands unless they run in an interactive terminal - so for this example to not exit, you need to run:
 
-   ```
+   ```console
    $ docker container run -it alpine /bin/sh
    ```
 
@@ -96,14 +96,14 @@ You are now inside the container shell, and you can try out a few commands like 
 
 1. Now it's time to see the `docker container ls` or the shortcut `docker ps` command. The `docker container ls` command shows you all containers that are currently running.
 
-   ```
+   ```console
    $ docker container ls
    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
    ```
 
 1. Since no containers are running, you see a blank line. Let's try a more helpful variant: `docker container ls -a`
 
-   ```
+   ```console
    $ docker container ls -a
    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
    36171a5da744        alpine              "/bin/sh"                5 minutes ago       Exited (0) 2 minutes ago                        fervent_newton
@@ -114,7 +114,7 @@ You are now inside the container shell, and you can try out a few commands like 
 
 1. You see above a list of all the containers that you ran. Notice that the `STATUS` column shows these containers exited a few minutes ago. You're probably wondering if there is a way to run more than just one command in a container. Let's try that now:
 
-   ```
+   ```console
    $ docker container run -it alpine /bin/sh
    / # ls
    bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
@@ -146,7 +146,7 @@ In the following example, we will run an Ubuntu Linux container.
 
    We're also telling the container to run `bash` as its main process (PID 1).
 
-   ```
+   ```console
    $ docker container run --interactive --tty --rm ubuntu bash
    ```
 
@@ -164,7 +164,7 @@ In the following example, we will run an Ubuntu Linux container.
 
 4. For fun, let's check the version of our host OS
 
-   ```
+   ```console
    $ cat /etc/issue
 
    Ubuntu 24.04 LTS \n \l
@@ -178,7 +178,7 @@ Interactive containers are helpful when you are putting together your image. You
 
 5. To exit the shell of the Ubuntu container:
 
-   ```
+   ```console
    $ exit
    ```
 
@@ -192,7 +192,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
    We'll also use an environment variable (`--env`) to set the root password (NOTE: **DON'T DO THIS IN PRODUCTION**):
 
-   ```
+   ```console
    $ docker container run \
    --detach \
    --name mydb \
@@ -216,7 +216,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
 2. List running containers
 
-   ```
+   ```console
    $ docker container ls
    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS            NAMES
    3f4e8da0caf7        mariadb:latest      "docker-entrypoint..."   52 seconds ago      Up 51 seconds       3306/tcp         mydb
@@ -226,7 +226,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
 3. You can check what's happening in your containers by using a couple of built-in Docker commands: `docker container logs` and `docker container top`
 
-   ```
+   ```console
    $ docker container logs mydb
    <output truncated>
    2023-06-15  8:29:26 0 [Note] Server socket created on IP: '0.0.0.0'.
@@ -239,7 +239,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
    Let's look at the running processes inside the container.
 
-   ```
+   ```console
    $ docker container top mydb
    UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
    999                 23256               23229               0                   08:29               ?                   00:00:00            mariadbd
@@ -247,7 +247,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
    You should see the MariaDB demon (`mariadbd`) is running. Note that the PID shown here is the PID for this process on your docker host. To see the same `mariadbd` process running as the main process of the container (PID 1) try:
 
-   ```
+   ```console
    $ docker container exec mydb ps -ef
    UID        PID  PPID  C STIME TTY          TIME CMD
    mysql        1     0  0 08:29 ?        00:00:00 mariadbd
@@ -262,7 +262,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
    `docker container exec` allows you to run a command inside a container. In this example, we'll use `docker container exec` to run the command-line equivalent of `mariadb --user=root --password=my-secret-pw --version` inside our MariaDB container.
 
-   ```
+   ```console
    $ docker container exec -it mydb \
    mariadb --user=root --password=my-secret-pw --version
 
@@ -275,7 +275,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 
 5. You can also use `docker container exec` to connect to a new shell process inside an already-running container. The command below will give you an interactive shell (`sh`) in your MariaDB container.
 
-   ```
+   ```console
    $ docker exec -it mydb sh
    #
    ```
@@ -300,19 +300,19 @@ Let's clean up for the next lab.
 
 8. Stop the MariaDB container
 
-   ```
+   ```console
    $ docker container stop mydb
    ```
 
 9. Remove the MariaDB container
 
-   ```
+   ```console
    $ docker container rm mydb
    ```
 
 10. Delete the MariaDB image
 
-    ```
+    ```console
     $ docker image rm mariadb
     ```
 

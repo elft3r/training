@@ -8,7 +8,7 @@ MongoDB is a free and open-source cross-platform document-oriented database prog
 
 To get started, let's run the following in our terminal:
 
-```
+```console
 $ docker run \
     -v /data/files/path:/bitnami \
     bitnami/mongodb:latest

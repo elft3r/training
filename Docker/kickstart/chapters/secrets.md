@@ -28,7 +28,7 @@ Perform the following command from a *manager* node in your Swarm. This lab will
 
 1. Create a new text file containing the text you wish to use as your secret.
 
-    ```
+    ```console
     $ echo "secrets are important" > sec.txt
     ```
 
@@ -39,7 +39,7 @@ Perform the following command from a *manager* node in your Swarm. This lab will
 
 2. Confirm that the file was created.
 
-    ```
+    ```console
     $ ls -l
     
     total 4
@@ -49,7 +49,7 @@ Perform the following command from a *manager* node in your Swarm. This lab will
 3. Use the `docker secret create` command to create a new secret using the file
 created in the previous step.
 
-    ```
+    ```console
     $ docker secret create sec1 ./sec.txt
     
     ftu76ghgsk7f9fmcrj3wx3xcd
@@ -79,7 +79,7 @@ Perform all of the following commands from a Swarm *manager*.  The lab assumes y
 
 1. List existing secrets with the `docker secret ls` command.
 
-    ```
+    ```console
     $ docker secret ls
     
     ID                     NAME      CREATED             UPDATED
@@ -88,7 +88,7 @@ Perform all of the following commands from a Swarm *manager*.  The lab assumes y
 
 2. Inspect the **sec1** secret.
 
-    ```
+    ```console
     $ docker secret inspect sec1
     
     [
@@ -123,7 +123,7 @@ shown in the examples below.
 
 1. Create a new service and attach the `sec1` secret.
 
-    ```
+    ```console
     $ docker service create --name sec-test --secret="sec1" redis:alpine
 
     p858ush7oeei8647na2xa12sc
@@ -135,7 +135,7 @@ shown in the examples below.
 
 2. Verify the service is running.
 
-    ```
+    ```console
     $ docker service ls
     
     ID             NAME       MODE         REPLICAS   IMAGE
@@ -145,7 +145,7 @@ shown in the examples below.
 3. Inspect the `sec-test` service to verify that the secret is associated with
 it.
 
-    ```
+    ```console
     $ docker service inspect sec-test
     [
       {
@@ -181,7 +181,7 @@ it.
 4. Obtain the name of any of the tasks in the `sec-test` service (if you've been
 following along there will only be one task running in the service).
 
-    ```
+    ```console
     //Run the following docker service ps command to see which node
     the service task is running on.
 
@@ -213,7 +213,7 @@ following along there will only be one task running in the service).
 service task. Be sure to substitute the Container ID in the command below with
 a the container ID form your environment (see output of previous step).
 
-    ```
+    ```console
     $ docker exec -it <CONTAINER ID> sh
     
     data#
@@ -239,7 +239,7 @@ a the container ID form your environment (see output of previous step).
 
 7. View the unencrypted contents of the *secret*.
 
-    ```
+    ```console
     $ cat /run/secrets/sec1
     
     secrets are important
@@ -272,7 +272,7 @@ In this step you will remove all secrets and services,as well as clean up any ot
 
    This command will remove **all** services on your Docker host. Only perform this step if you know you know you do not need any of the services running on your system.
 
-    ```
+    ```console
     $ docker service rm $(docker service ls -q)
     <Snip>
     ```
@@ -280,14 +280,14 @@ In this step you will remove all secrets and services,as well as clean up any ot
 
    This command will remove **all** secrets on your Docker host. Only perform this step if you know you will not use these secrets again.
 
-    ```
+    ```console
     $ docker secret rm $(docker secret ls -q)
     <Snip>
     ```
 
 3. If you haven't already done so, delete the file that you used as the source of the secret data in Step 1.
 
-    ```
+    ```console
     $ rm sec.txt
     ```
 

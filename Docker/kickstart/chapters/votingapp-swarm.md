@@ -23,7 +23,7 @@ For this application we will use the [Docker Example Voting App](https://github.
 
 1. Clone the repository onto your machine and `cd` into the directory:
 
-   ```
+   ```console
    $ git clone https://github.com/docker/example-voting-app.git
 
    $ cd example-voting-app
@@ -37,7 +37,7 @@ This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). S
 
 1. Query your IP Address
 
-   ```
+   ```console
    $ ifconfig -a |grep -A 4 en0
 
    en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
@@ -53,7 +53,7 @@ This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). S
 
 2. Create a Docker Swarm using the IP Address from step 1.
 
-   ```
+   ```console
    $ docker swarm init --advertise-addr <IP Address from Step 1>
 
    Swarm initialized: current node (gshy63zz81kw3a7treejl2g4l) is now a manager.
@@ -204,7 +204,7 @@ The `deploy` key is new in version 3. It allows you to specify various propertie
 
 4. Let's deploy our Vote Application to Docker Swarm:
 
-   ```
+   ```console
    $ docker stack deploy --compose-file docker-stack.yml vote
 
    Creating network vote_frontend
@@ -220,7 +220,7 @@ The `deploy` key is new in version 3. It allows you to specify various propertie
 
 5. Verify your stack was deployed successfully:
 
-   ```
+   ```console
    $ docker stack services vote
 
    ID            NAME         MODE        REPLICAS  IMAGE
@@ -233,7 +233,7 @@ The `deploy` key is new in version 3. It allows you to specify various propertie
 
 6. We can also check the services this which also provides the published ports:
 
-   ```
+   ```console
    $ docker service ls
 
    ID                  NAME                MODE                REPLICAS            IMAGE                                          PORTS
@@ -257,7 +257,7 @@ The `deploy` key is new in version 3. It allows you to specify various propertie
 
    **NOTE**: If you are running this tutorial in a cloud environment like AWS, Azure, Digital Ocean, or GCE you will not have direct access to localhost or 127.0.0.1 via a browser. A work around for this is to leverage ssh port forwarding. Below is an example for Mac OS. Similarly this can be done for Windows and Putty users.
 
-   ```
+   ```console
    $ ssh -L 5000:localhost:5000 <ssh-user>@<CLOUD_INSTANCE_IP_ADDRESS>
    ```
 
@@ -310,7 +310,7 @@ Next, we want to redeploy our Vote Application stack with the new changes. The `
 
 2. Redeploy Vote Stack:
 
-   ```
+   ```console
    $ docker stack deploy --compose-file docker-stack.yml vote
 
    Updating service vote_db (id: praz62mx8pisq07tziygllvb5)
@@ -329,7 +329,7 @@ Now place another vote `http://localhost:5000` and view the results `http://loca
 
 3. Remove the stack from the swarm.
 
-   ```
+   ```console
    $ docker stack rm vote
    ```
 

@@ -20,7 +20,7 @@ The Dockerfile syntax is straightforward. In this task we're going to create an 
 
 Use the following command to clone the lab repo from GitHub.
 
-```
+```console
 $ git clone https://github.com/dockersamples/linux_tweet_app
 Cloning into 'linux_tweet_app'...
 remote: Counting objects: 14, done.
@@ -35,13 +35,13 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
 1. Make sure you're in the `linux_tweet_app` directory:
 
-   ```
+   ```console
    $ cd ~/linux_tweet_app
    ```
 
 2. Display the contents of our Dockerfile.
 
-   ```
+   ```console
    $ cat Dockerfile
 
    FROM nginx:latest
@@ -63,7 +63,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
 3. In order to make commands more copy/paste friendly, export an environment variable containing your DockerID (if you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com))
 
-   ```
+   ```console
    $ export DOCKERID=<your docker id>
    ```
 
@@ -71,7 +71,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
 4. To make sure it stored correctly by echoing it back in the terminal
 
-   ```
+   ```console
    $ echo $DOCKERID
    <your docker id>
    ```
@@ -83,7 +83,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
    Be sure to include period (`.`) at the end of the command as this indicates the current directory.
 
-   ```
+   ```console
    $ docker image build --tag $DOCKERID/linux_tweet_app:1.0 .
 
    Sending build context to Docker daemon  32.77kB
@@ -119,7 +119,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
    As this container will be running an NGINX web server, we'll use the `--publish` flag to publish port 80 inside the container onto port 8080 on the host. This will allow traffic coming in to the Docker host on port 8080 to be directed to port 80 in the container. The format of the `--publish` flag is `host_port`:`container_port`.
 
-   ```
+   ```console
    $ docker container run \
    --detach \
    --publish 8080:80 \
@@ -133,7 +133,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
 8. Once you've accessed the website, shut it down and remove it.
 
-   ```
+   ```console
    $ docker container rm --force linux_tweet_app
 
    linux_tweet_app
@@ -161,7 +161,7 @@ When you use a bind mount, a file or directory on the host machine is mounted in
 
    Be sure to run this command from within the `linux_tweet_app` directory on your Docker host.
 
-   ```
+   ```console
    $ docker container run \
    --detach \
    --publish 8080:80 \
@@ -182,7 +182,7 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
 
    The Git repo that you pulled earlier contains several different versions of an index.html file. Run an `ls` command from within the `~/linux_tweet_app` directory to see a list of them. In this step we'll replace `index.html` with `index-new.html`.
 
-   ```
+   ```console
    $ cp index-new.html index.html
    ```
 
@@ -192,7 +192,7 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
 
    Edit the index.html file and edit line number 33 and change the text to "Docker is Awesome!"
 
-   ```
+   ```console
    $ vi index.html
    ```
 
@@ -202,7 +202,7 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
 
 5. Stop and remove the currently running container
 
-   ```
+   ```console
    $ docker container rm --force linux_tweet_app
 
    linux_tweet_app
@@ -210,7 +210,7 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
 
 6. Rerun the current version without a bind mount.
 
-   ```
+   ```console
    $ docker container run \
    --detach \
    --publish 8080:80 \
@@ -222,7 +222,7 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
 
 8. Stop and remove the current container
 
-   ```
+   ```console
    $ docker container rm --force linux_tweet_app
 
    linux_tweet_app
@@ -238,7 +238,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
 
    Be sure to include the period (`.`) at the end of the command.
 
-   ```
+   ```console
    $ docker image build --tag $DOCKERID/linux_tweet_app:2.0 .
    ```
 
@@ -246,7 +246,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
 
 2. Let's look at the images on our system
 
-   ```
+   ```console
    $ docker image ls
    REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
    <your docker id>/linux_tweet_app   2.0             01612e05312b        16 seconds ago      108MB
@@ -265,7 +265,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
 
    Be sure to reference the image tagged as `2.0`.
 
-   ```
+   ```console
    $ docker container run \
    --detach \
    --publish 8080:80 \
@@ -283,7 +283,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
 
 3. Run the old version (make sure you map it to port 8081 on the host, give it the unique name, and reference the 1.0 version of the image).
 
-   ```
+   ```console
    $ docker container run \
    --detach \
    --publish 8081:80 \
@@ -297,7 +297,7 @@ Bravo, we have successfully deployed 2 versions of our web app in parallel to ou
 
 5. Stop the running containers
 
-   ```
+   ```console
    $ docker container ps
 
    $ docker container stop old_linux_tweet_app

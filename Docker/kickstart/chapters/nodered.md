@@ -4,7 +4,7 @@ NodeRed is a flow-based programming tool based on NodeJs. The interface allows f
 In this chapter we will cover the basics of running NodeRed inside of a Docker container. Once we have accomplished the deplyoment of NodeRed with Docker we will then add a MongoDB database which we will connect to from inside NodeRed.
 
 To get started, let's run the following in our terminal:
-```
+```console
 $ docker run -it -p 1880:1880 --name mynodered nodered/node-red-docker
 ```
 

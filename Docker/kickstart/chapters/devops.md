@@ -14,7 +14,7 @@ Now that we understand how to build Docker images it's now time to start autobui
 
 1. In order to make commands more copy/paste friendly, export an environment variable containing your DockerID (if you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com))
 
-   ```
+   ```console
    $ export DOCKERID=<your docker id>
    ```
 
@@ -22,10 +22,10 @@ Now that we understand how to build Docker images it's now time to start autobui
 
 2. To make sure it stored correctly by echoing it back in the terminal
 
-   ```
+   ```console
    $ echo $DOCKERID
    <your docker id>
-   ```
+   ```console
 
 ### Push your images to Docker Hub
 
@@ -45,7 +45,7 @@ Distribution is built into the Docker platform. You can build images locally and
 
 1. Before you can push your images, you will need to log into Docker Hub.
 
-   ```
+   ```console
    $ docker login
    Username: <your docker id>
    Password: <your docker id password>
@@ -56,7 +56,7 @@ Distribution is built into the Docker platform. You can build images locally and
 
 2. Push version `1.0` of your web app using `docker image push`.
 
-   ```
+   ```console
    $ docker image push $DOCKERID/linux_tweet_app:1.0
 
    The push refers to a repository [docker.io/<your docker id>/linux_tweet_app]
@@ -72,7 +72,7 @@ Distribution is built into the Docker platform. You can build images locally and
 
 3. Now push version `2.0`.
 
-   ```
+   ```console
    $ docker image push $DOCKERID/linux_tweet_app:2.0
 
    The push refers to a repository [docker.io/<your docker id>/linux_tweet_app]
@@ -106,43 +106,43 @@ It's time to automate our build pipeline. First, we need to create a GitHub Repo
 
 4. Remove the Git directory
 
-   ```
+   ```console
    $ rm -Rf .git
    ```
 
 5. Initialize the Git directory
 
-   ```
+   ```console
    $ git init
    ```
 
 6. Change the branch name to main
 
-   ```
+   ```console
    $ git checkout -b main
    ```
 
 7. Add your Git Repo configuration to the local index
 
-   ```
+   ```console
    $ git remote add origin https://github.com/<your GitHub username>/<your github repo name>.git
    ```
 
 8. Add all files to Git index
 
-   ```
+   ```console
    $ git add *
    ```
 
 9. Commit Linux Tweet App files to the GitHub Autobuilds Repo
 
-   ```
+   ```console
    $ git commit -m "First commit to Autobuilds"
    ```
 
 10. Push the changes to GitHub
 
-    ```
+    ```console
     $ git push --set-upstream origin main
     ```
 
@@ -217,11 +217,11 @@ jobs:
 
 4. Commit and Push the changes to GitHub
 
-```
+```console
 $ git add .github/workflows/build-push-and-deploy.yml
 $ git commit -m "Added GitHub Actions Script"
 $ git push
-```
+```console
 
 5. After you pushed the changes go to the _Actions_ tab in your GitHub Repository. You should see the Workflow that was just triggered.
 
@@ -239,7 +239,7 @@ Awesome! To ensure our automated builds are really working let's commit a new ve
 
 2.  Commit our new changes to our GitHub Repo
 
-    ```
+    ```console
     $ git add index.html
 
     $ git commit -m "updated index.html text to DevOps is Awesome"
@@ -275,7 +275,7 @@ To do this, we need to add a new job to our GitHub Actions. This will start the 
 
 2. Commit and push your changes to the GitHub repo
 
-   ```
+   ```console
    $ git add .github/workflows/build-push-and-deploy.yml
 
    $ git commit -m "added testing job to our Autobuild Repo"
@@ -301,7 +301,7 @@ You can use your favorite editor (vi, emacs, VSCode, etc) to edit the `README.md
 
 6. Commit the changes to `README.md`
 
-```
+```console
 $ git add README.md
 
 $ git commit -m "Added GitHub Actions build status to our Repo"

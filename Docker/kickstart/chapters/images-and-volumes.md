@@ -46,7 +46,7 @@ Let's start by looking at layers and how files written to a container are manage
 
 Docker images are the basis of containers. In the previous example, you **pulled** the _dockersamples/static-site_ image from the registry and asked the Docker client to run a container **based** on that image. To see the list of images that are available locally on your system, run the `docker image ls` command.
 
-```
+```console
 $ docker image ls
 REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
 dockersamples/static-site   latest              92a386b6e686        2 hours ago        190.5 MB
@@ -67,7 +67,7 @@ For simplicity, you can think of an image functions similarly to a git repositor
 
 1. Pull a specific version of `debian` image as follows:
 
-   ```
+   ```console
    $ docker image pull debian:bullseye-slim
    ```
 
@@ -75,7 +75,7 @@ For simplicity, you can think of an image functions similarly to a git repositor
 
 2. So for example, the `docker image pull` command given below will always pull the `latest` tag of an image. The example below pulls `debian:latest` by default.
 
-   ```
+   ```console
    $ docker image pull debian
    ```
 
@@ -97,7 +97,7 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 1. Pull the Debian Bookworm Slim image
 
-   ```
+   ```console
    $ docker image pull debian:bookworm-slim
    bookworm-slim: Pulling from library/debian
    952b15bbc7fb: Pull complete
@@ -108,7 +108,7 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 2. Pull a PostgreSQL image
 
-   ```
+   ```console
    $ docker image pull postgres:17
    17: Pulling from library/postgres
    952b15bbc7fb: Already exists
@@ -144,7 +144,7 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 3. Start a Debian container, shell into it.
 
-   ```
+   ```console
    $ docker container run --tty --interactive --name mydebian debian:bookworm-slim bash
    root@e09203d84deb:/#
    ```
@@ -171,13 +171,13 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 6. Stop the container
 
-   ```
+   ```console
    $ docker container stop mydebian
    ```
 
 7. Ensure that your container still exists
 
-   ```
+   ```console
    $ docker container ls --all
    CONTAINER ID        IMAGE                  COMMAND             CREATED             STATUS           PORTS               NAMES
    674d7abf10c6        debian:bookworm-slim   "bash"              36 minutes ago      Exited (0) 2 minutes ago                       mydebian
@@ -185,13 +185,13 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 8. Start the Debian container again
 
-   ```
+   ```console
    $ docker container start mydebian
    ```
 
 9. Attach to the container, hit `enter` twice after completing the command
 
-   ```
+   ```console
    $ docker container attach mydebian
    ```
 
@@ -201,7 +201,7 @@ Another key concept is the idea of _official images_ and _user images_. (Both of
 
 10. Remove the container and list the directory contents
 
-    ```
+    ```console
     $ docker container rm mydebian
     mydebian
     ```
@@ -236,7 +236,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 1. Start a MariaDB container
 
-   ```
+   ```console
    $ docker container run --name mariadb -e MARIADB_USER=dbuser -e MARIADB_PASSWORD=dbpass -e MARIADB_DATABASE=sample -e MARIADB_ROOT_PASSWORD=supersecret -d mariadb:11
    acf185dc16e274b2f332266a1bfc6d1df7d7b4f780e6a7ec6716b40cafa5b3c3
    ```
@@ -245,7 +245,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 2. Use `docker container inspect` to view the details of the anonymous volume
 
-   ```
+   ```console
    $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
    ```
 
@@ -255,7 +255,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 3. Shell into your running MariaDB container and log into MariaDB
 
-   ```
+   ```console
    $ docker container exec --tty --interactive mariadb bash
 
    root@132f4b3ec0dc:/# mariadb --user=dbuser --password=dbpass
@@ -310,7 +310,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 6. Stop the container and restart it
 
-   ```
+   ```console
    $ docker container stop mariadb
    mariadb
 
@@ -320,7 +320,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 7. Shell back into the running container and log into MariaDB
 
-   ```
+   ```console
    $ docker container exec --interactive --tty mariadb bash
 
    root@132f4b3ec0dc:/# mariadb --user=dbuser --password=dbpass
@@ -365,7 +365,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 10. Let's look at the volume again
 
-    ```
+    ```console
     $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
     in the /mariadb container /var/lib/mysql is mapped to /var/lib/docker/volumes/cd79b3301df29d13a068d624467d6080354b81e34d794b615e6e93dd61f89628/_data
     ```
@@ -378,21 +378,21 @@ This line sets up an anonymous volume in order to increase database performance 
 
 11. Remove the current MariaDB container
 
-    ```
+    ```console
     $ docker container rm --force mariadb
     mariadb
     ```
 
 12. Start a new container with the same command that was used before
 
-    ```
+    ```console
     $ docker container run --name mariadb -e MARIADB_USER=dbuser -e MARIADB_PASSWORD=dbpass -e MARIADB_DATABASE=sample -e MARIADB_ROOT_PASSWORD=supersecret -d mariadb:11
     eb15eb4ecd26d7814a8da3bb27cee1a23304fab1961358dd904db37c061d3798
     ```
 
 13. List out the volume details for the new container
 
-    ```
+    ```console
     $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
     in the /mariadb container /var/lib/mysql is mapped to /var/lib/docker/volumes/e0ffdc6b4e0cfc6e795b83cece06b5b807e6af1b52c9d0b787e38a48e159404a/_data
     ```
@@ -401,7 +401,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 14. Shell back into the running container and log into MariaDB
 
-    ```
+    ```console
     $ docker container exec --interactive --tty mariadb bash
 
     root@132f4b3ec0dc:/# mariadb --user=dbuser --password=dbpass
@@ -436,7 +436,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
 17. Remove the container
 
-    ```
+    ```console
     $ docker container rm --force mariadb
     mariadb
     ```
@@ -453,7 +453,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 1. Start a MariaDB container with a named volume (`mydbdata`)
 
-   ```
+   ```console
    $ docker container run --name mariadb \
    -e MARIADB_USER=dbuser \
    -e MARIADB_PASSWORD=dbpass \
@@ -470,7 +470,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 2. List the volumes on the Docker host
 
-   ```
+   ```console
    $ docker volume ls
    DRIVER              VOLUME NAME
    local               55c322b9c4a644a5284ccb5e4d7b6b466a0534e26d57c9ef4221637d39cf9a88
@@ -481,7 +481,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 3. Inspect the volume
 
-   ```
+   ```console
    $ docker volume inspect mydbdata
    [
        {
@@ -500,7 +500,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 4. Shell into your running MariaDB container and log into MariaDB
 
-   ```
+   ```console
    $ docker container exec --tty --interactive mariadb bash
 
    root@132f4b3ec0dc:/# mariadb --user=dbuser --password=dbpass
@@ -546,7 +546,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 7. Remove the MariaDB container
 
-   ```
+   ```console
    $ docker container rm --force mariadb
    ```
 
@@ -556,7 +556,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 8. Start a new MariaDB container
 
-   ```
+   ```console
    $ docker container run --name new_mariadb \
    -e MARIADB_USER=dbuser \
    -e MARIADB_PASSWORD=dbpass \
@@ -569,7 +569,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 9. Shell into your running MariaDB container and log into MariaDB
 
-   ```
+   ```console
    $ docker container exec --tty --interactive new_mariadb bash
 
    root@132f4b3ec0dc:/# mariadb --user=dbuser --password=dbpass
@@ -614,7 +614,7 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 12. Remove the new MariaDB container and volume
 
-    ```
+    ```console
     $ docker container rm --force new_mariadb
     new_mariadb
 

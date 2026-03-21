@@ -12,7 +12,7 @@ The image that you are going to use is a single-page website that was already cr
 
 1. Run the image directly in one go using `docker container run` as follows.
 
-   ```
+   ```console
    $ docker container run --detach dockersamples/static-site
    ```
 
@@ -32,7 +32,7 @@ Let's re-run the command with some new flags to publish ports and pass your name
 
    Since we ran the container in detached mode, we don't have to launch another terminal to do this. Run `docker container ls` to view the running containers.
 
-   ```
+   ```console
    $ docker container ls
    CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
    a7a0e504ca3e        dockersamples/static-site   "/bin/sh -c 'cd /usr/"   28 seconds ago      Up 26 seconds       80/tcp, 443/tcp     stupefied_mahavira
@@ -40,7 +40,7 @@ Let's re-run the command with some new flags to publish ports and pass your name
 
 3. Check out the `CONTAINER ID` column. You will need to use this `CONTAINER ID` value, a long sequence of characters, to identify the container you want to stop, and then to remove it. The example below provides the `CONTAINER ID` on our system; you should use the value that you see in your terminal.
 
-   ```
+   ```console
    $ docker container stop a7a0e504ca3e
    $ docker container rm   a7a0e504ca3e
    ```
@@ -56,14 +56,14 @@ Let's re-run the command with some new flags to publish ports and pass your name
    - `--name` allows you to specify a container name
    - `AUTHOR` is the environment variable name and `Your Name` is the value that you can pass
 
-   ```
+   ```console
    $ docker container run --name static-site --env AUTHOR="Your Name" --detach --publish-all dockersamples/static-site
    e61d12292d69556eabe2a44c16cbd54486b2527e2ce4f95438e504afb7b02810
    ```
 
 5. Now you can see the ports by running the `docker port` command with the name of the newly created container `static-site`.
 
-   ```
+   ```console
    $ docker port static-site
    443/tcp -> 0.0.0.0:32772
    80/tcp -> 0.0.0.0:32773
@@ -73,7 +73,7 @@ Let's re-run the command with some new flags to publish ports and pass your name
 
 6. You can also run a second webserver at the same time, this time specifying a custom host port mapping to the container's webserver. **Be sure to change the name**
 
-   ```
+   ```console
    $ docker container run --name static-site-2 --env AUTHOR="Your Name" --detach --publish 8888:80 dockersamples/static-site
    ```
 
@@ -87,14 +87,14 @@ Let's re-run the command with some new flags to publish ports and pass your name
 
 7. Stop and remove the containers since we won't be using them anymore.
 
-   ```
+   ```console
    $ docker container stop static-site
    $ docker container rm static-site
    ```
 
 8. Let's use a shortcut to remove the second site:
 
-   ```
+   ```console
    $ docker container rm -f static-site-2
    ```
 
@@ -102,7 +102,7 @@ Let's re-run the command with some new flags to publish ports and pass your name
 
 9. Run `docker container ls -a` to make sure the containers are gone.
 
-   ```
+   ```console
    $ docker container ls -a
    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
    ```
