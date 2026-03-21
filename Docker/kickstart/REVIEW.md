@@ -33,10 +33,6 @@ The following issues have been identified and fixed:
 - ✅ Fixed `printf` vs `echo` for reliable escape sequences in `multistage-builds.md`
 - ✅ Fixed hardcoded `~/Training` path in `multistage-builds.md`
 - ✅ Fixed port 5002→5000 in `docker compose ps` output in `votingapp-compose.md`
-- ✅ Updated EOL `postgres:9.4` → `postgres:15-alpine` in `votingapp-swarm.md`
-- ✅ Replaced deprecated Docker for AWS/Azure references in `votingapp-swarm.md`
-- ✅ Added cross-platform IP address instructions in `votingapp-swarm.md`
-- ✅ Replaced archived docker/labs networking link with internal chapter link in `votingapp-swarm.md`
 - ✅ Fixed stray `"` characters in `ls -l` output in `secrets.md`
 - ✅ Removed empty "Docker & Kubernetes" section in `secrets.md`
 - ✅ Added link to `nextsteps.md` from `secrets.md` (was a dead-end)
@@ -63,6 +59,19 @@ These items rely on external repos that may change independently:
 - `webapps-part2.md` clones `github.com/dockersamples/linux_tweet_app` — if this repo is modified or removed, the tutorial breaks
 - `votingapp-compose.md` and `votingapp-swarm.md` clone `github.com/docker/example-voting-app` — the compose file shown inline may drift from the actual repo
 - `votingapp-swarm.md` uses `dockersamples/examplevotingapp_vote:before` and `:after` image tags which may be removed from Docker Hub
+
+### Voting App Swarm Chapter — Needs Full Resort
+
+The `votingapp-swarm.md` chapter was reverted to its original state because the improvements need more thorough review. The following items should be addressed when the chapter is revisited:
+
+- Update EOL `postgres:9.4` → a current Postgres image
+- Replace deprecated Docker for AWS/Azure beta references
+- Add cross-platform IP address lookup instructions (macOS, Linux, Windows)
+- Replace archived `docker/labs` networking link with an up-to-date reference
+- Update "Docker Store" references to "Docker Hub"
+- Review the inline `docker-stack.yml` for accuracy against the current upstream example-voting-app repo
+- Verify that `dockersamples/examplevotingapp_vote:before` and `:after` image tags still exist on Docker Hub
+- General copy-editing pass for clarity and modern Docker CLI usage
 
 ### Enhancements (not bugs)
 
