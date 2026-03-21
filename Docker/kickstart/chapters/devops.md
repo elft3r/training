@@ -163,7 +163,7 @@ Now that we have pushed our project to GitHub, the next step is to enable [GitHu
 
 3. To add a job, you need to create the `.github/workflows/build-push-and-deploy.yml` file and add the content below to it:
 
-```
+```yaml
 ---
 name: Build, Push and Deploy
 
@@ -223,7 +223,7 @@ jobs:
 $ git add .github/workflows/build-push-and-deploy.yml
 $ git commit -m "Added GitHub Actions Script"
 $ git push
-```console
+```
 
 5. After you pushed the changes go to the _Actions_ tab in your GitHub Repository. You should see the Workflow that was just triggered.
 
@@ -259,7 +259,7 @@ To do this, we need to add a new job to our GitHub Actions. This will start the 
 
 1. Add the following code snippet to your GitHub Actions file:
 
-   ```
+   ```yaml
    test-container:
       name: Test our container
       needs: build-and-push-image
@@ -297,9 +297,8 @@ To add the build status to your project, add the following line to your `README.
 
 You can use your favorite editor (vi, emacs, VSCode, etc) to edit the `README.md` file and paste the following snippet to the first line of the `README.md`
 
-```
 ![Build-Push-And-Test Workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/build-push-and-deploy.yml/badge.svg)
-```
+
 
 6. Commit the changes to `README.md`
 
