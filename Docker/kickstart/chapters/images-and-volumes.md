@@ -243,7 +243,7 @@ This line sets up an anonymous volume in order to increase database performance 
 
    When we start the container the anonymous volume is created:
 
-2. Use Docker inspect to view the details of the anonymous volume
+2. Use `docker container inspect` to view the details of the anonymous volume
 
    ```
    $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
