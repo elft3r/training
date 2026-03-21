@@ -18,7 +18,7 @@ Now that we understand how to build Docker images it's now time to start autobui
    $ export DOCKERID=<your docker id>
    ```
 
-   > Special Note: The Windows Command Line does not allow to export the `DOCKERID`. You can therefore either directly set the DockerID in the following commands. Or export the variable via `set DOCKERID=<your docker id>` and then replace the variable with `%DOCKERID%`.
+   > Special Note: On Windows, use `set DOCKERID=<your docker id>` in CMD (and reference it as `%DOCKERID%`), or `$env:DOCKERID="<your docker id>"` in PowerShell (and reference it as `$env:DOCKERID`).
 
 2. To make sure it stored correctly by echoing it back in the terminal
 
@@ -34,8 +34,8 @@ List the images on your Docker host. You will see that you now have two `linux_t
     $ docker image ls
 
     REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
-    vegasbrianc/linux_tweet_app   2.0                 01612e05312b        3 minutes ago       108MB
-    vegasbrianc/linux_tweet_app   1.0                 bb32b5783cd3        7 minutes ago       108MB
+    <your docker id>/linux_tweet_app   2.0                 01612e05312b        3 minutes ago       108MB
+    <your docker id>/linux_tweet_app   1.0                 bb32b5783cd3        7 minutes ago       108MB
 
 These images are only stored in your Docker host's local repository. We want to `push` these images to Docker Hub so we can access the images from anywhere.
 
@@ -215,7 +215,7 @@ jobs:
           labels: ${{ steps.docker_meta.outputs.labels }}
 ```
 
-13. Commit and Push the changes to GitHub
+4. Commit and Push the changes to GitHub
 
 ```
 $ git add .github/workflows/build-push-and-deploy.yml
@@ -223,7 +223,7 @@ $ git commit -m "Added GitHub Actions Script"
 $ git push
 ```
 
-14. After you pushed the changes go to the _Actions_ tab in your GitHub Repository. You should see the Workflow that was just triggered.
+5. After you pushed the changes go to the _Actions_ tab in your GitHub Repository. You should see the Workflow that was just triggered.
 
 ### Test Automated Builds
 

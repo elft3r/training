@@ -1,3 +1,13 @@
 # Next Steps
 
-Now that you've built some images and pushed them to Docker Hub, and learned the basics of Swarm mode, you can explore more of Docker by checking out [the documentation](https://docs.docker.com). And if you need any help, check out the [Docker Forums](https://forums.docker.com) or [StackOverflow](https://stackoverflow.com/tags/docker/).
+Congratulations on completing the Docker Kickstart course! You've covered containers, images, volumes, multi-stage builds, networking, Compose, Swarm, and secrets.
+
+Here are some resources to continue your Docker journey:
+
+- [Official Docker Documentation](https://docs.docker.com) — the definitive reference for all Docker features
+- [Docker Security Labs](../../security/) — deep-dives into AppArmor, seccomp, capabilities, and more
+- [Docker Networking Labs](../../networking/) — advanced networking tutorials
+- [Build and Deploy a Monitoring Stack](https://github.com/56kcloud/Training/blob/master/DockerCon/readme.md) — Prometheus and Grafana with Docker
+- [StackOverflow - Docker](https://stackoverflow.com/tags/docker/) — community Q&A
+
+Happy containerizing!

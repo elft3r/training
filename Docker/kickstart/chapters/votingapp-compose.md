@@ -215,7 +215,7 @@ NAME                          IMAGE                       COMMAND               
 example-voting-app-db-1       postgres:15-alpine          "docker-entrypoint.s…"   db                  About a minute ago   Up About a minute (healthy)   5432/tcp
 example-voting-app-redis-1    redis:alpine                "docker-entrypoint.s…"   redis               About a minute ago   Up About a minute (healthy)   6379/tcp
 example-voting-app-result-1   example-voting-app-result   "nodemon server.js"      result              About a minute ago   Up About a minute             0.0.0.0:5858->5858/tcp, 0.0.0.0:5001->80/tcp
-example-voting-app-vote-1     example-voting-app-vote     "python app.py"          vote                About a minute ago   Up About a minute (healthy)   0.0.0.0:5002->80/tcp
+example-voting-app-vote-1     example-voting-app-vote     "python app.py"          vote                About a minute ago   Up About a minute (healthy)   0.0.0.0:5000->80/tcp
 example-voting-app-worker-1   example-voting-app-worker   "dotnet Worker.dll"      worker              About a minute ago   Up About a minute
 ```
 

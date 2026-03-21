@@ -4,13 +4,13 @@ Great! So you have now looked at `docker container run`, played with a Docker co
 
 ## Task 1: Run a static website in a container
 
-> **Note:** Code for this section is in this repo in the [static-site directory](https://github.com/docker/labs/tree/master/beginner/static-site).
+> **Note:** Code for this section uses the [`dockersamples/static-site`](https://hub.docker.com/r/dockersamples/static-site) image from Docker Hub.
 
 First, we'll use Docker to run a static website in a container. The website is based on an existing image. We'll pull a Docker image from Docker Hub, run the container, and see how easy it is to set up a web server.
 
 The image that you are going to use is a single-page website that was already created for this demo and is available on the Docker Hub as [`dockersamples/static-site`](https://hub.docker.com/r/dockersamples/static-site).
 
-1. Run the image directly in one go using `docker run` as follows.
+1. Run the image directly in one go using `docker container run` as follows.
 
    ```
    $ docker container run --detach dockersamples/static-site
@@ -24,16 +24,16 @@ The image that you are going to use is a single-page website that was already cr
 
    Now that the server is running, do you see the website? What port is it running on? And more importantly, how do you access the container directly from our host machine?
 
-   Actually, you probably won't be able to answer any of these questions yet! &#9786; In this case, the client didn't tell the Docker Engine to publish any of the ports, so you need to re-run the `docker run` command to add this instruction.
+   Actually, you probably won't be able to answer any of these questions yet! &#9786; In this case, the client didn't tell the Docker Engine to publish any of the ports, so you need to re-run the `docker container run` command to add this instruction.
 
 Let's re-run the command with some new flags to publish ports and pass your name to the container to customize the message displayed. We'll use the _-d_ option again to run the container in detached mode.
 
 2. Stop the container that you have just launched. In order to do this, we need the container ID.
 
-   Since we ran the container in detached mode, we don't have to launch another terminal to do this. Run `docker container ps` to view the running containers.
+   Since we ran the container in detached mode, we don't have to launch another terminal to do this. Run `docker container ls` to view the running containers.
 
    ```
-   $ docker container ps
+   $ docker container ls
    CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
    a7a0e504ca3e        dockersamples/static-site   "/bin/sh -c 'cd /usr/"   28 seconds ago      Up 26 seconds       80/tcp, 443/tcp     stupefied_mahavira
    ```
@@ -47,8 +47,8 @@ Let's re-run the command with some new flags to publish ports and pass your name
 
    > **Note:** A cool feature is that you do not need to specify the entire `CONTAINER ID`. You can just specify a few starting characters and if it is unique among all the containers that you have launched, the Docker client will intelligently pick it up.
 
-4. Launch a container in **detached** mode as shown below:
-   The command summary the above command:
+4. Launch a container in **detached** mode as shown below.
+   Here is a summary of the flags used:
 
    - `--detach` will create a container with the process detached from our terminal
    - `--publish-all` will publish all the exposed container ports to random ports on the Docker host
@@ -69,7 +69,7 @@ Let's re-run the command with some new flags to publish ports and pass your name
    80/tcp -> 0.0.0.0:32773
    ```
 
-   > **Note:** If you are running [Docker Desktop for Mac](https://docs.docker.com/desktop/mac), [Docker Desktop for Windows](https://docs.docker.com/desktop/windows/), or [Docker Desktop on Linux](https://docs.docker.com/desktop/linux/), you can open `http://0.0.0.0:[YOUR_PORT_FOR 80/tcp]`. For our example this is `http://localhost:32773`.
+   > **Note:** If you are running [Docker Desktop for Mac](https://docs.docker.com/desktop/mac), [Docker Desktop for Windows](https://docs.docker.com/desktop/windows/), or [Docker Desktop on Linux](https://docs.docker.com/desktop/linux/), you can open `http://localhost:[YOUR_PORT_FOR 80/tcp]`. For our example this is `http://localhost:32773`.
 
 6. You can also run a second webserver at the same time, this time specifying a custom host port mapping to the container's webserver. **Be sure to change the name**
 
@@ -77,11 +77,11 @@ Let's re-run the command with some new flags to publish ports and pass your name
    $ docker container run --name static-site-2 --env AUTHOR="Your Name" --detach --publish 8888:80 dockersamples/static-site
    ```
 
-   Open your browser to `http://0.0.0.0:32773` and open a second tab `http://0.0.0.0:8888`. We can now view both websites running in parallel on your Docker Host.
+   Open your browser to `http://localhost:32773` and open a second tab `http://localhost:8888`. We can now view both websites running in parallel on your Docker Host.
 
    <center><img src="../images/web-app.png" title="web-app"></center>
 
-   `--publish` will publish instruct the container to map the specified container port to the host port. `8888:80` = Host:Container Port
+   `--publish` instructs Docker to map the specified container port to the host port. `8888:80` = Host:Container Port
 
    Now that you've seen how to run a webserver inside a Docker container, how do you create your own Docker image? This is the question we'll explore in the next section.
 
@@ -98,12 +98,12 @@ Let's re-run the command with some new flags to publish ports and pass your name
    $ docker container rm -f static-site-2
    ```
 
-   > **Note:** `rm -f` is the not nice way of removing containers. Be warned
+   > **Note:** `rm -f` forcefully removes a running container without gracefully stopping it first. Use with caution.
 
-9. Run `docker container ps -a` to make sure the containers are gone.
+9. Run `docker container ls -a` to make sure the containers are gone.
 
    ```
-   $ docker container ps -a
+   $ docker container ls -a
    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
    ```
 

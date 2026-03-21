@@ -1,6 +1,6 @@
 # Webapps with Docker Part Deux
 
-Now that we understand the structure of Docker images it's now time to start building our very own Docker image from a `Dockerfile`
+Now that we understand the structure of Docker images, it's time to build a custom Docker image from a `Dockerfile` and deploy it as a web application.
 
 > **Tasks**:
 >
@@ -67,7 +67,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
    $ export DOCKERID=<your docker id>
    ```
 
-   > Special Note: The Windows Command Line does not allow to export the `DOCKERID`. You can therefore either directly set the DockerID in the following commands. Or export the variable via `set DOCKERID=<your docker id>` and then replace the variable with `%DOCKERID%`.
+   > Special Note: On Windows, use `set DOCKERID=<your docker id>` in CMD (and reference it as `%DOCKERID%`), or `$env:DOCKERID="<your docker id>"` in PowerShell (and reference it as `$env:DOCKERID`).
 
 4. To make sure it stored correctly by echoing it back in the terminal
 
@@ -117,7 +117,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
 
 6. Use the `docker container run` command to start a new container from the image you created.
 
-   As this container will be running an NGINX web server, we'll use the `--publish` flag to publish port 80 inside the container onto port 80 on the host. This will allow traffic coming in to the Docker host on port 80 to be directed to port 80 in the container. The format of the `--publish` flag is `host_port`:`container_port`.
+   As this container will be running an NGINX web server, we'll use the `--publish` flag to publish port 80 inside the container onto port 8080 on the host. This will allow traffic coming in to the Docker host on port 8080 to be directed to port 80 in the container. The format of the `--publish` flag is `host_port`:`container_port`.
 
    ```
    $ docker container run \
@@ -127,9 +127,9 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
    $DOCKERID/linux_tweet_app:1.0
    ```
 
-   Any external traffic coming into the server on port 80 will now be directed into the container.
+   Any external traffic coming into the server on port 8080 will now be directed into the container.
 
-7. Open your newly created Web App in your Browser `http://0.0.0.0:8080`
+7. Open your newly created Web App in your Browser `http://localhost:8080`
 
 8. Once you've accessed the website, shut it down and remove it.
 
@@ -172,7 +172,7 @@ When you use a bind mount, a file or directory on the host machine is mounted in
 
    > Remember from our Dockerfile `usr/share/nginx/html` is where are html files are stored for our web app
 
-2. Open the Linux_Tweet App in your Browser `http://0.0.0.0:8080` to verify the website is running (you may need to refresh the browser to get the latest version).
+2. Open the Linux_Tweet App in your Browser `http://localhost:8080` to verify the website is running (you may need to refresh the browser to get the latest version).
 
 ### Modify the running website
 
@@ -203,7 +203,7 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
 5. Stop and remove the currently running container
 
    ```
-   $ docker rm --force linux_tweet_app
+   $ docker container rm --force linux_tweet_app
 
    linux_tweet_app
    ```
@@ -218,14 +218,14 @@ Because we did a bind mount, any changes made to the local filesystem are immedi
    $DOCKERID/linux_tweet_app:1.0
    ```
 
-7. Open the Tweet Web App in your Browser `http://0.0.0.0:8080` Notice it's back to the original version with the blue background.
+7. Open the Tweet Web App in your Browser `http://localhost:8080` Notice it's back to the original version with the blue background.
 
 8. Stop and remove the current container
 
    ```
-   $ docker rm --force linux_tweet_app
+   $ docker container rm --force linux_tweet_app
 
-   linux_tweet app
+   linux_tweet_app
    ```
 
 ## Task 3: Update and version your image
@@ -273,7 +273,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
    $DOCKERID/linux_tweet_app:2.0
    ```
 
-2. Open the Tweet Web App in your Browser `http://0.0.0.0:8080`
+2. Open the Tweet Web App in your Browser `http://localhost:8080`
 
    The web page will have an orange background.
 
@@ -281,7 +281,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
 
    As we're already using port 8080 for the container running from the `2.0` version of the image, we will start a new container and publish it on port 8081. Additionally, we need to give our container a unique name (`old_linux_tweet_app`)
 
-3. Run the old version (make sure you map it to port 8080 on the host, give it the unique name, and reference the 1.0 version of the image).
+3. Run the old version (make sure you map it to port 8081 on the host, give it the unique name, and reference the 1.0 version of the image).
 
    ```
    $ docker container run \
@@ -291,7 +291,7 @@ To save the changes you made to the `index.html` file earlier, you need to build
    $DOCKERID/linux_tweet_app:1.0
    ```
 
-4. Open the Tweet Web App in your Browser `http://0.0.0.0:8081` to view the old version of the website.
+4. Open the Tweet Web App in your Browser `http://localhost:8081` to view the old version of the website.
 
 Bravo, we have successfully deployed 2 versions of our web app in parallel to our Docker host.
 
@@ -333,16 +333,16 @@ Here's a quick summary of the few basic commands we used in our Dockerfile.
 ```
 
 - `EXPOSE` creates a hint for users of an image which ports provide services. It is included in the information which
-  can be retrieved via `$ docker inspect <container-id>`.
+  can be retrieved via `$ docker container inspect <container-id>`.
 
 > **Note:** The `EXPOSE` command does not actually make any ports accessible to the host! Instead, this requires
-> publishing ports by means of the `-p` flag when using `$ docker run`.
+> publishing ports by means of the `-p` flag when using `$ docker container run`.
 
-- `PUSH` pushes your image to Docker Hub, or alternately to a [private registry](https://docs.docker.com/registry/)
+> **Note:** There is no `PUSH` instruction in a Dockerfile. To push an image to Docker Hub (or a [private registry](https://docs.docker.com/registry/)), use the `docker image push` CLI command.
 
-> **Note:** If you want to learn more about Dockerfiles, check out [Best practices for writing Dockerfiles](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/).
+> **Note:** If you want to learn more about Dockerfiles, check out [Best practices for writing Dockerfiles](https://docs.docker.com/build/building/best-practices/).
 
-Great! So you have now looked at `docker run`, played with a Docker container and also got the hang of some terminology. Armed with all this knowledge, you are now ready to get to the real stuff &#8212; deploying web applications with Docker.
+Great! So you have now looked at `docker container run`, played with a Docker container and also got the hang of some terminology. Armed with all this knowledge, you are now ready to get to the real stuff &#8212; deploying web applications with Docker.
 
 ## Next Steps
 
