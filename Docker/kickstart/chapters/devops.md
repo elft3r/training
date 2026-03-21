@@ -23,7 +23,8 @@ Now that we understand how to build Docker images it's now time to start autobui
 2. To make sure it stored correctly by echoing it back in the terminal
 
    ```console
-   $ echo $DOCKERID <your docker id>
+   $ echo $DOCKERID
+   <your docker id>
    ```
 
 ### Push your images to Docker Hub
