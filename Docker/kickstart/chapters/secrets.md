@@ -181,20 +181,22 @@ it.
 4. Obtain the name of any of the tasks in the `sec-test` service (if you've been
 following along there will only be one task running in the service).
 
-    ```console
-    //Run the following docker service ps command to see which node
+    Run the following `docker service ps` command to see which node
     the service task is running on.
 
+    ```console
     $ docker service ps sec-test
-    
-    ID          NAME        IMAGE         NODE    DESIRED STATE  CURRENT STATE   
+
+    ID          NAME        IMAGE         NODE    DESIRED STATE  CURRENT STATE
     9qqp...htd  sec-test.1  redis:alpine  node1   Running        Running 8 mins..
+    ```
 
-    //Log on to the node running the service task (node1 in this example, but
-    might be different in your lab) and run a docker ps command.
+    Log on to the node running the service task (node1 in this example, but
+    might be different in your lab) and run a `docker ps` command.
 
+    ```console
     $ docker ps --filter name=sec-test
-    
+
     CONTAINER ID    IMAGE                     COMMAND                  CREATED   STATUS      PORTS      NAMES
     5652c1688f40    redis@sha256:9cd..c3ee7   "docker-entrypoint..."   15 mins   Up 15 mins  6379/tcp   sec-test.1.9qqp...vu2aw
     ```

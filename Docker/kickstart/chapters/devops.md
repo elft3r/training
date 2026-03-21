@@ -219,11 +219,11 @@ jobs:
 
 4. Commit and Push the changes to GitHub
 
-```console
-$ git add .github/workflows/build-push-and-deploy.yml
-$ git commit -m "Added GitHub Actions Script"
-$ git push
-```
+   ```console
+   $ git add .github/workflows/build-push-and-deploy.yml
+   $ git commit -m "Added GitHub Actions Script"
+   $ git push
+   ```
 
 5. After you pushed the changes go to the _Actions_ tab in your GitHub Repository. You should see the Workflow that was just triggered.
 
@@ -302,13 +302,13 @@ You can use your favorite editor (vi, emacs, VSCode, etc) to edit the `README.md
 
 6. Commit the changes to `README.md`
 
-```console
-$ git add README.md
+   ```console
+   $ git add README.md
 
-$ git commit -m "Added GitHub Actions build status to our Repo"
+   $ git commit -m "Added GitHub Actions build status to our Repo"
 
-$ git push
-```
+   $ git push
+   ```
 
 ## Next Steps
 

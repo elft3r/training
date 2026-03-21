@@ -108,7 +108,7 @@ Let's have a look at the Dockerfile we'll be using, which builds a simple websit
    ---> 12045a0df899
    Removing intermediate container 4623761274ac
    Successfully built 12045a0df899
-   Successfully tagged <your docker ID>/linux_tweet_app:latest
+   Successfully tagged <your docker ID>/linux_tweet_app:1.0
    ```
 
    The output above shows the Docker daemon execute each line in the Dockerfile.
