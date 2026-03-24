@@ -1,14 +1,14 @@
-# Deploying MongoDB
+# MongoDB with Node-RED
 
 In this lab you'll learn how to deploy MongoDB with Docker.
 
-You will complete the following steps as part of this lab.
-
-- [Task 1 - Build Custom Image](#Task_1)
-- [Task 2 - Building a NodeRed Stack](#Task_2)
-- [Task 3 - Configuring Node-RED](#Task_3)
-- [Task 4 - Replicated MongoDB](#Task_4)
-- [Task 5 - Cleanup](#Task_4)
+> **Tasks:**
+>
+> - [Task 1: Building Custom Images](#task-1-building-custom-images)
+> - [Task 2: Building a NodeRed Stack](#task-2-building-a-nodered-stack)
+> - [Task 3: Configuring Node-RED to see the new services](#task-3-configuring-node-red-to-see-the-new-services)
+> - [Task 4: Replicated MongoDB](#task-4-replicated-mongodb)
+> - [Task 5: Cleanup](#task-5-cleanup)
 
 In this lab the terms *service task* and *container* are used interchangeably.
 In all examples in the lab a *service tasks* is a container that is running as
@@ -27,7 +27,7 @@ $ docker container run -it -p 1880:1880 --name mynodered nodered/node-red-docker
 We can now access the NodeRed UI via `http://<hostip>:1880`
 
 
-### <a name="Task_1"></a>Task 1: Building Custom Images
+## Task 1: Building Custom Images
 
 Creating a new Docker image, using the public Node-RED images as the base image, allows you to install extra nodes during the build process.
 
@@ -47,7 +47,7 @@ Run the following command to build the image:
 That will create a Node-RED image that includes the wordpos nodes.
 
 
-### <a name="Task_2"></a>Task 2: Building a NodeRed Stack
+## Task 2: Building a NodeRed Stack
 In the Docker Swarm Chapter, we linked containers together using the Docker compose file.
 
 For example, if you have a container that providesis your APP and you would like to connect it to a MongoDB to persist the data. In this example, we link the Node-RED container with MongoDB so node-red can store data:
@@ -98,13 +98,13 @@ services:
 * Run the command from the CLI: `docker compose up`
 
 
-## <a name="Task_3"></a>Task 3: Configuring Node-RED to see the new services
+## Task 3: Configuring Node-RED to see the new services
 Now, we will walk through how Node-RED can use the new MongoDB
 
 Access Node-Red `http://<hostip>:1880`
 
 
-## <a name="Task_4"></a>Task 4: Replicated MongoDB
+## Task 4: Replicated MongoDB
 To setup a MongoDB cluster is quite easy. To understand how a MongoDB cluster works review the [MongoDB replication documentaiton](https://docs.mongodb.com/manual/replication/)
 
 ```
@@ -153,7 +153,7 @@ $ docker compose scale mongodb-primary=1 mongodb-secondary=3 mongodb-arbiter=1
 
 The above command scales up the number of secondary nodes to 3
 
-## <a name="Task_5"></a>Task 5: Cleanup
+## Task 5: Cleanup
 
 This is the final cleanup where we will delete all the containers, networks, and volumes from your Docker Host. **Only if you want to**
 
@@ -177,4 +177,5 @@ Are you sure you want to continue? [y/N]
 
 
 ## Next Steps
-[Additional Ressources](./README.md)
+
+For additional resources, head over to [Additional Resources](./README.md)

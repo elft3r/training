@@ -2,17 +2,17 @@
 
 In this lab you'll learn how to build, manage, and use **bridge** networks — the most common networking type for containers running on a single Docker host.
 
-You will complete the following steps as part of this lab.
+> **Tasks:**
+>
+> - [Task 1: Explore the default bridge network](#task-1-explore-the-default-bridge-network)
+> - [Task 2: Run containers on the default bridge](#task-2-run-containers-on-the-default-bridge)
+> - [Task 3: Create a user-defined bridge network](#task-3-create-a-user-defined-bridge-network)
+> - [Task 4: Test DNS-based service discovery](#task-4-test-dns-based-service-discovery)
+> - [Task 5: Network isolation between bridges](#task-5-network-isolation-between-bridges)
+> - [Task 6: Configure port mapping for external access](#task-6-configure-port-mapping-for-external-access)
+> - [Task 7: Cleanup](#task-7-cleanup)
 
-- [Task 1 - Explore the default **bridge** network](#task_1)
-- [Task 2 - Run containers on the default bridge](#task_2)
-- [Task 3 - Create a user-defined bridge network](#task_3)
-- [Task 4 - Test DNS-based service discovery](#task_4)
-- [Task 5 - Network isolation between bridges](#task_5)
-- [Task 6 - Configure port mapping for external access](#task_6)
-- [Task 7 - Cleanup](#task_7)
-
-## <a name="task_1"></a>Task 1: Explore the default bridge network
+## Task 1: Explore the default bridge network
 
 Every Docker installation comes with three pre-built networks. List them with `docker network ls`.
 
@@ -64,7 +64,7 @@ $ docker network inspect bridge
 ]
 ```
 
-## <a name="task_2"></a>Task 2: Run containers on the default bridge
+## Task 2: Run containers on the default bridge
 
 The **bridge** network is the default for new containers. If you don't specify `--network`, your container lands here.
 
@@ -119,7 +119,7 @@ Clean up the default bridge containers.
 $ docker container rm -f c1 c2
 ```
 
-## <a name="task_3"></a>Task 3: Create a user-defined bridge network
+## Task 3: Create a user-defined bridge network
 
 User-defined bridge networks are the **recommended** approach for container networking. They provide:
 - **Automatic DNS resolution** between containers (by name)
@@ -165,7 +165,7 @@ Remove the `custom_bridge` network since we won't use it further.
 $ docker network rm custom_bridge
 ```
 
-## <a name="task_4"></a>Task 4: Test DNS-based service discovery
+## Task 4: Test DNS-based service discovery
 
 Now start two containers on the **user-defined** `my_bridge` network.
 
@@ -197,7 +197,7 @@ $ docker container exec client wget -qO- http://web
 ...
 ```
 
-## <a name="task_5"></a>Task 5: Network isolation between bridges
+## Task 5: Network isolation between bridges
 
 Containers on **different** bridge networks are isolated from each other by default. This is a fundamental Docker security feature.
 
@@ -248,7 +248,7 @@ Clean up the isolated container.
 $ docker container rm -f isolated
 ```
 
-## <a name="task_6"></a>Task 6: Configure port mapping for external access
+## Task 6: Configure port mapping for external access
 
 Containers on a bridge network are not accessible from outside the Docker host by default. To expose a container's service externally, use **port mapping** with the `-p` flag.
 
@@ -288,7 +288,7 @@ You can also access it from a web browser by navigating to `http://<your-docker-
 
 > **NOTE:** Port mapping uses **DNAT** (Destination NAT) under the hood — inbound connections arriving on host port 8080 are redirected to the container's port 80. Separately, **outbound** traffic from containers to the internet uses **SNAT/masquerade**, so it appears to originate from the host's IP address. This outbound masquerading applies to all bridge-connected containers, regardless of whether port mapping is configured.
 
-## <a name="task_7"></a>Task 7: Cleanup
+## Task 7: Cleanup
 
 Remove all containers and the custom network.
 

@@ -8,7 +8,9 @@ Now that we understand the structure of Docker images, it's time to build a cust
 > - [Task 2: Modify a running website](#task-2-modify-a-running-website)
 > - [Task 3: Update and version your image](#task-3-update-and-version-your-image)
 
-**Prerequisite** Ensure you have a DockerID. If you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com)
+## Prerequisites
+
+Ensure you have a DockerID. If you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com).
 
 ## Task 1: Package and run a custom app using Docker
 

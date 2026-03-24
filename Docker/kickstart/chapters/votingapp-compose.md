@@ -10,7 +10,8 @@ This portion of the tutorial will guide you through using [Docker Compose](https
 > - [Task 4: Customize the Voting App](#task-4-customize-the-voting-app)
 > - [Task 5: Remove the containers](#task-5-remove-the-containers)
 
-**Important.**
+## Prerequisites
+
 To complete this section, you will need to have Docker installed on your machine as mentioned in the [Setup](./setup.md) section. You'll also need to have git installed. There are many options for installing it. For instance, you can get it from [GitHub](https://help.github.com/articles/set-up-git/).
 
 ## Task 1: Clone Voting App Repo
@@ -264,6 +265,6 @@ $ docker compose down
 
 This will stop the containers and remove them afterwards.
 
-### Next Steps
+## Next Steps
 
-For the next step in the tutorial head over to [Deploying an app to Docker Swarm](./votingapp-swarm.md)
+For the next step in the tutorial, head over to [Deploying an app to Docker Swarm](./votingapp-swarm.md)

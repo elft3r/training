@@ -2,7 +2,12 @@
 
 In this lab you'll learn how to deploy MongoDB with Docker.
 
-## Overview MongoDB and Docker
+> **Tasks:**
+>
+> - [Task 1: Overview MongoDB and Docker](#task-1-overview-mongodb-and-docker)
+> - [Task 2: Configuring Node-RED to see the new services](#task-2-configuring-node-red-to-see-the-new-services)
+
+## Task 1: Overview MongoDB and Docker
 
 MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.
 
@@ -24,7 +29,7 @@ Running a MongoDB container without a persistent data storage will not persist y
 2. Copy the below text into a file named `docker-compose.yml`
 
 
-```
+```yaml
 version: '3.1'
 networks:
   mongo-net:
@@ -45,7 +50,7 @@ services:
 * Run the command from the CLI: `docker compose up`
 
 
-## Configuring Node-RED to see the new services
+## Task 2: Configuring Node-RED to see the new services
 Now, we will walk through how Node-RED can use the new MongoDB
 
 Access Node-Red `http://<hostip>:1880`

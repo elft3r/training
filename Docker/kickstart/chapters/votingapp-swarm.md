@@ -2,16 +2,17 @@
 
 This portion of the tutorial will guide you through deploying a Docker Swarm, the creation and customization of a voting app.
 
-> **Tasks**:
+> **Tasks:**
 >
-> - [Task 1: Clone Voting App Repo](#Task_1)
-> - [Task 2: Create Docker Swarm](#Task_2)
-> - [Task 3: Customize the Voting App](#Task_3)
+> - [Task 1: Clone Voting App Repo](#task-1-clone-voting-app)
+> - [Task 2: Initiate Docker Swarm](#task-2-initiate-docker-swarm)
+> - [Task 3: Customize the Voting App](#task-3-customize-the-voting-app)
 
-**Important.**
+## Prerequisites
+
 To complete this section, you will need to have Docker installed on your machine as mentioned in the [Setup](./setup.md) section. You'll also need to have git installed. There are many options for installing it. For instance, you can get it from [GitHub](https://help.github.com/articles/set-up-git/).
 
-### <a name="Task_1"></a>Task 1: Clone Voting app
+## Task 1: Clone Voting app
 
 For this application we will use the [Docker Example Voting App](https://github.com/docker/example-voting-app). This app consists of five components:
 
@@ -29,7 +30,7 @@ For this application we will use the [Docker Example Voting App](https://github.
    $ cd example-voting-app
    ```
 
-### <a name="Task_2"></a>Task 2: Initiate Docker Swarm
+## Task 2: Initiate Docker Swarm
 
 For this first stage, we will use existing images that are in Docker Store.
 
@@ -261,7 +262,7 @@ The `deploy` key is new in version 3. It allows you to specify various propertie
    $ ssh -L 5000:localhost:5000 <ssh-user>@<CLOUD_INSTANCE_IP_ADDRESS>
    ```
 
-### <a name="Task_3"></a>Task 3:Customize the Voting App
+## Task 3: Customize the Voting App
 
 In this step, you will customize the app and redeploy it. We've supplied the same images but with the votes changed from Cats and Dogs to Java and .NET using the `after` tag.
 
@@ -333,6 +334,6 @@ Now place another vote `http://localhost:5000` and view the results `http://loca
    $ docker stack rm vote
    ```
 
-### Next Steps
+## Next Steps
 
 For the next step in the tutorial, head over to [Networking Basics](./networking-basics.md)

@@ -2,6 +2,10 @@
 
 Great! So you have now looked at `docker container run`, played with a Docker container, and also got the hang of some terminology. Armed with all this knowledge, you are now ready to get to the real stuff &#8212; create Docker Images, and deploy these images as web applications with Docker.
 
+> **Tasks:**
+>
+> - [Task 1: Run a static website in a container](#task-1-run-a-static-website-in-a-container)
+
 ## Task 1: Run a static website in a container
 
 > **Note:** Code for this section uses the [`dockersamples/static-site`](https://hub.docker.com/r/dockersamples/static-site) image from Docker Hub.
@@ -107,6 +111,6 @@ Let's re-run the command with some new flags to publish ports and pass your name
    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
    ```
 
-## Next Step
+## Next Steps
 
 For the next step in the tutorial, head over to [Docker Images and Volumes](./images-and-volumes.md)
