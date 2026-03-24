@@ -267,7 +267,7 @@ the secret from memory.
 
 ## Task 4: Clean-up
 
-In this step you will remove all secrets and services,as well as clean up any other artifacts created in this lab.
+In this step you will remove all secrets and services, as well as clean up any other artifacts created in this lab.
 
 
 1. Remove all services on the host.

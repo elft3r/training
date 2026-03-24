@@ -101,11 +101,11 @@ services:
 ## Task 3: Configuring Node-RED to see the new services
 Now, we will walk through how Node-RED can use the new MongoDB
 
-Access Node-Red `http://<hostip>:1880`
+Access Node-RED `http://<hostip>:1880`
 
 
 ## Task 4: Replicated MongoDB
-To setup a MongoDB cluster is quite easy. To understand how a MongoDB cluster works review the [MongoDB replication documentaiton](https://docs.mongodb.com/manual/replication/)
+To setup a MongoDB cluster is quite easy. To understand how a MongoDB cluster works review the [MongoDB replication documentation](https://docs.mongodb.com/manual/replication/)
 
 ```yaml
 services:

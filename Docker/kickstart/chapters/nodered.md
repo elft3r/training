@@ -119,7 +119,7 @@ $ docker compose up
 
 Now, we will walk through how Node-RED can use the new MongoDB.
 
-Access Node-Red `http://<hostip>:1880`
+Access Node-RED `http://<hostip>:1880`
 
 ## Next Steps
 
