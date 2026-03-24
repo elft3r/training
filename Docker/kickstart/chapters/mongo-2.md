@@ -33,15 +33,15 @@ Creating a new Docker image, using the public Node-RED images as the base image,
 
 Create a file called Dockerfile with the content:
 
-```
+```dockerfile
  FROM nodered/node-red-docker
  RUN npm install node-red-node-twitter
 ```
 
 Run the following command to build the image:
 
-```
- docker image build -t mynodered:<tag> .
+```console
+$ docker image build -t mynodered:<tag> .
 ```
 
 That will create a Node-RED image that includes the wordpos nodes.
@@ -57,7 +57,7 @@ We will now create a Docker compose stack using the Dockerfile from section 1.3.
 1. Create a directory called nodered and change to the nodered directory
 2. Create a file named `Dockerfile` in this directory with the following code:
 
-```
+```dockerfile
  FROM nodered/node-red-docker
  RUN npm install node-red-node-twitter
  RUN npm install node-red-node-mongodb
@@ -67,7 +67,7 @@ We will now create a Docker compose stack using the Dockerfile from section 1.3.
 2. Copy the below text into a file named `docker-compose.yml`
 
 
-```
+```yaml
 version: '3.1'
 networks:
   node-red:
@@ -107,7 +107,7 @@ Access Node-Red `http://<hostip>:1880`
 ## Task 4: Replicated MongoDB
 To setup a MongoDB cluster is quite easy. To understand how a MongoDB cluster works review the [MongoDB replication documentaiton](https://docs.mongodb.com/manual/replication/)
 
-```
+```yaml
 services:
   mongodb-primary:
     image: 'bitnami/mongodb:latest'
@@ -178,4 +178,4 @@ Are you sure you want to continue? [y/N]
 
 ## Next Steps
 
-For additional resources, head over to [Additional Resources](./README.md)
+For additional resources, head over to the [Next Steps](./nextsteps.md) page.

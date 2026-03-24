@@ -4,7 +4,7 @@ This portion of the tutorial will guide you through deploying a Docker Swarm, th
 
 > **Tasks:**
 >
-> - [Task 1: Clone Voting App Repo](#task-1-clone-voting-app)
+> - [Task 1: Clone Voting app](#task-1-clone-voting-app)
 > - [Task 2: Initiate Docker Swarm](#task-2-initiate-docker-swarm)
 > - [Task 3: Customize the Voting App](#task-3-customize-the-voting-app)
 
@@ -70,7 +70,7 @@ This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). S
 
    Let's review what is inside the file:
 
-   ```
+   ```yaml
    version: "3"
    services:
 
@@ -174,13 +174,13 @@ The Compose file also defines two networks, front-tier and back-tier. Each conta
 
 Take a look at the file again. You'll see it starts with
 
-```
+```yaml
 version: "3"
 ```
 
 It's important that you use version 3 of compose files, as `docker stack deploy` won't support use of earlier versions. You will see there's also a `services` key, under which there is a separate key for each of the services. Such as:
 
-```
+```yaml
   vote:
     image: dockersamples/examplevotingapp_vote:before
     ports:
@@ -272,7 +272,7 @@ Go back to `docker-stack.yml`
 
 1. Change the `vote` and `result` images to use the `after` tag, so they look like this:
 
-   ```
+   ```yaml
      vote:
        image: dockersamples/examplevotingapp_vote:after
        ports:

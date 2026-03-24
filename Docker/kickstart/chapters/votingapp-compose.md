@@ -2,7 +2,7 @@
 
 This portion of the tutorial will guide you through using [Docker Compose](https://docs.docker.com/compose), to run and customize a voting app.
 
-> **Tasks**:
+> **Tasks:**
 >
 > - [Task 1: Clone Voting App Repo](#task-1-clone-voting-app-repo)
 > - [Task 2: Understand the Compose File](#task-2-understand-the-compose-file)
@@ -38,7 +38,7 @@ Locate the [Docker Compose](https://docs.docker.com/compose) file. The file we a
 
 Let's review what is inside the file:
 
-```
+```yaml
 # version is now using "compose spec"
 # v2 and v3 are now combined!
 # docker-compose v1.27+ required
@@ -150,7 +150,7 @@ The Compose file also defines two networks, front-tier and back-tier. Each conta
 
 Take a look at the file again, it start's with the following comment:
 
-```
+```yaml
 # version is now using "compose spec"
 # v2 and v3 are now combined!
 # docker-compose v1.27+ required
@@ -160,7 +160,7 @@ You will find many `docker-compose.yml` files that start with either `version: "
 
 You will see there's also a `services` key, under which there is a separate key for each of the services. Such as:
 
-```
+```yaml
   vote:
     build: ./vote
     # use python rather than gunicorn for local dev

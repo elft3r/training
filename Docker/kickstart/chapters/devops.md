@@ -2,10 +2,10 @@
 
 Now that we understand how to build Docker images it's now time to start autobuilding our changes with a pipeline `Dockerfile`
 
-> **Tasks**:
+> **Tasks:**
 >
 > - [Task 1: Push your image to Docker Hub](#task-1-push-your-image-to-docker-hub)
-> - [Task 2: Setup a Automated Build](#task-2-setup-an-automated-build)
+> - [Task 2: Setup an Automated Build](#task-2-setup-an-automated-build)
 > - [Task 3: Unit Test our Automated Builds](#task-3-unit-test-our-automated-builds)
 
 ## Task 1: Push your image to Docker Hub
@@ -235,9 +235,11 @@ Awesome! To ensure our automated builds are really working let's commit a new ve
 
     > Using your favorite editor (vi, emacs, etc)
 
-        Edit the index.html file and edit line number 33 and change the text to "DevOps is Awesome"
+    ```console
+    Edit the index.html file and edit line number 33 and change the text to "DevOps is Awesome"
 
-        $ vi index.html
+    $ vi index.html
+    ```
 
 2.  Commit our new changes to our GitHub Repo
 

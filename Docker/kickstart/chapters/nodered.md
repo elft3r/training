@@ -123,4 +123,4 @@ Access Node-Red `http://<hostip>:1880`
 
 ## Next Steps
 
-For the next step in the tutorial, head over to [Deploying an InfluxDB Stack](./influxdb.md)
+For the next step in the tutorial, head over to the [Next Steps](./nextsteps.md) page.

@@ -2,10 +2,10 @@
 
 The wait is finally over. It's time to roll up our sleeves and start our first container. Get Ready.
 
-> **Tasks**:
+> **Tasks:**
 >
-> - [Task 1: Run our First Container](#task-1-running-your-first-container)
-> - [Task 2: Run an Interactive Container](#task-2-run-an-interactive-ubuntu-container)
+> - [Task 1: Running your first container](#task-1-running-your-first-container)
+> - [Task 2: Run an interactive Ubuntu container](#task-2-run-an-interactive-ubuntu-container)
 > - [Task 3: Run a background MariaDB container](#task-3-run-a-background-mariadb-container)
 > - [Terminology Covered in this section](#terminology)
 
