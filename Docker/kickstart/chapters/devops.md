@@ -297,7 +297,9 @@ To add the build status to your project, add the following line to your `README.
 
 You can use your favorite editor (vi, emacs, VSCode, etc) to edit the `README.md` file and paste the following snippet to the first line of the `README.md`
 
+```text
 ![Build-Push-And-Test Workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/build-push-and-deploy.yml/badge.svg)
+```
 
 
 6. Commit the changes to `README.md`

@@ -192,7 +192,7 @@ following along there will only be one task running in the service).
     ```
 
     Log on to the node running the service task (node1 in this example, but
-    might be different in your lab) and run a `docker ps` command.
+    might be different in your lab) and run a `docker container ls` command.
 
     ```console
     $ docker container ls --filter name=sec-test
@@ -206,12 +206,12 @@ following along there will only be one task running in the service).
   > NOTE: The two commands above start out by listing all the tasks in the
   `sec-test` service. Part of the output of the first command shows the `NODE`
   that each task is running on - in the example above this was a single task
-  running on **node1**. The next command (`docker ps`) lists all running
+  running on **node1**. The next command (`docker container ls`) lists all running
   containers on **node1** and filters the results to show just the containers
   where the name starts with **sec-test** - this means that only containers
   (tasks) that are part of the `sec-test` service are displayed.
 
-5. Use the `docker exec` command to get a shell prompt on to the `sec-test`
+5. Use the `docker container exec` command to get a shell prompt on to the `sec-test`
 service task. Be sure to substitute the Container ID in the command below with
 a the container ID form your environment (see output of previous step).
 
