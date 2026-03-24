@@ -64,7 +64,7 @@ Let's re-run the command with some new flags to publish ports and pass your name
 5. Now you can see the ports by running the `docker port` command with the name of the newly created container `static-site`.
 
    ```console
-   $ docker port static-site
+   $ docker container port static-site
    443/tcp -> 0.0.0.0:32772
    80/tcp -> 0.0.0.0:32773
    ```

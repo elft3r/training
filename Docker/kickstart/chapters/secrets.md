@@ -195,7 +195,7 @@ following along there will only be one task running in the service).
     might be different in your lab) and run a `docker ps` command.
 
     ```console
-    $ docker ps --filter name=sec-test
+    $ docker container ls --filter name=sec-test
 
     CONTAINER ID    IMAGE                     COMMAND                  CREATED   STATUS      PORTS      NAMES
     5652c1688f40    redis@sha256:9cd..c3ee7   "docker-entrypoint..."   15 mins   Up 15 mins  6379/tcp   sec-test.1.9qqp...vu2aw
@@ -216,7 +216,7 @@ service task. Be sure to substitute the Container ID in the command below with
 a the container ID form your environment (see output of previous step).
 
     ```console
-    $ docker exec -it <CONTAINER ID> sh
+    $ docker container exec -it <CONTAINER ID> sh
     
     data#
     ```

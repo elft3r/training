@@ -9,7 +9,7 @@ MongoDB is a free and open-source cross-platform document-oriented database prog
 To get started, let's run the following in our terminal:
 
 ```console
-$ docker run \
+$ docker container run \
     -v /data/files/path:/bitnami \
     bitnami/mongodb:latest
 ```
@@ -42,7 +42,7 @@ services:
       - MONGODB_DATABASE=my_database
 ```
 
-* Run the command from the CLI: `docker-compose up`
+* Run the command from the CLI: `docker compose up`
 
 
 ## Configuring Node-RED to see the new services

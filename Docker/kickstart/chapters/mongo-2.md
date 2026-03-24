@@ -41,7 +41,7 @@ Create a file called Dockerfile with the content:
 Run the following command to build the image:
 
 ```
- docker build -t mynodered:<tag> .
+ docker image build -t mynodered:<tag> .
 ```
 
 That will create a Node-RED image that includes the wordpos nodes.

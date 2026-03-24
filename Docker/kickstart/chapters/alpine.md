@@ -276,7 +276,7 @@ Background containers are how you'll run most applications. Here's a simple exam
 5. You can also use `docker container exec` to connect to a new shell process inside an already-running container. The command below will give you an interactive shell (`sh`) in your MariaDB container.
 
    ```console
-   $ docker exec -it mydb sh
+   $ docker container exec -it mydb sh
    #
    ```
 

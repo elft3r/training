@@ -16,7 +16,7 @@ Great! Let's configure the Node-RED container and add a node:
 
 ```
 # Open a shell in the container
-docker exec -it mynodered /bin/bash
+docker container exec -it mynodered /bin/bash
 
 # Once inside the container, npm install the nodes in /data
 cd /data
@@ -44,7 +44,7 @@ Create a file called Dockerfile with the content:
 Run the following command to build the image:
 
 ```
- docker build -t mynodered:<tag> .
+ docker image build -t mynodered:<tag> .
 ```
 
 That will create a Node-RED image that includes the wordpos nodes.
