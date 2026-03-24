@@ -1,52 +1,12 @@
-# Docker Kickstart Training - Review
+# Docker Kickstart Training – Remaining Review Notes
 
-## Overall Assessment
+This document tracks **currently known open issues** in the Docker Kickstart training material.
+Earlier pre-fix review notes that described the state of the repository prior to recent clean-up
+have been removed to avoid confusion, since many of those issues have now been resolved or the
+referenced files have been deleted.
 
-The Docker Kickstart training is a well-structured, progressive curriculum that takes learners from basic container operations through to orchestration with Docker Swarm. The hands-on, task-based approach is effective.
-
----
-
-## Resolved Issues
-
-The following issues have been identified and fixed:
-
-- ✅ Updated Docker Desktop installation links in `setup.md`
-- ✅ Fixed dead documentation links in `alpine.md`
-- ✅ Fixed `$MARIADB_ROOT_PASSWORD` env var expansion bug in `alpine.md` (was expanding on host shell where the variable doesn't exist)
-- ✅ Updated `VIRTUAL SIZE` → `SIZE` column header in `alpine.md`
-- ✅ Fixed container list output in `alpine.md` to match actual tutorial commands
-- ✅ Added macOS/Windows note for `cat /etc/issue` in `alpine.md`
-- ✅ Fixed typo "not install" → "not installed" in `alpine.md`
-- ✅ Fixed `docker container ps` → `docker container ls` throughout
-- ✅ Replaced archived docker/labs repo link in `webapps-part1.md`
-- ✅ Fixed broken grammar in `webapps-part1.md` ("The command summary the above command", "will publish instruct")
-- ✅ Replaced `0.0.0.0` browser URLs with `localhost` throughout
-- ✅ Standardized Docker CLI to modern syntax (`docker container run`, `docker image ls`, etc.) across all chapters
-- ✅ Fixed port 80/8080 text-vs-command contradiction in `webapps-part2.md`
-- ✅ Fixed port 8080/8081 text-vs-command contradiction in `webapps-part2.md`
-- ✅ Removed incorrect `PUSH` Dockerfile instruction reference in `webapps-part2.md`
-- ✅ Fixed typo "linux_tweet app" → "linux_tweet_app" in `webapps-part2.md`
-- ✅ Added PowerShell instructions to Windows notes in `webapps-part2.md` and `devops.md`
-- ✅ Updated Dockerfile best practices link in `webapps-part2.md`
-- ✅ Fixed step numbering jump (3→13) in `devops.md`
-- ✅ Replaced hardcoded `vegasbrianc` username with placeholder in `devops.md`
-- ✅ Fixed `printf` vs `echo` for reliable escape sequences in `multistage-builds.md`
-- ✅ Fixed hardcoded `~/Training` path in `multistage-builds.md`
-- ✅ Fixed port 5002→5000 in `docker compose ps` output in `votingapp-compose.md`
-- ✅ Fixed stray `"` characters in `ls -l` output in `secrets.md`
-- ✅ Removed empty "Docker & Kubernetes" section in `secrets.md`
-- ✅ Added link to `nextsteps.md` from `secrets.md` (was a dead-end)
-- ✅ Updated Docker version prerequisite in `secrets.md`
-- ✅ Enhanced `nextsteps.md` with useful links to other training content
-- ✅ Fixed missing `$` prompt prefix in `images-and-volumes.md`
-- ✅ Updated `docker images` → `docker image ls` in `images-and-volumes.md`
-- ✅ Updated `docker inspect` → `docker volume inspect` / `docker container inspect` in `images-and-volumes.md`
-- ✅ Fixed `docker run` → `docker container run` throughout `images-and-volumes.md`
-- ✅ Multi-stage build coverage added (`multistage-builds.md`)
-- ✅ GitHub Actions versions updated in `devops.md`
-- ✅ Flask app Dockerfile updated to Python 3
-- ✅ Navigation links between chapters fixed
-- ✅ "Docker Store" references updated to "Docker Hub"
+The items below are intended as a lightweight to-do list for future improvements, not as a
+historical record.
 
 ---
 
