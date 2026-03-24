@@ -57,7 +57,7 @@ $ docker image build -t mynodered:<tag> .
 
 That will create a Node-RED image that includes the wordpos nodes.
 
-## Task 4: Building a NodeRed Stack
+## Task 4: Building a Node-RED Stack
 
 In the Docker Swarm Chapter, we linked containers together using the Docker compose file.
 
