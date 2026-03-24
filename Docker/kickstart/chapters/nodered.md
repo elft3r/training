@@ -4,8 +4,8 @@ NodeRed is a flow-based programming tool based on NodeJs. The interface allows f
 In this chapter we will cover the basics of running NodeRed inside of a Docker container. Once we have accomplished the deplyoment of NodeRed with Docker we will then add a MongoDB database which we will connect to from inside NodeRed.
 
 To get started, let's run the following in our terminal:
-```
-$ docker run -it -p 1880:1880 --name mynodered nodered/node-red-docker
+```console
+$ docker container run -it -p 1880:1880 --name mynodered nodered/node-red-docker
 ```
 
 We can now access the NodeRed UI via `http://<hostip>:1880`
@@ -16,7 +16,7 @@ Great! Let's configure the Node-RED container and add a node:
 
 ```
 # Open a shell in the container
-docker exec -it mynodered /bin/bash
+docker container exec -it mynodered /bin/bash
 
 # Once inside the container, npm install the nodes in /data
 cd /data
@@ -44,7 +44,7 @@ Create a file called Dockerfile with the content:
 Run the following command to build the image:
 
 ```
- docker build -t mynodered:<tag> .
+ docker image build -t mynodered:<tag> .
 ```
 
 That will create a Node-RED image that includes the wordpos nodes.
@@ -56,7 +56,7 @@ In the Docker Swarm Chapter, we linked containers together using the Docker comp
 For example, if you have a container that provides an MQTT broker container called mybroker, you can run the Node-RED container with the link parameter to join the two:
 
 ```
-docker run -it -p 1880:1880 --name mynodered --link mybroker:broker nodered/node-red-docker
+docker container run -it -p 1880:1880 --name mynodered --link mybroker:broker nodered/node-red-docker
 ```
 
 This will make broker a known hostname within the Node-RED container that can be used to access the service within a flow, without having to expose it outside of the Docker host.
@@ -102,7 +102,7 @@ services:
      - node-red
 ```
 
-* Run the command from the CLI: `docker-compose up`
+* Run the command from the CLI: `docker compose up`
 
 
 ## 4.5 Configuring Node-RED to see the new services

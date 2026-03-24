@@ -25,7 +25,7 @@ For this application we will use the [Docker Example Voting App](https://github.
 
 1. Clone the repository onto your machine and `cd` into the directory:
 
-   ```
+   ```console
    $ git clone https://github.com/docker/example-voting-app.git
 
    $ cd example-voting-app
@@ -186,7 +186,7 @@ The `build` key specifies, were compose can find the `Dockerfile` to build the i
 
 The `command` key, allows you to specify the command that is executed inside the container. This will overwrite the `CMD` tag from the `Dockerfile`.
 
-Much like with `docker run` you can define `volumes`, `ports` and `networks`. There's also a `depends_on` key which allows you to specify that a service is only deployed after another service, in this case `vote` only deploys after `redis`.
+Much like with `docker container run` you can define `volumes`, `ports` and `networks`. There's also a `depends_on` key which allows you to specify that a service is only deployed after another service, in this case `vote` only deploys after `redis`.
 
 With the `healthcheck` key, you can define a check to figure out if the container is healthy or not. This allows the orchestrator to decide when traffic can be routed to it. Or a new container is needed as the current one is not running properly. You can find more details [here](https://docs.docker.com/compose/compose-file/05-services/#healthcheck).
 
@@ -194,7 +194,7 @@ With the `healthcheck` key, you can define a check to figure out if the containe
 
 To start the app in the background you can run the following command:
 
-```
+```console
 $ docker compose up -d
 
 [+] Running 7/7
@@ -209,7 +209,7 @@ $ docker compose up -d
 
 Find out more about the running containers:
 
-```
+```console
 $ docker compose ps
 NAME                          IMAGE                       COMMAND                  SERVICE             CREATED              STATUS                        PORTS
 example-voting-app-db-1       postgres:15-alpine          "docker-entrypoint.s…"   db                  About a minute ago   Up About a minute (healthy)   5432/tcp
@@ -249,7 +249,7 @@ In this step, you will customize the app and learn how you can use Docker Compos
 
 To remove the container you can run the following command:
 
-```
+```console
 $ docker compose down
 [+] Running 7/7
  ✔ Container example-voting-app-result-1  Removed     0.4s

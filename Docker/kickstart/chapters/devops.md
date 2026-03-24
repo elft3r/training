@@ -14,7 +14,7 @@ Now that we understand how to build Docker images it's now time to start autobui
 
 1. In order to make commands more copy/paste friendly, export an environment variable containing your DockerID (if you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com))
 
-   ```
+   ```console
    $ export DOCKERID=<your docker id>
    ```
 
@@ -22,7 +22,7 @@ Now that we understand how to build Docker images it's now time to start autobui
 
 2. To make sure it stored correctly by echoing it back in the terminal
 
-   ```
+   ```console
    $ echo $DOCKERID
    <your docker id>
    ```
@@ -31,11 +31,13 @@ Now that we understand how to build Docker images it's now time to start autobui
 
 List the images on your Docker host. You will see that you now have two `linux_tweet_app` images - one tagged as `1.0` and the other as `2.0`.
 
-    $ docker image ls
+   ```console
+   $ docker image ls
 
-    REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
-    <your docker id>/linux_tweet_app   2.0                 01612e05312b        3 minutes ago       108MB
-    <your docker id>/linux_tweet_app   1.0                 bb32b5783cd3        7 minutes ago       108MB
+   REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+   <your docker id>/linux_tweet_app   2.0                 01612e05312b        3 minutes ago       108MB
+   <your docker id>/linux_tweet_app   1.0                 bb32b5783cd3        7 minutes ago       108MB
+   ```
 
 These images are only stored in your Docker host's local repository. We want to `push` these images to Docker Hub so we can access the images from anywhere.
 
@@ -45,7 +47,7 @@ Distribution is built into the Docker platform. You can build images locally and
 
 1. Before you can push your images, you will need to log into Docker Hub.
 
-   ```
+   ```console
    $ docker login
    Username: <your docker id>
    Password: <your docker id password>
@@ -56,7 +58,7 @@ Distribution is built into the Docker platform. You can build images locally and
 
 2. Push version `1.0` of your web app using `docker image push`.
 
-   ```
+   ```console
    $ docker image push $DOCKERID/linux_tweet_app:1.0
 
    The push refers to a repository [docker.io/<your docker id>/linux_tweet_app]
@@ -72,7 +74,7 @@ Distribution is built into the Docker platform. You can build images locally and
 
 3. Now push version `2.0`.
 
-   ```
+   ```console
    $ docker image push $DOCKERID/linux_tweet_app:2.0
 
    The push refers to a repository [docker.io/<your docker id>/linux_tweet_app]
@@ -106,43 +108,43 @@ It's time to automate our build pipeline. First, we need to create a GitHub Repo
 
 4. Remove the Git directory
 
-   ```
+   ```console
    $ rm -Rf .git
    ```
 
 5. Initialize the Git directory
 
-   ```
+   ```console
    $ git init
    ```
 
 6. Change the branch name to main
 
-   ```
+   ```console
    $ git checkout -b main
    ```
 
 7. Add your Git Repo configuration to the local index
 
-   ```
+   ```console
    $ git remote add origin https://github.com/<your GitHub username>/<your github repo name>.git
    ```
 
 8. Add all files to Git index
 
-   ```
+   ```console
    $ git add *
    ```
 
 9. Commit Linux Tweet App files to the GitHub Autobuilds Repo
 
-   ```
+   ```console
    $ git commit -m "First commit to Autobuilds"
    ```
 
 10. Push the changes to GitHub
 
-    ```
+    ```console
     $ git push --set-upstream origin main
     ```
 
@@ -161,7 +163,7 @@ Now that we have pushed our project to GitHub, the next step is to enable [GitHu
 
 3. To add a job, you need to create the `.github/workflows/build-push-and-deploy.yml` file and add the content below to it:
 
-```
+```yaml
 ---
 name: Build, Push and Deploy
 
@@ -217,11 +219,11 @@ jobs:
 
 4. Commit and Push the changes to GitHub
 
-```
-$ git add .github/workflows/build-push-and-deploy.yml
-$ git commit -m "Added GitHub Actions Script"
-$ git push
-```
+   ```console
+   $ git add .github/workflows/build-push-and-deploy.yml
+   $ git commit -m "Added GitHub Actions Script"
+   $ git push
+   ```
 
 5. After you pushed the changes go to the _Actions_ tab in your GitHub Repository. You should see the Workflow that was just triggered.
 
@@ -239,7 +241,7 @@ Awesome! To ensure our automated builds are really working let's commit a new ve
 
 2.  Commit our new changes to our GitHub Repo
 
-    ```
+    ```console
     $ git add index.html
 
     $ git commit -m "updated index.html text to DevOps is Awesome"
@@ -257,7 +259,7 @@ To do this, we need to add a new job to our GitHub Actions. This will start the 
 
 1. Add the following code snippet to your GitHub Actions file:
 
-   ```
+   ```yaml
    test-container:
       name: Test our container
       needs: build-and-push-image
@@ -275,7 +277,7 @@ To do this, we need to add a new job to our GitHub Actions. This will start the 
 
 2. Commit and push your changes to the GitHub repo
 
-   ```
+   ```console
    $ git add .github/workflows/build-push-and-deploy.yml
 
    $ git commit -m "added testing job to our Autobuild Repo"
@@ -295,19 +297,20 @@ To add the build status to your project, add the following line to your `README.
 
 You can use your favorite editor (vi, emacs, VSCode, etc) to edit the `README.md` file and paste the following snippet to the first line of the `README.md`
 
-```
+```text
 ![Build-Push-And-Test Workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/build-push-and-deploy.yml/badge.svg)
 ```
 
+
 6. Commit the changes to `README.md`
 
-```
-$ git add README.md
+   ```console
+   $ git add README.md
 
-$ git commit -m "Added GitHub Actions build status to our Repo"
+   $ git commit -m "Added GitHub Actions build status to our Repo"
 
-$ git push
-```
+   $ git push
+   ```
 
 ## Next Steps
 

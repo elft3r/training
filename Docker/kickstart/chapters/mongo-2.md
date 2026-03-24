@@ -20,8 +20,8 @@ NodeRed is a flow-based programming tool based on NodeJs. The interface allows f
 In this chapter we will cover the basics of running NodeRed inside of a Docker container. Once we have accomplished the deplyoment of NodeRed with Docker we will then add a MongoDB database which we will connect to from inside NodeRed.
 
 To get started, let's run the following in our terminal:
-```
-$ docker run -it -p 1880:1880 --name mynodered nodered/node-red-docker
+```console
+$ docker container run -it -p 1880:1880 --name mynodered nodered/node-red-docker
 ```
 
 We can now access the NodeRed UI via `http://<hostip>:1880`
@@ -41,7 +41,7 @@ Create a file called Dockerfile with the content:
 Run the following command to build the image:
 
 ```
- docker build -t mynodered:<tag> .
+ docker image build -t mynodered:<tag> .
 ```
 
 That will create a Node-RED image that includes the wordpos nodes.
@@ -95,7 +95,7 @@ services:
      - node-red
 ```
 
-* Run the command from the CLI: `docker-compose up`
+* Run the command from the CLI: `docker compose up`
 
 
 ## <a name="Task_3"></a>Task 3: Configuring Node-RED to see the new services
@@ -147,8 +147,8 @@ volumes:
 
 In the above example we can easily scale our MongoDB cluster:
 
-```
-$ docker-compose scale mongodb-primary=1 mongodb-secondary=3 mongodb-arbiter=1
+```console
+$ docker compose scale mongodb-primary=1 mongodb-secondary=3 mongodb-arbiter=1
 ```
 
 The above command scales up the number of secondary nodes to 3
@@ -159,13 +159,13 @@ This is the final cleanup where we will delete all the containers, networks, and
 
 1. First stop the running MongoDB stack
 
-```
-$ docker-compose rm
+```console
+$ docker compose rm
 ```
 
 2. Prune Docker of all containers, images, networks, and basically everything else.
 
-```
+```console
 $ docker system prune
 WARNING! This will remove:
         - all stopped containers
@@ -173,7 +173,7 @@ WARNING! This will remove:
         - all dangling images
         - all build cache
 Are you sure you want to continue? [y/N]
-``
+```
 
 
 ## Next Steps

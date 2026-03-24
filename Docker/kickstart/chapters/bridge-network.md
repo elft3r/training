@@ -16,7 +16,7 @@ You will complete the following steps as part of this lab.
 
 Every Docker installation comes with three pre-built networks. List them with `docker network ls`.
 
-```
+```console
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 1befe23acd58        bridge              bridge              local
@@ -30,7 +30,7 @@ Under the hood, the *bridge* driver creates a Linux bridge (virtual switch) call
 
 > **NOTE:** In order to execute this command, you need to be in the Linux system, that is running Docker.
 
-```
+```console
 $ ip addr show docker0
 3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN
     link/ether 02:42:f1:7f:89:a6 brd ff:ff:ff:ff:ff:ff
@@ -42,7 +42,7 @@ The **docker0** bridge acts as the gateway (`172.17.0.1`) for all containers con
 
 Inspect the **bridge** network to see its configuration.
 
-```
+```console
 $ docker network inspect bridge
 [
     {
@@ -70,16 +70,16 @@ The **bridge** network is the default for new containers. If you don't specify `
 
 Start two Alpine containers.
 
-```
-$ docker run -dit --name c1 alpine sh
-$ docker run -dit --name c2 alpine sh
+```console
+$ docker container run -dit --name c1 alpine sh
+$ docker container run -dit --name c2 alpine sh
 ```
 
 > **NOTE:** We use Alpine because it includes `ping` out of the box — no need to install extra packages.
 
 Verify both containers are connected to the **bridge** network.
 
-```
+```console
 $ docker network inspect bridge --format '{{range .Containers}}{{.Name}}: {{.IPv4Address}}{{"\n"}}{{end}}'
 c1: 172.17.0.2/16
 c2: 172.17.0.3/16
@@ -87,8 +87,8 @@ c2: 172.17.0.3/16
 
 Test connectivity **by IP address** between the two containers.
 
-```
-$ docker exec c1 ping -c 3 172.17.0.3
+```console
+$ docker container exec c1 ping -c 3 172.17.0.3
 PING 172.17.0.3 (172.17.0.3): 56 data bytes
 64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.112 ms
 64 bytes from 172.17.0.3: seq=1 ttl=64 time=0.098 ms
@@ -97,8 +97,8 @@ PING 172.17.0.3 (172.17.0.3): 56 data bytes
 
 Containers on the default bridge can reach each other by IP. Now try reaching the other container **by name**.
 
-```
-$ docker exec c1 ping -c 3 c2
+```console
+$ docker container exec c1 ping -c 3 c2
 ping: bad address 'c2'
 ```
 
@@ -106,8 +106,8 @@ ping: bad address 'c2'
 
 Also verify that containers can reach the internet.
 
-```
-$ docker exec c1 ping -c 3 docker.com
+```console
+$ docker container exec c1 ping -c 3 docker.com
 PING docker.com (141.193.213.20): 56 data bytes
 64 bytes from 141.193.213.20: seq=0 ttl=37 time=15.2 ms
 ...
@@ -115,8 +115,8 @@ PING docker.com (141.193.213.20): 56 data bytes
 
 Clean up the default bridge containers.
 
-```
-$ docker rm -f c1 c2
+```console
+$ docker container rm -f c1 c2
 ```
 
 ## <a name="task_3"></a>Task 3: Create a user-defined bridge network
@@ -128,21 +128,21 @@ User-defined bridge networks are the **recommended** approach for container netw
 
 Create a user-defined bridge network.
 
-```
+```console
 $ docker network create my_bridge
 a1b2c3d4e5f6...
 ```
 
 Inspect the new network.
 
-```
+```console
 $ docker network inspect my_bridge --format '{{(index .IPAM.Config 0).Subnet}}'
 172.18.0.0/16
 ```
 
 Docker automatically assigned a subnet. You can also specify one explicitly.
 
-```
+```console
 $ docker network create \
   --subnet=10.0.0.0/24 \
   --gateway=10.0.0.1 \
@@ -151,7 +151,7 @@ $ docker network create \
 
 Verify both networks exist.
 
-```
+```console
 $ docker network ls --filter driver=bridge
 NETWORK ID          NAME                DRIVER              SCOPE
 1befe23acd58        bridge              bridge              local
@@ -161,7 +161,7 @@ d7e8f9a0b1c2        custom_bridge       bridge              local
 
 Remove the `custom_bridge` network since we won't use it further.
 
-```
+```console
 $ docker network rm custom_bridge
 ```
 
@@ -169,15 +169,15 @@ $ docker network rm custom_bridge
 
 Now start two containers on the **user-defined** `my_bridge` network.
 
-```
-$ docker run -dit --name web --network my_bridge nginx:alpine
-$ docker run -dit --name client --network my_bridge alpine sh
+```console
+$ docker container run -dit --name web --network my_bridge nginx:alpine
+$ docker container run -dit --name client --network my_bridge alpine sh
 ```
 
 Test connectivity **by container name**.
 
-```
-$ docker exec client ping -c 3 web
+```console
+$ docker container exec client ping -c 3 web
 PING web (172.18.0.2): 56 data bytes
 64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.089 ms
 64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.105 ms
@@ -188,8 +188,8 @@ PING web (172.18.0.2): 56 data bytes
 
 You can even use `wget` to reach the NGINX web server by name.
 
-```
-$ docker exec client wget -qO- http://web
+```console
+$ docker container exec client wget -qO- http://web
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,14 +203,14 @@ Containers on **different** bridge networks are isolated from each other by defa
 
 Start a container on the default **bridge** network.
 
-```
-$ docker run -dit --name isolated alpine sh
+```console
+$ docker container run -dit --name isolated alpine sh
 ```
 
 Try to ping the `web` container (which is on `my_bridge`) from `isolated` (which is on the default `bridge`).
 
-```
-$ docker exec isolated ping -c 3 172.18.0.2
+```console
+$ docker container exec isolated ping -c 3 172.18.0.2
 PING 172.18.0.2 (172.18.0.2): 56 data bytes
 
 --- 172.18.0.2 ping statistics ---
@@ -223,14 +223,14 @@ PING 172.18.0.2 (172.18.0.2): 56 data bytes
 
 You can attach a container to additional networks using `docker network connect`.
 
-```
+```console
 $ docker network connect my_bridge isolated
 ```
 
 Now `isolated` is connected to **both** the default `bridge` and `my_bridge`. Verify.
 
-```
-$ docker exec isolated ping -c 3 web
+```console
+$ docker container exec isolated ping -c 3 web
 PING web (172.18.0.2): 56 data bytes
 64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.110 ms
 ...
@@ -238,14 +238,14 @@ PING web (172.18.0.2): 56 data bytes
 
 It can now reach containers on `my_bridge` by name. To remove the connection:
 
-```
+```console
 $ docker network disconnect my_bridge isolated
 ```
 
 Clean up the isolated container.
 
-```
-$ docker rm -f isolated
+```console
+$ docker container rm -f isolated
 ```
 
 ## <a name="task_6"></a>Task 6: Configure port mapping for external access
@@ -256,17 +256,17 @@ The `web` container from Task 4 is already running NGINX on port 80, but it's on
 
 Stop and re-create the `web` container with port mapping.
 
-```
-$ docker rm -f web
-$ docker run -d --name web --network my_bridge -p 8080:80 nginx:alpine
+```console
+$ docker container rm -f web
+$ docker container run -d --name web --network my_bridge -p 8080:80 nginx:alpine
 ```
 
 This maps port **8080** on the Docker host to port **80** inside the container.
 
 Verify the port mapping.
 
-```
-$ docker ps --filter name=web
+```console
+$ docker container ls --filter name=web
 CONTAINER ID   IMAGE          COMMAND                  PORTS                  NAMES
 b747d43fa277   nginx:alpine   "/docker-entrypoint.…"   0.0.0.0:8080->80/tcp   web
 ```
@@ -275,7 +275,7 @@ The `0.0.0.0:8080->80/tcp` mapping means port 8080 on **all host interfaces** fo
 
 Test external access using `curl` from the Docker host.
 
-```
+```console
 $ curl localhost:8080
 <!DOCTYPE html>
 <html>
@@ -292,15 +292,15 @@ You can also access it from a web browser by navigating to `http://<your-docker-
 
 Remove all containers and the custom network.
 
-```
-$ docker rm -f web client
+```console
+$ docker container rm -f web client
 $ docker network rm my_bridge
 ```
 
 Verify cleanup.
 
-```
-$ docker ps -a --filter name=web --filter name=client
+```console
+$ docker container ls -a --filter name=web --filter name=client
 CONTAINER ID   IMAGE   COMMAND   CREATED   STATUS   PORTS   NAMES
 
 $ docker network ls --filter driver=bridge
