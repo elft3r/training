@@ -2,7 +2,7 @@
 
 This portion of the tutorial will guide you through using [Docker Compose](https://docs.docker.com/compose), to run and customize a voting app.
 
-> **Tasks**:
+> **Tasks:**
 >
 > - [Task 1: Clone Voting App Repo](#task-1-clone-voting-app-repo)
 > - [Task 2: Understand the Compose File](#task-2-understand-the-compose-file)
@@ -10,7 +10,8 @@ This portion of the tutorial will guide you through using [Docker Compose](https
 > - [Task 4: Customize the Voting App](#task-4-customize-the-voting-app)
 > - [Task 5: Remove the containers](#task-5-remove-the-containers)
 
-**Important.**
+## Prerequisites
+
 To complete this section, you will need to have Docker installed on your machine as mentioned in the [Setup](./setup.md) section. You'll also need to have git installed. There are many options for installing it. For instance, you can get it from [GitHub](https://help.github.com/articles/set-up-git/).
 
 ## Task 1: Clone Voting App Repo
@@ -37,7 +38,7 @@ Locate the [Docker Compose](https://docs.docker.com/compose) file. The file we a
 
 Let's review what is inside the file:
 
-```
+```yaml
 # version is now using "compose spec"
 # v2 and v3 are now combined!
 # docker-compose v1.27+ required
@@ -147,9 +148,9 @@ If you take a look at `docker-compose.yml`, you will see that the file defines
 
 The Compose file also defines two networks, front-tier and back-tier. Each container is placed on one or two networks. Once on those networks, they can access other services on that network in code just by using the name of the service. Services can be on any number of networks. Services are isolated on their network. Services are only able to discover each other by name if they are on the same network. To learn more about networking check out the [Networking Lab](https://github.com/docker/labs/tree/master/networking).
 
-Take a look at the file again, it start's with the following comment:
+Take a look at the file again, it starts with the following comment:
 
-```
+```yaml
 # version is now using "compose spec"
 # v2 and v3 are now combined!
 # docker-compose v1.27+ required
@@ -159,7 +160,7 @@ You will find many `docker-compose.yml` files that start with either `version: "
 
 You will see there's also a `services` key, under which there is a separate key for each of the services. Such as:
 
-```
+```yaml
   vote:
     build: ./vote
     # use python rather than gunicorn for local dev
@@ -264,6 +265,6 @@ $ docker compose down
 
 This will stop the containers and remove them afterwards.
 
-### Next Steps
+## Next Steps
 
-For the next step in the tutorial head over to [Deploying an app to Docker Swarm](./votingapp-swarm.md)
+For the next step in the tutorial, head over to [Deploying an app to Docker Swarm](./votingapp-swarm.md)

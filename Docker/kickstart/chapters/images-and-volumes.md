@@ -2,7 +2,7 @@
 
 Great! So you have now looked at `docker container run`, played with Docker containers, and ran your first web application inside a container. In this section, you will learn about Docker Images and Volumes.
 
-> **Tasks**:
+> **Tasks:**
 >
 > - [Task 1: Docker Images](#task-1-docker-images)
 > - [Task 2: Layers and Copy on Write](#task-2-layers-and-copy-on-write)
@@ -25,7 +25,7 @@ The [Docker documentation](https://docs.docker.com/engine/userguide/storagedrive
 
 A Docker image is built up from a series of layers. Each layer represents an instruction in the image’s Dockerfile. Each layer except the very last one is read-only. Consider the following Dockerfile:
 
-```
+```dockerfile
     FROM debian:bookworm-slim
     COPY . /app
     RUN make /app
@@ -226,7 +226,7 @@ The next sections will cover both anonymous and named volumes.
 
 Take a look at the MariaDB [Dockerfile](https://github.com/MariaDB/mariadb-docker/blob/master/11.4/Dockerfile) you will find the following line:
 
-```
+```dockerfile
 VOLUME /var/lib/mysql
 ```
 
@@ -624,6 +624,6 @@ A named volume can be created on the command line, in a docker-compose file, and
 
     If a new container was started with the previous command, it would create a new empty volume.
 
-## Let's Take a Break then continue to WebApps Part 2
+## Next Steps
 
 For the next step in the tutorial, head over to [Webapps with Docker - Part Two](./webapps-part2.md)

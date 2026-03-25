@@ -2,12 +2,12 @@
 
 In this lab you'll learn how to create and manage *secrets* with Docker.
 
-You will complete the following steps as part of this lab.
-
-- [Task 1 - Create a Secret](#Task_1)
-- [Task 2 - Manage Secrets](#Task_2)
-- [Task 3 - Access the secret within an app](#Task_3)
-- [Task 4 - Clean-up](#Task_4)
+> **Tasks:**
+>
+> - [Task 1: Create a Secret](#task-1-create-a-secret)
+> - [Task 2: Manage Secrets](#task-2-manage-secrets)
+> - [Task 3: Access the secret within an app](#task-3-access-the-secret-within-an-app)
+> - [Task 4: Clean-up](#task-4-clean-up)
 
 In this lab the terms *service task* and *container* are used interchangeably.
 In all examples in the lab a *service tasks* is a container that is running as
@@ -19,7 +19,7 @@ You will need all of the following to complete this lab:
 
 - A Docker Swarm cluster (Docker Swarm mode must be enabled)
 
-## <a name="Task_1"></a>Task 1: Create a Secret
+## Task 1: Create a Secret
 
 In this step you'll use the `docker secret create` command to create a new
 *secret*.
@@ -66,7 +66,7 @@ using the Swarm's native encryption.
 
 You can now delete the `sec.txt` file used to create the secret.
 
-## <a name="Task_2"></a>Task 2: Manage Secrets
+## Task 2: Manage Secrets
 
 In this step you'll use the `docker secret` sub-command to list and inspect
 secrets.
@@ -110,7 +110,7 @@ Perform all of the following commands from a Swarm *manager*.  The lab assumes y
   unencrypted contents of the secret.
 
 
-## <a name="Task_3"></a>Task 3: Access the secret within an app
+## Task 3: Access the secret within an app
 
 In this step you'll deploy a service and grant it access to the secret. You'll
 then `exec` on to a task in the service and view the unencrypted contents of the
@@ -265,9 +265,9 @@ the secret from memory.
 
 **Congratulations**, you have completed this lab on Secrets management.
 
-## <a name="Task_4"></a>Task 4: Clean-up
+## Task 4: Clean-up
 
-In this step you will remove all secrets and services,as well as clean up any other artifacts created in this lab.
+In this step you will remove all secrets and services, as well as clean up any other artifacts created in this lab.
 
 
 1. Remove all services on the host.

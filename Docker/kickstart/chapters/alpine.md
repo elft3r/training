@@ -2,10 +2,10 @@
 
 The wait is finally over. It's time to roll up our sleeves and start our first container. Get Ready.
 
-> **Tasks**:
+> **Tasks:**
 >
-> - [Task 1: Run our First Container](#task-1-running-your-first-container)
-> - [Task 2: Run an Interactive Container](#task-2-run-an-interactive-ubuntu-container)
+> - [Task 1: Running your first container](#task-1-running-your-first-container)
+> - [Task 2: Run an interactive Ubuntu container](#task-2-run-an-interactive-ubuntu-container)
 > - [Task 3: Run a background MariaDB container](#task-3-run-a-background-mariadb-container)
 > - [Terminology Covered in this section](#terminology)
 
@@ -326,6 +326,6 @@ In the last section, you saw a lot of Docker-specific jargon that might confuse 
 - _Docker client_ - The command line tool that allows the user to interact with the Docker daemon.
 - _Docker Hub_ - A [registry](https://hub.docker.com/) of Docker images where you can find trusted and enterprise-ready containers, plugins, and Docker editions. You'll be using this later in this tutorial.
 
-## Next Steps: Webapps with Docker
+## Next Steps
 
 For the next step in the tutorial, head over to [Webapps with Docker - Part One](./webapps-part1.md)

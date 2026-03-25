@@ -2,14 +2,14 @@
 
 In this lab you'll explore Docker's networking model and the CLI commands used to manage container networks.
 
-You will complete the following steps as part of this lab.
+> **Tasks:**
+>
+> - [Task 1: The `docker network` command](#task-1-the-docker-network-command)
+> - [Task 2: List networks](#task-2-list-networks)
+> - [Task 3: Inspect a network](#task-3-inspect-a-network)
+> - [Task 4: Understand network drivers](#task-4-understand-network-drivers)
 
-- [Task 1 - The `docker network` command](#docker_network)
-- [Task 2 - List networks](#list_networks)
-- [Task 3 - Inspect a network](#inspect)
-- [Task 4 - Understand network drivers](#drivers)
-
-## <a name="docker_network"></a>Task 1: The `docker network` command
+## Task 1: The `docker network` command
 
 The `docker network` command is the main command for configuring and managing container networks.
 
@@ -35,7 +35,7 @@ Run 'docker network COMMAND --help' for more information on a command.
 
 The key operations are: **create** and **rm** to manage networks, **connect** and **disconnect** to attach containers, and **inspect** and **ls** to view details.
 
-## <a name="list_networks"></a>Task 2: List networks
+## Task 2: List networks
 
 Run `docker network ls` to view existing container networks on your Docker host.
 
@@ -57,7 +57,7 @@ Every Docker installation comes with these three default networks:
 
 Each network has a unique `ID` and `NAME`, and is associated with a single driver. Notice that the "bridge" and "host" networks share the same name as their respective drivers.
 
-## <a name="inspect"></a>Task 3: Inspect a network
+## Task 3: Inspect a network
 
 Use `docker network inspect` to view configuration details of a network. These details include the name, ID, driver, subnet info, connected containers, and more.
 
@@ -112,7 +112,7 @@ Key things to notice:
 
 > **NOTE:** The command syntax is `docker network inspect <network>`, where `<network>` can be either the network name or ID.
 
-## <a name="drivers"></a>Task 4: Understand network drivers
+## Task 4: Understand network drivers
 
 Docker uses a pluggable networking architecture. The built-in drivers handle most use cases:
 

@@ -2,13 +2,15 @@
 
 Now that we understand the structure of Docker images, it's time to build a custom Docker image from a `Dockerfile` and deploy it as a web application.
 
-> **Tasks**:
+> **Tasks:**
 >
 > - [Task 1: Package and run a custom app using Docker](#task-1-package-and-run-a-custom-app-using-docker)
 > - [Task 2: Modify a running website](#task-2-modify-a-running-website)
 > - [Task 3: Update and version your image](#task-3-update-and-version-your-image)
 
-**Prerequisite** Ensure you have a DockerID. If you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com)
+## Prerequisites
+
+Ensure you have a DockerID. If you don't have a DockerID you can get one for free via [Docker Hub](https://hub.docker.com).
 
 ## Task 1: Package and run a custom app using Docker
 
@@ -326,7 +328,7 @@ Here's a quick summary of the few basic commands we used in our Dockerfile.
 
 - `CMD` defines the commands that will run on the Image at start-up. Unlike a `RUN`, this does not create a new layer for the Image, but simply runs the command. There can only be one `CMD` per Dockerfile/Image. If you need to run multiple commands, the best way to do that is to have the `CMD` run a script. `CMD` requires that you tell it where to run the command, unlike `RUN`. So example `CMD` commands would be:
 
-```
+```dockerfile
   CMD ["python", "./app.py"]
 
   CMD ["/bin/bash", "echo", "Hello World"]
