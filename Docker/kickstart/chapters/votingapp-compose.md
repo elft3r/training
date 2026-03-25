@@ -148,7 +148,7 @@ If you take a look at `docker-compose.yml`, you will see that the file defines
 
 The Compose file also defines two networks, front-tier and back-tier. Each container is placed on one or two networks. Once on those networks, they can access other services on that network in code just by using the name of the service. Services can be on any number of networks. Services are isolated on their network. Services are only able to discover each other by name if they are on the same network. To learn more about networking check out the [Networking Lab](https://github.com/docker/labs/tree/master/networking).
 
-Take a look at the file again, it start's with the following comment:
+Take a look at the file again, it starts with the following comment:
 
 ```yaml
 # version is now using "compose spec"

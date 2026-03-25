@@ -235,9 +235,9 @@ Awesome! To ensure our automated builds are really working let's commit a new ve
 
     > Using your favorite editor (vi, emacs, etc)
 
-    ```console
     Edit the index.html file and edit line number 33 and change the text to "DevOps is Awesome"
 
+    ```console
     $ vi index.html
     ```
 

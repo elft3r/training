@@ -5,7 +5,7 @@ In this lab you'll learn how to deploy MongoDB with Docker.
 > **Tasks:**
 >
 > - [Task 1: Building Custom Images](#task-1-building-custom-images)
-> - [Task 2: Building a NodeRed Stack](#task-2-building-a-nodered-stack)
+> - [Task 2: Building a Node-RED Stack](#task-2-building-a-node-red-stack)
 > - [Task 3: Configuring Node-RED to see the new services](#task-3-configuring-node-red-to-see-the-new-services)
 > - [Task 4: Replicated MongoDB](#task-4-replicated-mongodb)
 > - [Task 5: Cleanup](#task-5-cleanup)
@@ -14,17 +14,17 @@ In this lab the terms *service task* and *container* are used interchangeably.
 In all examples in the lab a *service tasks* is a container that is running as
 part of a service.
 
-## Overview NodeRed, MongoDB, and Docker
-NodeRed is a flow-based programming tool based on NodeJs. The interface allows for easily dragging and dropping nodes and wiring them together. The real power of NodeRed is when it is combined with Docker. Docker allows easily to provison services which NodeRed can connect to.
+## Overview Node-RED, MongoDB, and Docker
+Node-RED is a flow-based programming tool based on NodeJs. The interface allows for easily dragging and dropping nodes and wiring them together. The real power of Node-RED is when it is combined with Docker. Docker allows easily to provison services which Node-RED can connect to.
 
-In this chapter we will cover the basics of running NodeRed inside of a Docker container. Once we have accomplished the deplyoment of NodeRed with Docker we will then add a MongoDB database which we will connect to from inside NodeRed.
+In this chapter we will cover the basics of running Node-RED inside of a Docker container. Once we have accomplished the deplyoment of Node-RED with Docker we will then add a MongoDB database which we will connect to from inside Node-RED.
 
 To get started, let's run the following in our terminal:
 ```console
 $ docker container run -it -p 1880:1880 --name mynodered nodered/node-red-docker
 ```
 
-We can now access the NodeRed UI via `http://<hostip>:1880`
+We can now access the Node-RED UI via `http://<hostip>:1880`
 
 
 ## Task 1: Building Custom Images
@@ -34,8 +34,8 @@ Creating a new Docker image, using the public Node-RED images as the base image,
 Create a file called Dockerfile with the content:
 
 ```dockerfile
- FROM nodered/node-red-docker
- RUN npm install node-red-node-twitter
+FROM nodered/node-red-docker
+RUN npm install node-red-node-twitter
 ```
 
 Run the following command to build the image:
@@ -47,7 +47,7 @@ $ docker image build -t mynodered:<tag> .
 That will create a Node-RED image that includes the wordpos nodes.
 
 
-## Task 2: Building a NodeRed Stack
+## Task 2: Building a Node-RED Stack
 In the Docker Swarm Chapter, we linked containers together using the Docker compose file.
 
 For example, if you have a container that providesis your APP and you would like to connect it to a MongoDB to persist the data. In this example, we link the Node-RED container with MongoDB so node-red can store data:
@@ -58,9 +58,9 @@ We will now create a Docker compose stack using the Dockerfile from section 1.3.
 2. Create a file named `Dockerfile` in this directory with the following code:
 
 ```dockerfile
- FROM nodered/node-red-docker
- RUN npm install node-red-node-twitter
- RUN npm install node-red-node-mongodb
+FROM nodered/node-red-docker
+RUN npm install node-red-node-twitter
+RUN npm install node-red-node-mongodb
 ```
 
 1. Create a file name `docker-compose.yml`

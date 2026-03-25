@@ -7,7 +7,7 @@ In this chapter you will learn the basics of running Node-RED inside a Docker co
 > - [Task 1: Configuring Node-RED](#task-1-configuring-node-red)
 > - [Task 2: Persisting Data](#task-2-persisting-data)
 > - [Task 3: Building Custom Images](#task-3-building-custom-images)
-> - [Task 4: Building a NodeRed Stack](#task-4-building-a-nodered-stack)
+> - [Task 4: Building a Node-RED Stack](#task-4-building-a-node-red-stack)
 > - [Task 5: Configuring Node-RED to see the new services](#task-5-configuring-node-red-to-see-the-new-services)
 
 To get started, let's run the following in our terminal:
@@ -16,7 +16,7 @@ To get started, let's run the following in our terminal:
 $ docker container run -it -p 1880:1880 --name mynodered nodered/node-red-docker
 ```
 
-We can now access the NodeRed UI via `http://<hostip>:1880`
+We can now access the Node-RED UI via `http://<hostip>:1880`
 
 ## Task 1: Configuring Node-RED
 

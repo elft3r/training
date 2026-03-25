@@ -32,7 +32,7 @@ For this application we will use the [Docker Example Voting App](https://github.
 
 ## Task 2: Initiate Docker Swarm
 
-For this first stage, we will use existing images that are in Docker Store.
+For this first stage, we will use existing images that are on Docker Hub.
 
 This app relies on [Docker Swarm mode](https://docs.docker.com/engine/swarm/). Swarm mode is the cluster management and orchestration features embedded in the Docker engine. You can easily deploy to a swarm using a file that declares your desired state for the app. Swarm allows you to run your containers on more than one machine. In this tutorial, you can run on just one machine, or you can use something like [Docker for AWS](https://beta.docker.com/) or [Docker for Azure](https://beta.docker.com/) to quickly create a multiple node machine. Alternately, you can use Docker Machine to create a number of local nodes on your development machine. See [the Swarm Mode lab](../../swarm-mode/beginner-tutorial/README.md#creating-the-nodes-and-swarm) for more information.
 
