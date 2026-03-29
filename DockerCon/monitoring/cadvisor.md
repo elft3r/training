@@ -1,3 +1,9 @@
+---
+title: Google cAdvisor
+parent: Monitoring & Logging
+nav_order: 1
+---
+
 # Google cAdvisor (Container Advisor)
 
 <img src="https://raw.githubusercontent.com/elft3r/Training/main/img/cadvisor-logo.png" alt="cAdvisor Logo" width="150" height="99"> 

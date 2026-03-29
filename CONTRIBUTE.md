@@ -15,4 +15,4 @@ Anything you contribute will be under an Apache license. Anything posted here ma
 
 This project is based on the original [56K.Cloud Training Repository](https://github.com/56kcloud/Training). We appreciate their work in making this content open source.
 
-We will be following the lightweight version of the Docker contribution policies and procedures as explained in
+We will be following the lightweight version of the Docker contribution policies and procedures.
