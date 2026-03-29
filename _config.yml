@@ -1,5 +1,40 @@
-theme: jekyll-theme-cayman
-exclude: [
-  'Kubernetes/website/',
-  'istio-workshop/'
-]
+remote_theme: just-the-docs/just-the-docs
+
+title: Container, Cloud & DevOps Tutorials
+description: Docker, Kubernetes, Cloud, and DevOps hands-on labs and tutorials
+url: "https://training.new-bridge.dev"
+baseurl: ""
+
+plugins:
+  - jekyll-remote-theme
+
+# Theme settings
+color_scheme: default
+search_enabled: true
+heading_anchors: true
+
+# Navigation
+nav_sort: case_insensitive
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer
+footer_content: "Licensed under <a href=\"https://github.com/elft3r/Training/blob/main/LICENSE\">Apache 2.0</a>."
+
+exclude:
+  - Kubernetes/website/
+  - istio-workshop/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - LICENSE
+  - CLAUDE.md
+  - Docker/kickstart/flask-app/
+  - Docker/kickstart/static-site/
+  - Presentations/

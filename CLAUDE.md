@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is the **56K.Cloud Training Repository** — an open-source, community-driven collection of Docker, Kubernetes, Cloud, and DevOps tutorials and hands-on labs. The content is hosted as a Jekyll static site at [training.56kcloud.io](https://training.56kcloud.io).
+This is the **Training Repository** — an open-source, community-driven collection of Docker, Kubernetes, Cloud, and DevOps tutorials and hands-on labs. The content is hosted as a Jekyll static site at [training.new-bridge.dev](https://training.new-bridge.dev).
 
 **License:** Apache 2.0
 
@@ -29,7 +29,7 @@ This is the **56K.Cloud Training Repository** — an open-source, community-driv
 ├── Presentations/            # PDF presentations
 ├── img/                      # Repository images
 ├── _config.yml               # Jekyll site configuration
-├── CNAME                     # DNS: training.56kcloud.io
+├── CNAME                     # DNS: training.new-bridge.dev
 ├── contribute.md             # Contribution guidelines
 ├── README.md                 # Main tutorials index & site overview
 └── LICENSE                   # Apache 2.0
@@ -70,7 +70,7 @@ Quality is managed through manual review and community feedback. `Docker/kicksta
 
 ### Jekyll Site
 
-The site uses the **Cayman** Jekyll theme. Configuration in `_config.yml` excludes `Kubernetes/website/` and `istio-workshop/` from the build.
+The site uses the **Just the Docs** Jekyll theme (remote theme). Configuration in `_config.yml` excludes non-content directories from the build. Navigation is driven by YAML frontmatter (`title`, `parent`, `grand_parent`, `nav_order`) in each Markdown file.
 
 ## Contribution Guidelines
 

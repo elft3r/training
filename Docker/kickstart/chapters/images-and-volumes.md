@@ -1,3 +1,10 @@
+---
+title: Docker Images and Volumes
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 4
+---
+
 # Docker Images and Volumes
 
 Great! So you have now looked at `docker container run`, played with Docker containers, and ran your first web application inside a container. In this section, you will learn about Docker Images and Volumes.

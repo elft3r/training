@@ -1,3 +1,10 @@
+---
+title: Setup
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 1
+---
+
 # Setup
 
 In this chapter you'll get Docker installed and verify that everything is working correctly.

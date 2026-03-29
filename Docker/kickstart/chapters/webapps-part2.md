@@ -1,3 +1,10 @@
+---
+title: Webapps with Docker Part Deux
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 5
+---
+
 # Webapps with Docker Part Deux
 
 Now that we understand the structure of Docker images, it's time to build a custom Docker image from a `Dockerfile` and deploy it as a web application.

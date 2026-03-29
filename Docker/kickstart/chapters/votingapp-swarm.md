@@ -1,3 +1,10 @@
+---
+title: Deploying an app to a Swarm
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 8
+---
+
 # Deploying an app to a Swarm
 
 This portion of the tutorial will guide you through deploying a Docker Swarm, the creation and customization of a voting app.

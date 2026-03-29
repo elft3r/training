@@ -1,3 +1,9 @@
+---
+title: Kubernetes
+nav_order: 3
+has_children: true
+---
+
 # Kubernetes
 
 This repo contains [Kubernetes](https://kubernetes.io) labs and tutorials authored both by Docker, Kubernetes, and by members of the community. We welcome contributions and want to grow the repo.
