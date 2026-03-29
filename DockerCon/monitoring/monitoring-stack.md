@@ -6,7 +6,7 @@ nav_order: 2
 
 # Deploy the Prometheus Monitoring Stack, understand the components, and monitor containers
 
-<img src="https://raw.githubusercontent.com/elft3r/Training/main/img/prometheus.gif" alt="Prometheus Logo" width="150" height="99"> 
+<img src="https://raw.githubusercontent.com/elft3r/training/main/img/prometheus.gif" alt="Prometheus Logo" width="150" height="99"> 
 
 The wait is finally over let's get monitoring.
 
@@ -187,7 +187,7 @@ In the final section we will build a Dashboard based on the Prometheus stack. We
 
 Here is what the final Dashboard should look like:
 
-<img src="https://raw.githubusercontent.com/elft3r/Training/main/img/dashboard.png" alt="Dashboard Workshop Demo" width="500" height="250"> 
+<img src="https://raw.githubusercontent.com/elft3r/training/main/img/dashboard.png" alt="Dashboard Workshop Demo" width="500" height="250"> 
 
 ### Import Dashboards
 In the last section we can quickly import Dashboards from [Grafana Dashboards](https://grafana.com/dashboards)

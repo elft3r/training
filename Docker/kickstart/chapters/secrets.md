@@ -302,4 +302,4 @@ In this step you will remove all secrets and services, as well as clean up any o
 
 ## Next Steps
 
-For the next step in the tutorial, head over to [Build and Deploy a Monitoring Stack](https://github.com/elft3r/Training/blob/main/DockerCon/README.md) or check out the [Next Steps](./nextsteps.md) page for further learning resources.
+For the next step in the tutorial, head over to [Build and Deploy a Monitoring Stack](https://github.com/elft3r/training/blob/main/DockerCon/README.md) or check out the [Next Steps](./nextsteps.md) page for further learning resources.
