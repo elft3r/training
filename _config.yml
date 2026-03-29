@@ -1,4 +1,4 @@
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
 title: Container, Cloud & DevOps Tutorials
 description: Docker, Kubernetes, Cloud, and DevOps hands-on labs and tutorials
@@ -6,7 +6,7 @@ url: "https://training.new-bridge.dev"
 baseurl: ""
 
 plugins:
-  - jekyll-remote-theme
+  - jekyll-seo-tag
 
 # Theme settings
 color_scheme: default
