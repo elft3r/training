@@ -1,3 +1,10 @@
+---
+title: Docker and DevOps
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 6
+---
+
 # Docker and DevOps
 
 Now that we understand how to build Docker images it's now time to start autobuilding our changes with a pipeline `Dockerfile`

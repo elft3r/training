@@ -1,3 +1,10 @@
+---
+title: Deploying Webapps with Docker
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 3
+---
+
 # Deploying Webapps with Docker
 
 Great! So you have now looked at `docker container run`, played with a Docker container, and also got the hang of some terminology. Armed with all this knowledge, you are now ready to get to the real stuff &#8212; create Docker Images, and deploy these images as web applications with Docker.

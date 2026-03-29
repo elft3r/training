@@ -1,3 +1,10 @@
+---
+title: Bridge Networking
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 10
+---
+
 # Bridge Networking
 
 In this lab you'll learn how to build, manage, and use **bridge** networks — the most common networking type for containers running on a single Docker host.

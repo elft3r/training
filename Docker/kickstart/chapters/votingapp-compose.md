@@ -1,3 +1,10 @@
+---
+title: Deploying an app with Docker Compose
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 7
+---
+
 # Deploying an app with Docker Compose
 
 This portion of the tutorial will guide you through using [Docker Compose](https://docs.docker.com/compose), to run and customize a voting app.

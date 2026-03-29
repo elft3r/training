@@ -1,3 +1,10 @@
+---
+title: Managing Docker Secrets
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 11
+---
+
 # Managing Docker Secrets
 
 In this lab you'll learn how to create and manage *secrets* with Docker.
@@ -295,4 +302,4 @@ In this step you will remove all secrets and services, as well as clean up any o
 
 ## Next Steps
 
-For the next step in the tutorial, head over to [Build and Deploy a Monitoring Stack](https://github.com/56kcloud/Training/blob/master/DockerCon/readme.md) or check out the [Next Steps](./nextsteps.md) page for further learning resources.
+For the next step in the tutorial, head over to [Build and Deploy a Monitoring Stack](https://github.com/elft3r/Training/blob/main/DockerCon/README.md) or check out the [Next Steps](./nextsteps.md) page for further learning resources.

@@ -1,3 +1,10 @@
+---
+title: Docker Networking Basics
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 9
+---
+
 # Docker Networking Basics
 
 In this lab you'll explore Docker's networking model and the CLI commands used to manage container networks.

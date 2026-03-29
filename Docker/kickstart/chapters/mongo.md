@@ -1,3 +1,10 @@
+---
+title: Deploying MongoDB
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 12
+---
+
 # Deploying MongoDB
 
 In this lab you'll learn how to deploy MongoDB with Docker.

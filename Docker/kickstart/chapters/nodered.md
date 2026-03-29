@@ -1,3 +1,10 @@
+---
+title: Node-RED with Docker
+parent: Docker Kickstart
+grand_parent: Docker
+nav_order: 14
+---
+
 # Node-RED with Docker
 
 In this chapter you will learn the basics of running Node-RED inside a Docker container, building custom images, and composing a Node-RED stack with MongoDB.

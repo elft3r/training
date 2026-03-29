@@ -1,3 +1,10 @@
+---
+title: Docker Security
+parent: Docker
+nav_order: 3
+has_children: true
+---
+
 # Docker Security
 
 This directory contains tutorials on how to take advantage of a non-exhaustive collection of Docker security features. Moreover, the tutorials are designed to explain and demonstrate the strong security defaults in Docker for each feature.

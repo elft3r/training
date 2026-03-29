@@ -1,8 +1,12 @@
+---
+title: Monitoring & Logging
+nav_order: 4
+has_children: true
+---
+
 ## Logging & Monitoring Workshop
 
-<img src="https://raw.githubusercontent.com/56kcloud/Training/master/img/56k.jpg" alt="56K.Cloud Logo" width="150" height="99"> 
-
-Welcome to the Logging & Monitoring Workshop presented by [Brian Christner](https://twitter.com/idomyowntricks) from [56K.Cloud](https://www.56k.cloud)
+Welcome to the Logging & Monitoring Workshop.
 
 This Docker tutorial consists of the following sections:
 
