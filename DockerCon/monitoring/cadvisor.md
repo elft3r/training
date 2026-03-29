@@ -6,7 +6,7 @@ nav_order: 1
 
 # Google cAdvisor (Container Advisor)
 
-<img src="https://raw.githubusercontent.com/elft3r/Training/main/img/cadvisor-logo.png" alt="cAdvisor Logo" width="150" height="99"> 
+<img src="https://raw.githubusercontent.com/elft3r/training/main/img/cadvisor-logo.png" alt="cAdvisor Logo" width="150" height="99"> 
 
 [cAdvisor](https://hub.docker.com/r/google/cadvisor/) is an amazing tool. It is an all-in-one tool for grabbing real-time metrics from all the containers running on a single host and exposing these metrics. The cAdvisor collects, aggregates, processes, and exports usage and performance information from running containers.
 
