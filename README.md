@@ -19,3 +19,7 @@ Welcome to the Training & Labs site. This repo contains Docker, Kubernetes, Clou
 We want to see this repo grow, so if you have a tutorial to submit, or contributions to existing tutorials, please see this guide:
 
 [Guide to submitting your own tutorial](CONTRIBUTE.md)
+
+---
+
+This project is based on the original [56K.Cloud Training Repository](https://github.com/56kcloud/Training).
