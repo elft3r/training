@@ -1,4 +1,4 @@
-# Deploy the Promethues Monitoring Stack, understand the components, and monitor containers
+# Deploy the Prometheus Monitoring Stack, understand the components, and monitor containers
 
 <img src="https://raw.githubusercontent.com/elft3r/Training/main/img/prometheus.gif" alt="Prometheus Logo" width="150" height="99"> 
 
