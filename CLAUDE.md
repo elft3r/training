@@ -30,7 +30,7 @@ This is the **Training Repository** — an open-source, community-driven collect
 ├── img/                      # Repository images
 ├── _config.yml               # Jekyll site configuration
 ├── CNAME                     # DNS: training.new-bridge.dev
-├── contribute.md             # Contribution guidelines
+├── CONTRIBUTE.md             # Contribution guidelines
 ├── README.md                 # Main tutorials index & site overview
 └── LICENSE                   # Apache 2.0
 ```
@@ -75,7 +75,7 @@ The site uses the **Just the Docs** Jekyll theme (remote theme). Configuration i
 ## Contribution Guidelines
 
 - All contributions are licensed under Apache 2.0
-- Follow the lightweight Docker contribution policies referenced in `contribute.md`
+- Follow the lightweight Docker contribution policies referenced in `CONTRIBUTE.md`
 - Submit issues and pull requests for new tutorials or fixes to existing ones
 - Use native Docker and Kubernetes tooling whenever possible
 

@@ -41,6 +41,6 @@ This repo contains [Kubernetes](https://kubernetes) labs and tutorials, useful l
   * Node.js
     * [Live Debugging a Node.js application in Docker](developer-tools/nodejs-debugging)
     * [Dockerizing a Node.js application](developer-tools/nodejs/porting/)
-* [Docker for ASP.NET and Windows containers](windows/readme.md)
+* [Docker for ASP.NET and Windows containers](windows/README.md)
 * [Building a 12 Factor app with Docker](12factor/README.md)
 * [Hands-on Labs from DockerCon US 2017](dockercon-us-2017/)

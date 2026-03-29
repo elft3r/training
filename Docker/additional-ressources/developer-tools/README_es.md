@@ -1,6 +1,6 @@
 # Tutoriales de Herramientas de Desarrollo
 
-Este directorio contiene tutoriales sobre como configurar y usar herramientas de desarrollo comunes con docker. Te animamos a [contribuir](../contribute.md) con tus propios tutoriales aquí.
+Este directorio contiene tutoriales sobre como configurar y usar herramientas de desarrollo comunes con docker. Te animamos a [contribuir](../CONTRIBUTE.md) con tus propios tutoriales aquí.
 
 ## IDEs
 

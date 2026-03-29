@@ -10,8 +10,8 @@ This repo contains [Docker](https://docker.com) labs and tutorials authored both
 
 #### Docker Tutorials:
 
-- [Docker Kickstart](kickstart/readme.md)
-- [Docker Training DevOpsDays](DevOpsDays/readme.md)
+- [Docker Kickstart](kickstart/README.md)
+- [Docker Training DevOpsDays](DevOpsDays/README.md)
 - [Docker Swarm Mode](swarm-mode/README.md)
 - [Docker Security](security/README.md)
 - [Docker Networking](networking/)
@@ -26,4 +26,4 @@ Be sure to check out the additional Docker resources section aimed at Developers
 
 We want to see this repo grow, so if you have a tutorial to submit or contributions to existing tutorials, please see this guide:
 
-[Guide to submitting your tutorial](./../contribute.md)
+[Guide to submitting your tutorial](./../CONTRIBUTE.md)

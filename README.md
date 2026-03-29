@@ -11,7 +11,7 @@ Welcome to the Training & Labs site. This repo contains Docker, Kubernetes, Clou
 #### Tutorials:
 
 - [Docker](Docker/README.md)
-- [Monitoring & Logging](DockerCon/readme.md)
+- [Monitoring & Logging](DockerCon/README.md)
 - [Kubernetes](Kubernetes/README.md)
 
 #### Contributing

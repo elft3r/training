@@ -20,5 +20,5 @@ This Docker tutorial consists of the following sections:
 - [Networking Basics](chapters/networking-basics.md)
 - [Bridge Networking](chapters/bridge-network.md)
 - [Secret Management](chapters/secrets.md)
-- [Build and Deploy a Monitoring Stack](https://github.com/elft3r/Training/blob/main/DockerCon/readme.md)
+- [Build and Deploy a Monitoring Stack](https://github.com/elft3r/Training/blob/main/DockerCon/README.md)
 - [Next Steps](chapters/nextsteps.md)
