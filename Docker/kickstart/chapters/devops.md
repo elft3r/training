@@ -170,6 +170,7 @@ Now that we have pushed our project to GitHub, the next step is to enable [GitHu
 
 3. To add a job, you need to create the `.github/workflows/build-push-and-deploy.yml` file and add the content below to it:
 
+{% raw %}
 ```yaml
 ---
 name: Build, Push and Deploy
@@ -223,6 +224,7 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
 ```
+{% endraw %}
 
 4. Commit and Push the changes to GitHub
 
@@ -268,6 +270,7 @@ To do this, we need to add a new job to our GitHub Actions. This will start the 
 
 1. Add the following code snippet to your GitHub Actions file:
 
+   {% raw %}
    ```yaml
    test-container:
       name: Test our container
@@ -283,6 +286,7 @@ To do this, we need to add a new job to our GitHub Actions. This will start the 
             docker ps
             while ! curl --retry 10 --retry-delay 5 -v http://0.0.0.0:8080 >/dev/null; do sleep 1; done
    ```
+   {% endraw %}
 
 2. Commit and push your changes to the GitHub repo
 

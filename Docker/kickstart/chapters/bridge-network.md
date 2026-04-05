@@ -86,11 +86,13 @@ $ docker container run -dit --name c2 alpine sh
 
 Verify both containers are connected to the **bridge** network.
 
+{% raw %}
 ```console
 $ docker network inspect bridge --format '{{range .Containers}}{{.Name}}: {{.IPv4Address}}{{"\n"}}{{end}}'
 c1: 172.17.0.2/16
 c2: 172.17.0.3/16
 ```
+{% endraw %}
 
 Test connectivity **by IP address** between the two containers.
 
@@ -142,10 +144,12 @@ a1b2c3d4e5f6...
 
 Inspect the new network.
 
+{% raw %}
 ```console
 $ docker network inspect my_bridge --format '{{(index .IPAM.Config 0).Subnet}}'
 172.18.0.0/16
 ```
+{% endraw %}
 
 Docker automatically assigned a subnet. You can also specify one explicitly.
 
