@@ -1,11 +1,3 @@
----
-title: "8 - Concurrency"
-parent: 12-Factor App
-grand_parent: Docker
-nav_order: 9
----
-
-
 # 8 - Concurrency
 
 Horizontal scalability with the processes model.

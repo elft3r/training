@@ -1,11 +1,3 @@
----
-title: "Network Deployment Models"
-parent: Docker Networking
-grand_parent: Docker
-nav_order: 20
----
-
-
 ## <a name="models"></a>Network Deployment Models
 Docker Engine and community provide multiple drivers to use. These drivers can be configured in multiple ways, and the physical network design and configuration will also affect network behavior. This section looks at different configurations and how they interoperate with the application and the physical network. This is not an exhaustive list but a description of common methods of deployment.
 

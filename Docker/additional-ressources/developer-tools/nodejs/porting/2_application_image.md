@@ -1,9 +1,3 @@
----
-title: "Create the application's image"
-nav_exclude: true
----
-
-
 # Create the application's image
 
 * We will use 2 images to package the application

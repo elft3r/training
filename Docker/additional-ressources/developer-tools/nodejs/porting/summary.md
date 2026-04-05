@@ -1,9 +1,3 @@
----
-title: "What we done so far"
-nav_exclude: true
----
-
-
 # What we done so far
 
 * setup Docker for a simple Node.js / MongoDB application

@@ -1,9 +1,3 @@
----
-title: "Publish image"
-nav_exclude: true
----
-
-
 # Publish image
 
 The following procedure describes how to create a repository on Docker Hub and publish an image.

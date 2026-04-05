@@ -1,9 +1,3 @@
----
-title: "Modernize ASP.NET Apps - Ops Lab"
-nav_exclude: true
----
-
-
 
 # Modernize ASP.NET Apps - Ops Lab
 

@@ -1,9 +1,3 @@
----
-title: "Part 2 - Building the SQL Server Image"
-nav_exclude: true
----
-
-
 # Part 2 - Building the SQL Server Image
 
 Your database image will come packaged with the schema, by compiling the Dacpac with the builder image from [Part 1](part-1.md). With the Dacpac in the final image, you can run containers to create a new database, or to upgrade an existing one.

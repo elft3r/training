@@ -1,9 +1,3 @@
----
-title: Installing Kubernetes on AWS with kops
-parent: Kubernetes
-nav_order: 7
----
-
 
 # Installing Kubernetes on AWS with kops
 

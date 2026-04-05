@@ -1,9 +1,3 @@
----
-title: "DockerCon 2017 Austin Workshops"
-nav_exclude: true
----
-
-
 # DockerCon 2017 Austin Workshops
 
 At DockerCon 2017 in Austin, we had [10 workshops](https://2017.dockercon.com/workshops/), each lasting about 3 hours. These are the slides from the workshops so you can get the same content.

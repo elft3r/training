@@ -1,9 +1,3 @@
----
-title: Additional Kubernetes Resources
-parent: Kubernetes
-nav_order: 6
----
-
 # Additional Kubernetes Ressources
 
 This repo contains [Kubernetes](https://kubernetes) labs and tutorials, useful links, newsletters, and general ressources. We welcome contributions and want to grow the repo.

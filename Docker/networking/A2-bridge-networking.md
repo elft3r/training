@@ -1,10 +1,3 @@
----
-title: Bridge Networking
-parent: Docker Networking
-grand_parent: Docker
-nav_order: 2
----
-
 # Bridge networking
 
 # Lab Meta

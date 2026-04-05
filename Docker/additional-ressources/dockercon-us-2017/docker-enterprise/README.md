@@ -1,9 +1,3 @@
----
-title: "Application Orchestration with Docker Enterprise Edition"
-nav_exclude: true
----
-
-
 # Application Orchestration with Docker Enterprise Edition
 
 In this lab you will deploy an application on Docker Enterprise Edition that takes advantage of some of the latest features of Docker Universal Control Plane (UCP). UCP is an included component of Docker EE Standard and Docker EE Advanced. The tutorial will lead you through building a compose file that can deploy a full application on UCP in one click. Capabilities that you will use in this application deployment include:

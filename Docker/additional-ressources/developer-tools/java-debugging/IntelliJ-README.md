@@ -1,9 +1,3 @@
----
-title: "In-container Java Development: IntelliJ Community Edition"
-nav_exclude: true
----
-
-
 ## In-container Java Development: IntelliJ Community Edition
 
 ### Pre-requisites

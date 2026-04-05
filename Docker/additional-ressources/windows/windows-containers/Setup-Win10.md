@@ -1,9 +1,3 @@
----
-title: "Setup - Windows 10"
-nav_exclude: true
----
-
-
 # Setup - Windows 10
 
 This chapter explores setting up a Windows environment to properly use Windows containers on Windows 10.

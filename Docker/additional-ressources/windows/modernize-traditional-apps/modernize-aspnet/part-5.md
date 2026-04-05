@@ -1,9 +1,3 @@
----
-title: "Part 5 - Enabling Fast Prototyping with Separate UI Components"
-nav_exclude: true
----
-
-
 # Part 5 - Enabling Fast Prototyping with Separate UI Components
 
 In [Part 4](part-4.md) you modernized one part of the sample application by making use of the Docker platform, and addressed a performance feature. That's an improvement which will benefit all the stakeholders of the app - ops folks now have an app which is easy to maintain, upgrade and scale; dev folks have the freedom to bring new technology into the app without a rewrite; business folks have an app which behaves correctly under pressure and continues to work for users.

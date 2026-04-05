@@ -1,11 +1,3 @@
----
-title: "7 - Port Binding"
-parent: 12-Factor App
-grand_parent: Docker
-nav_order: 8
----
-
-
 # 7 - Port binding
 
 This factor is related to the exposition of the application to the outside.

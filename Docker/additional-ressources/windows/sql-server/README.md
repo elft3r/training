@@ -1,9 +1,3 @@
----
-title: "SQL Server Lab"
-nav_exclude: true
----
-
-
 # SQL Server Lab
 
 Microsoft SQL Server is available to run in Docker containers on Linux and Windows. This lab focuses on Windows and shows you how to use Docker to modernize your database delivery — bringing modern practices like CI/CD into database management.

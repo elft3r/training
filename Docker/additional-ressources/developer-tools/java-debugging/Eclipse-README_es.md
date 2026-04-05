@@ -1,9 +1,3 @@
----
-title: "Desarrollo Java: Eclipse"
-nav_exclude: true
----
-
-
 ## Desarrollo Java: Eclipse
 
 ### Pre-requisitos

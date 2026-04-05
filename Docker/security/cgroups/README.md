@@ -1,11 +1,3 @@
----
-title: "Control Groups (cgroups)"
-parent: Docker Security
-grand_parent: Docker
-nav_order: 3
----
-
-
 # Lab: Control Groups (cgroups)
 
 > **Difficulty**: Intermediate

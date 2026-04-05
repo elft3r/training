@@ -1,9 +1,3 @@
----
-title: "Deployment on a Docker Swarm"
-nav_exclude: true
----
-
-
 # Deployment on a Docker Swarm
 
 As for the multi Docker host environment, a Docker Swarm requires a key value store to gather the nodes / containers configurations and states.

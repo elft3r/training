@@ -1,9 +1,3 @@
----
-title: "Part 3 - Running the SQL Server Container"
-nav_exclude: true
----
-
-
 # Part 3 - Running the SQL Server Container
 
 You now have a Docker image with a SQL schema and deployment script, packaged on top of SQL Server Express. The database image was built in [Part 2](part-2.md), compiling the Dacpac using the builder image from [Part 1](part-1.md). You can use that image to spin up a database container in different ways.

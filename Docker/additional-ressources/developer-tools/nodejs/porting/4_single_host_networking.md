@@ -1,9 +1,3 @@
----
-title: "Container networking on a single Docker host"
-nav_exclude: true
----
-
-
 # Container networking on a single Docker host
 
 ## Docker host creation

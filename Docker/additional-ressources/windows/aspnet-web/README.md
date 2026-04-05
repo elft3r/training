@@ -1,9 +1,3 @@
----
-title: "Beginning ASP.NET Web application"
-nav_exclude: true
----
-
-
 # Beginning ASP.NET Web application
 
 A simple example using asp.net to serve a web page using kestrel. First `clone` this repository, and then you can use either docker-compose or docker run to start the image.

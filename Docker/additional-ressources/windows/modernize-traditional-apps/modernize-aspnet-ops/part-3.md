@@ -1,9 +1,3 @@
----
-title: "Zero-Downtime Update and Rollback"
-nav_exclude: true
----
-
-
 # Zero-Downtime Update and Rollback
 
 I have two images packaging different versions of my application, and in a production Docker environment I can use the platform for automatic update and rollback between versions. To get zero-downtime deployment you need to run your application containers as a service in a Docker swarm - a cluster of machines all running Docker, which you can manage as a single unit.

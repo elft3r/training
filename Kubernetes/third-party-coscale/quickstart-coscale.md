@@ -1,9 +1,3 @@
----
-title: Getting Started with CoScale
-parent: Kubernetes
-nav_order: 5
----
-
 # Getting Started with CoScale
 
 1. Register an account in CoScale: Link: [https://app.coscale.com/app/register/](https://app.coscale.com/app/register/)

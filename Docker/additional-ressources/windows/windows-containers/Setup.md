@@ -1,9 +1,3 @@
----
-title: "Next Steps"
-nav_exclude: true
----
-
-
 ﻿# Setup
 
 There are four environments you can use to set-up Windows Containers. We have provided separate guides for each:

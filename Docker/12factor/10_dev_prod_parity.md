@@ -1,11 +1,3 @@
----
-title: "10 - Dev / Prod Parity"
-parent: 12-Factor App
-grand_parent: Docker
-nav_order: 11
----
-
-
 # 10 - Dev / Prod parity
 
 The different environments must be as close as possible.

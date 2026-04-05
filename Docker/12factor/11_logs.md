@@ -1,11 +1,3 @@
----
-title: "11 - Logs"
-parent: 12-Factor App
-grand_parent: Docker
-nav_order: 12
----
-
-
 # 11 - Logs
 
 Logs need to be handle as a timeseries of textual events

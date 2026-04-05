@@ -1,11 +1,3 @@
----
-title: "Secrets (Docker Datacenter)"
-parent: Docker Security
-grand_parent: Docker
-nav_order: 8
----
-
-
 # Secrets
 
 # Lab Meta

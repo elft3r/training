@@ -37,4 +37,3 @@ exclude:
   - Docker/kickstart/flask-app/
   - Docker/kickstart/static-site/
   - Presentations/
-  - Docker/security/apparmor/wordpress/

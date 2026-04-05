@@ -1,11 +1,3 @@
----
-title: "1 - Codebase"
-parent: 12-Factor App
-grand_parent: Docker
-nav_order: 2
----
-
-
 # 1 - Codebase
 
 **one application <=> one codebase**

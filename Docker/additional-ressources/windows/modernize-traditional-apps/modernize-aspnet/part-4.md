@@ -1,9 +1,3 @@
----
-title: "Part 4 - Improving Performance with Asynchronous Messaging"
-nav_exclude: true
----
-
-
 # Part 4 - Improving Performance with Asynchronous Messaging
 
 Modernizing apps can be a significant amount of work. You can break a monolithic app into microservices along the lines of bounded contexts, re-platform all the services to use .NET Core and run them in Nano Server containers. There's a lot to gain from doing that, and the Docker platform enables that approach, but it's a rebuild project which needs a lot of investment.  Docker also supports a more targeted, feature-driven modernization, where you take specific features of your app that need improving, and redesign them to take advantage of Docker - without an extensive rebuild.

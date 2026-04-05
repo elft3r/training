@@ -1,11 +1,3 @@
----
-title: "AppArmor"
-parent: Docker Security
-grand_parent: Docker
-nav_order: 1
----
-
-
 # Lab: AppArmor
 
 > **Difficulty**: Advanced

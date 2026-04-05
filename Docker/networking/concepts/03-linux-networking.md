@@ -1,11 +1,3 @@
----
-title: "Linux Network Fundamentals"
-parent: Docker Networking
-grand_parent: Docker
-nav_order: 9
----
-
-
 
 ## <a name="drivers"></a><a name="linuxnetworking"></a>Linux Network Fundamentals
 

@@ -1,9 +1,3 @@
----
-title: "Setup"
-parent: Monitoring & Logging
-nav_order: 1
----
-
 ## Setup
 
 ### Prerequisites

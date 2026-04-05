@@ -1,9 +1,3 @@
----
-title: "Packaging Applications From Source"
-nav_exclude: true
----
-
-
 # Packaging Applications From Source
 
 Packaging MSIs into Docker images lets you use your existing build process investment, and move easily to a modern application platform. That's fine to get started, but there are a couple of problems. 

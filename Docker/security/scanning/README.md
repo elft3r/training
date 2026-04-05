@@ -1,11 +1,3 @@
----
-title: "Security Scanning"
-parent: Docker Security
-grand_parent: Docker
-nav_order: 5
----
-
-
 # Security Scanning with Docker Hub
 
 # Lab Meta

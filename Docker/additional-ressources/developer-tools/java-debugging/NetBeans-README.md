@@ -1,9 +1,3 @@
----
-title: "In-container Java Development: NetBeans IDE"
-nav_exclude: true
----
-
-
 ## In-container Java Development: NetBeans IDE
 
 ### Pre-requisites

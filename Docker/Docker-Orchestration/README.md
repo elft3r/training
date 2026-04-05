@@ -1,9 +1,3 @@
----
-title: Advanced Docker Orchestration
-parent: Docker
-nav_order: 7
----
-
 ## Advanced Docker Orchestration by Jérôme Petazzoni
 
 - [Slides](https://jpetazzo.github.io/orchestration-workshop)

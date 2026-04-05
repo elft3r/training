@@ -1,11 +1,3 @@
----
-title: "Physical Network Design"
-parent: Docker Networking
-grand_parent: Docker
-nav_order: 15
----
-
-
 ## <a name="requirements"></a>Physical Network Design Requirements
 Docker Datacenter and Docker networking are designed to run over common data center network infrastructure and topologies. Its centralized controller and fault-tolerant cluster guarantee compatibility across a wide range of network environments. The components that provide networking functionality (network provisioning, MAC learning, overlay encryption) are either a part of Docker Engine, UCP, or the Linux kernel itself. No extra components or special networking features are required to run any of the built-in Docker networking drivers.
 

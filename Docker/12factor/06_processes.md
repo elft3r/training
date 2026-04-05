@@ -1,11 +1,3 @@
----
-title: "6 - Processes"
-parent: 12-Factor App
-grand_parent: Docker
-nav_order: 7
----
-
-
 # 6 - Processes
 
 An application is made up of several processes.

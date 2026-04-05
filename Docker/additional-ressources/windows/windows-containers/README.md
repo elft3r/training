@@ -1,9 +1,3 @@
----
-title: "README"
-nav_exclude: true
----
-
-
 ﻿## Getting Started with Windows Containers
 
 In September 2016, Microsoft announced the general availability of Windows Server 2016, and with it, Docker engine running containers natively on Windows. This tutorial describes how to get setup to run Docker Windows Containers on Windows 10 or using a Windows Server 2016 VM.

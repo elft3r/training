@@ -1,9 +1,3 @@
----
-title: JumpStart Guide
-parent: Kubernetes
-nav_order: 1
----
-
 # JumpStart Guide
 This quick HOWTO is to support downloading the starting the K8s LAB and tools quickly while readly avaliable internet is possilbe
 

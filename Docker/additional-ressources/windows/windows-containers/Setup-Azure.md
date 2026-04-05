@@ -1,9 +1,3 @@
----
-title: "Setup - Azure"
-nav_exclude: true
----
-
-
 # Setup - Azure
 
 This chapter explores setting up a Windows environment to properly use Windows containers on Microsoft Azure.

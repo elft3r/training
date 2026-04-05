@@ -1,9 +1,3 @@
----
-title: "Desarrollo Java en Contenedor: NetBeans IDE"
-nav_exclude: true
----
-
-
 ## Desarrollo Java en Contenedor: NetBeans IDE
 
 ### Pre-requisitos

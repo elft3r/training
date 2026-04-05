@@ -1,11 +1,3 @@
----
-title: "MACVLAN Network Driver"
-parent: Docker Networking
-grand_parent: Docker
-nav_order: 13
----
-
-
 ## <a name="macvlandriver"></a>MACVLAN 
 
 The `macvlan` driver is a new implementation of the tried and true network virtualization technique. The Linux implementations are extremely lightweight because rather than using a Linux bridge for isolation, they are simply associated with a Linux Ethernet interface or sub-interface to enforce separation between networks and connectivity to the physical network.

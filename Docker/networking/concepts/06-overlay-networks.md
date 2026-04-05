@@ -1,11 +1,3 @@
----
-title: "Overlay Driver Network Architecture"
-parent: Docker Networking
-grand_parent: Docker
-nav_order: 12
----
-
-
 
 ## <a name="overlaydriver"></a>Overlay Driver Network Architecture
 
