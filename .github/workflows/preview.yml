@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read
-  issues: write
+  pull-requests: write
 
 concurrency:
   group: preview-${{ github.event.pull_request.number }}
@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   deploy-preview:
-    if: github.event.action != 'closed' && !github.event.pull_request.head.repo.fork
+    if: github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -82,7 +82,7 @@ jobs:
             }
 
   cleanup-preview:
-    if: github.event.action == 'closed' && !github.event.pull_request.head.repo.fork
+    if: github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
       - name: Delete preview deployments

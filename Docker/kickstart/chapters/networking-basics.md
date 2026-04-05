@@ -133,10 +133,12 @@ Docker uses a pluggable networking architecture. The built-in drivers handle mos
 
 You can see which drivers are available with `docker info`.
 
+{% raw %}
 ```console
 $ docker info --format '{{.Plugins.Network}}'
 [bridge host ipvlan macvlan null overlay]
 ```
+{% endraw %}
 
 For the kickstart workshop, we'll focus on the **bridge** driver since it's the most commonly used and the foundation for understanding Docker networking.
 

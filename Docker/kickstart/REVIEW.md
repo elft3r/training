@@ -1,3 +1,8 @@
+---
+title: Review Notes
+nav_exclude: true
+---
+
 # Docker Kickstart Training – Remaining Review Notes
 
 This document tracks **currently known open issues** in the Docker Kickstart training material.
