@@ -7,6 +7,12 @@ baseurl: ""
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-relative-links
+
+# Convert .md links to .html in the generated site
+relative_links:
+  enabled: true
+  collections: false
 
 # Theme settings
 search_enabled: true
@@ -21,6 +27,13 @@ back_to_top_text: "Back to top"
 
 # Footer
 footer_content: "Licensed under <a href=\"https://github.com/elft3r/training/blob/main/LICENSE\">Apache 2.0</a>."
+
+# Default layout for all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
 
 exclude:
   - Kubernetes/website/
