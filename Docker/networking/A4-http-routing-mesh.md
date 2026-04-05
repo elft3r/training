@@ -1,3 +1,10 @@
+---
+title: HTTP Routing Mesh
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 4
+---
+
 # HTTP Routing Mesh (HRM)
 
 > **NOTE:** This lab assumes two things.

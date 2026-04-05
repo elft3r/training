@@ -1,3 +1,9 @@
+---
+title: "Part 1 - Building the Registry Image"
+nav_exclude: true
+---
+
+
 # Part 1 - Building the Registry Image
 
 Docker provides an [official registry image](https://store.docker.com/images/registry) on the Hub, but currently it is only available as a Linux image. The application is written in Go so it can be compiled for Windows and run as a container on Windows 10 and Windows Server 2016.

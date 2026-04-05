@@ -1,3 +1,9 @@
+---
+title: "Docker Stats and Built-in Monitoring"
+parent: Monitoring & Logging
+nav_order: 4
+---
+
 # Docker Stats, Top, and other built-in Monitoring Tools
 
 Time to dive into the world of monitoring. First, we will explore the various built-in tools offered by Docker

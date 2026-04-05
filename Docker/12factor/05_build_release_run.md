@@ -1,3 +1,11 @@
+---
+title: "5 - Build / Release / Run"
+parent: 12-Factor App
+grand_parent: Docker
+nav_order: 6
+---
+
+
 # 5 - Build / Release / Run
 
 Build / Release and Run phases must be kept separated

@@ -1,3 +1,9 @@
+---
+title: "Modernize Traditional Apps"
+nav_exclude: true
+---
+
+
 # Modernize Traditional Apps
 
 There are millions of traditional .NET apps running key functions in enterprises. But they're expensive to maintain, complex to upgrade and may be running on old or unsupported versions of Windows. 

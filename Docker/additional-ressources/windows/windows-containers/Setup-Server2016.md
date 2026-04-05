@@ -1,3 +1,9 @@
+---
+title: "Setup - Windows Server 2016"
+nav_exclude: true
+---
+
+
 # Setup - Windows Server 2016
 
 This chapter explores setting up a Windows environment to properly use Windows containers on Windows Server 2016, on bare metal or in VM.

@@ -1,3 +1,10 @@
+---
+title: "Tutorial: The Pets App"
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 5
+---
+
 
 ### <a name="pets"></a>Tutorial Application: The Pets App
 

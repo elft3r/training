@@ -1,3 +1,9 @@
+---
+title: Minikube Quickstart
+parent: Kubernetes
+nav_order: 3
+---
+
 # Minikube Quickstart
 
 minikube is a local k8s enviroemnt for running and testing deployments, there are limitations, but not all k8s feactures are avalaibke. We will obtain a minikube binary for our OS and install the dependencies required to lanch K8s locally

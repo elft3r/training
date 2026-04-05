@@ -1,3 +1,11 @@
+---
+title: "Distribution and Trust"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 10
+---
+
+
 # Lab: Distribution and Trust
 
 > **Difficulty**: Intermediate

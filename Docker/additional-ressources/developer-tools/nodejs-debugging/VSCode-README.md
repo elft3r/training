@@ -1,3 +1,9 @@
+---
+title: "In-container Node Development: Visual Studio Code"
+nav_exclude: true
+---
+
+
 ## In-container Node Development: Visual Studio Code
 
 ### Pre-requisites

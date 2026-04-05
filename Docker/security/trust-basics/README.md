@@ -1,3 +1,11 @@
+---
+title: "Content Trust Basics"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 11
+---
+
+
 # Docker Content Trust Basics
 
 # Lab Meta

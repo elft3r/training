@@ -1,3 +1,9 @@
+---
+title: "Part 2 - Packaging ASP.NET Applications as Docker Images"
+nav_exclude: true
+---
+
+
 # Part 2 - Packaging ASP.NET Applications as Docker Images
 
 Now you have a repeatable way to publish the ASP.NET application. With the build agent from [Part 1](part-1.md), you can build a Docker image which packages the compiled app with all its dependencies. That's the first step towards modernizing the app. Just by running the app in the Docker platform you get plenty of benefits - increased compute utilization, improved security, and centralized management are a few. But it's also an enabler for adding new features to the app, making use of the great software that runs on Docker, and using the platform to integrate components together.

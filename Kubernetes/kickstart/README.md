@@ -1,3 +1,9 @@
+---
+title: Kubernetes Kickstarter
+parent: Kubernetes
+nav_order: 2
+---
+
 ## Kubernetes Kickstarter
 
 This tutorial consists of the following sections:

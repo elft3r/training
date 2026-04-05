@@ -1,3 +1,9 @@
+---
+title: "Continuous Integration With Docker Cloud"
+nav_exclude: true
+---
+
+
 # Continuous Integration With Docker Cloud
 
 

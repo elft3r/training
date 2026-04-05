@@ -1,3 +1,10 @@
+---
+title: DockerCon US 2017 Labs
+parent: Additional Docker Resources
+grand_parent: Docker
+nav_order: 2
+---
+
 # DockerCon US 2017 Hands-On Labs (HOL)
 
 ![dcus2017](images/dockercon.png)

@@ -1,3 +1,11 @@
+---
+title: "2 - Dependencies"
+parent: 12-Factor App
+grand_parent: Docker
+nav_order: 3
+---
+
+
 # 2 - Dependencies
 
 Application's dependencies must be declared and isolated

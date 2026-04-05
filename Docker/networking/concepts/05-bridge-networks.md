@@ -1,3 +1,11 @@
+---
+title: "Bridge Network Driver Architecture"
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 11
+---
+
+
 ## <a name="drivers"></a>Docker Bridge Network Driver Architecture
 
 This section explains the default Docker bridge network as well as user-defined bridge networks.

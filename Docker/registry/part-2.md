@@ -1,3 +1,10 @@
+---
+title: "Part 2 - Running a Secured Registry"
+parent: Docker Registry
+grand_parent: Docker
+nav_order: 2
+---
+
 # Part 2 - Running a Secured Registry Container in Linux
 
 We saw how to run a simple registry container in [Part 1](part-1.md), using the official Docker registry image. The registry server con be configured to serve HTTPS traffic on a known domain, so it's straightforward to run a secure registry for private use with a self-signed SSL certificate.

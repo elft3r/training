@@ -1,3 +1,11 @@
+---
+title: "Seccomp"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 6
+---
+
+
 # Lab: Seccomp
 
 > **Difficulty**: Advanced

@@ -1,3 +1,9 @@
+---
+title: "Docker Networking"
+nav_exclude: true
+---
+
+
 # Docker Networking
 
 Hi, welcome to the Networking lab for DockerCon 2017!

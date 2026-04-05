@@ -1,3 +1,11 @@
+---
+title: "Network Security and Encryption"
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 17
+---
+
+
 ## <a name="security"></a>Network Security and Encryption Design Considerations
 
 Network security is a top-of-mind consideration when designing and implementing containerized workloads with Docker. In this section, we will go over three key design considerations that are typically raised around Docker network security and how you can utilize Docker features and best practices to address them. 

@@ -1,3 +1,9 @@
+---
+title: "Part 1 - Building the Dacpac"
+nav_exclude: true
+---
+
+
 # Part 1 - Building the Dacpac
 
 In the source folder there are two Visual Studio solutions each with single SQL Server Data Tools Projects - _Assets.Database-v1_ and _Assets.Database-v2_. They represent two versions of a database schema, used for recording company assets.

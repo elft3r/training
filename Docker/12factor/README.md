@@ -1,3 +1,10 @@
+---
+title: 12-Factor App
+parent: Docker
+nav_order: 5
+has_children: true
+---
+
 # 12 Factor Application
 
 Today, a lot of applications are services deployed in the cloud, on infrastructure of cloud providers such as Amazon AWS, Google Compute Engine, DigitalOcean, Rackspace, OVH, ...

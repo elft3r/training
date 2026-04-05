@@ -1,3 +1,11 @@
+---
+title: "Docker Network Control Plane"
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 10
+---
+
+
 ## <a name="controlplane"></a>Docker Network Control Plane
 The Docker-distributed network control plane manages the state of Swarm-scoped Docker networks in addition to propagating control plane data. It is a built-in capability of Docker Swarm clusters and does not require any extra components such as an external KV store. The control plane uses a [Gossip](https://en.wikipedia.org/wiki/Gossip_protocol) protocol based on [SWIM](https://www.cs.cornell.edu/~asdas/research/dsn02-swim.pdf) to propagate network state information and topology across Docker container clusters. The Gossip protocol is highly efficient at reaching eventual consistency within the cluster while maintaining constant rates of message size, failure detection times, and convergence time across very large scale clusters. This ensures that the network is able to scale across many nodes without introducing scaling issues such as slow convergence or false positive node failures. 
 

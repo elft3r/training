@@ -1,3 +1,9 @@
+---
+title: "Part 2 - Running a Registry Container"
+nav_exclude: true
+---
+
+
 # Part 2 - Running a Registry Container
 
 There are several ways to run a registry container from the image we built in [Part 1](part-1.md). The simplest is to run an insecure registry over HTTP, but for that we need to configure Docker to explicitly allow insecure access to the registry. 

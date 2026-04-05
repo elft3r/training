@@ -1,3 +1,11 @@
+---
+title: "User Namespaces"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 12
+---
+
+
 # Lab: User Namespaces
 
 > **Difficulty**: Intermediate

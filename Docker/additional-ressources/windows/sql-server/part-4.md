@@ -1,3 +1,9 @@
+---
+title: "Part 4 - Upgrading the SQL Server Database"
+nav_exclude: true
+---
+
+
 # Part 4 - Upgrading the SQL Server Database
 
 In [Part 3](part-3.md) you saw different ways of running the image you built in [Part 2](part-2.md), which packaged the Dacpac generated with the builder from [Part 1](part-1.md). By using the Dacpac to deploy the database, you can support many scenarios using the same Docker image, and you also have a process to upgrade the database schema in a consistent and reliable way.

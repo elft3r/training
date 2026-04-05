@@ -1,3 +1,10 @@
+---
+title: Developer Tools Tutorials
+parent: Additional Docker Resources
+grand_parent: Docker
+nav_order: 1
+---
+
 # Developer Tools Tutorials
 
 This directory contains tutorials on how to set-up and use common developer tools and programming languages with Docker. We encourage you to [contribute](../../../CONTRIBUTE.md) your own tutorials here.

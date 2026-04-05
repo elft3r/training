@@ -1,3 +1,11 @@
+---
+title: "Load Balancing Design"
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 16
+---
+
+
 ## <a name="lb"></a>Load Balancing Design Considerations
 
 Load balancing is a major requirement in modern, distributed applications. Docker Swarm mode introduced in 1.12 comes with a native internal and external load balancing functionalities that utilize both `iptables` and `ipvs`, a transport-layer load balancing inside the Linux kernel.

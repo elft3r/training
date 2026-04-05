@@ -1,3 +1,11 @@
+---
+title: "9 - Disposability"
+parent: 12-Factor App
+grand_parent: Docker
+nav_order: 10
+---
+
+
 # 9 - Disposability
 
 Each process of an application must be disposable.

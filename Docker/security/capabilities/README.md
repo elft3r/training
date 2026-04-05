@@ -1,3 +1,11 @@
+---
+title: "Capabilities"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 2
+---
+
+
 # Lab: Capabilities
 
 > **Difficulty**: Advanced

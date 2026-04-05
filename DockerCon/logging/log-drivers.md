@@ -1,3 +1,9 @@
+---
+title: "Docker Swarm & Logging"
+parent: Monitoring & Logging
+nav_order: 3
+---
+
 # Docker Swarm & Logging
 
 In the previous exercise we saw how to check out logs for running containers on a single host. In this section we'll be creating services across a Swarm and shipping those logs to a centralized location for easier storage and querying.

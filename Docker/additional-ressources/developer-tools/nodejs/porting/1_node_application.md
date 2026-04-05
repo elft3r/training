@@ -1,3 +1,9 @@
+---
+title: "Setup our sample Node.js application"
+nav_exclude: true
+---
+
+
 # Setup our sample Node.js application
 
 ## Application details

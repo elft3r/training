@@ -1,3 +1,9 @@
+---
+title: "Tutorial: Depurando Aplicaciones Java en Docker"
+nav_exclude: true
+---
+
+
 # Tutorial: Depurando Aplicaciones Java en Docker
 
 Los programadores de Java pueden utilizar Docker para construir un ambiente de desarrollo donde puedan ejecutar, testear y depurar el código que está ejecutándose en un contenedor.

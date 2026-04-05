@@ -1,3 +1,9 @@
+---
+title: "Lab X: Lab Title"
+nav_exclude: true
+---
+
+
 # Lab X: Lab Title
 
 Quick description of the lab.

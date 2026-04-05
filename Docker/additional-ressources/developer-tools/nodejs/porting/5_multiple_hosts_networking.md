@@ -1,3 +1,9 @@
+---
+title: "Container networking on multiple Docker hosts"
+nav_exclude: true
+---
+
+
 # Container networking on multiple Docker hosts
 
 ## Prerequisite

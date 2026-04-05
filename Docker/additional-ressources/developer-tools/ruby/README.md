@@ -1,3 +1,9 @@
+---
+title: "Rails on Docker"
+nav_exclude: true
+---
+
+
 # Rails on Docker
 
 Ruby on Rails is a popular web application framework. Implementng RoR in containers presents challenges because of conflicting workflows and practices between Ruby on Rails and container based development. Developing RoR applications in containers is feasible keeping in mind that these differences can be overcome by changing workflows and practices.

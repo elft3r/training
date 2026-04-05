@@ -1,3 +1,9 @@
+---
+title: "Our First Logs"
+parent: Monitoring & Logging
+nav_order: 2
+---
+
 # Our First Logs
 
 Let's take a look at Docker Logging

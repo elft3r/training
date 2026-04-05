@@ -1,3 +1,9 @@
+---
+title: "Desarrollo Java en Contenedor: IntelliJ Community Edition"
+nav_exclude: true
+---
+
+
 ## Desarrollo Java en Contenedor: IntelliJ Community Edition
 
 ### Pre-requisitos

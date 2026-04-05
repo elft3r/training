@@ -1,3 +1,10 @@
+---
+title: Overlay Networking and Service Discovery
+parent: Docker Networking
+grand_parent: Docker
+nav_order: 3
+---
+
 # Overlay networking and service discovery
 
 # Lab Meta

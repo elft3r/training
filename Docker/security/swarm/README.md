@@ -1,3 +1,11 @@
+---
+title: "Swarm Mode Security"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 9
+---
+
+
 # Swarm Mode Security
 
 # Lab Meta

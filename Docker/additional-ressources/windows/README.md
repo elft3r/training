@@ -1,3 +1,10 @@
+---
+title: Windows and .NET Tutorials
+parent: Additional Docker Resources
+grand_parent: Docker
+nav_order: 3
+---
+
 # Windows and .NET Tutorials
 
 We have these Windows and .NET tutorials:

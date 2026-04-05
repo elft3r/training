@@ -1,3 +1,9 @@
+---
+title: "Purpose"
+nav_exclude: true
+---
+
+
 # Purpose
 
 This tutorial starts with a simple Node.js application (HTTP Rest API built with [Sails.js](http://sailsjs.org/)) and details the steps needed to *Dockerize* it and ensure its scalability.

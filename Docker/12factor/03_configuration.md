@@ -1,3 +1,11 @@
+---
+title: "3 - Configuration"
+parent: 12-Factor App
+grand_parent: Docker
+nav_order: 4
+---
+
+
 # 3 - Configuration
 
 Configuration (credentials, database connection string, ...) should be stored in the environment.

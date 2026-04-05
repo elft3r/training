@@ -1,3 +1,9 @@
+---
+title: "Docker Orchestration"
+nav_exclude: true
+---
+
+
 # Docker Orchestration
 
 Hi, welcome to the Orchestration lab for DockerCon 2017!

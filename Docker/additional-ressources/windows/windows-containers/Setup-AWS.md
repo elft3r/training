@@ -1,3 +1,9 @@
+---
+title: "Setup - AWS"
+nav_exclude: true
+---
+
+
 # Setup - AWS
 
 This chapter explores setting up a Windows environment to properly use Windows containers on Amazon Web Services (AWS).

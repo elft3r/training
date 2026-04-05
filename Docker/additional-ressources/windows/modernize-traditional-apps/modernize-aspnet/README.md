@@ -1,3 +1,9 @@
+---
+title: "Modernize ASP.NET Apps Lab"
+nav_exclude: true
+---
+
+
 
 # Modernize ASP.NET Apps Lab
 

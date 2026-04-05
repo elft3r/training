@@ -1,3 +1,9 @@
+---
+title: "In-container Java Development: Eclipse"
+nav_exclude: true
+---
+
+
 ## In-container Java Development: Eclipse
 
 ### Pre-requisites

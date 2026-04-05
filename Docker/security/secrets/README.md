@@ -1,3 +1,11 @@
+---
+title: "Secrets"
+parent: Docker Security
+grand_parent: Docker
+nav_order: 7
+---
+
+
 # Secrets
 
 # Lab Meta

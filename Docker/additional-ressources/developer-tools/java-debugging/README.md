@@ -1,3 +1,9 @@
+---
+title: "Tutorial: Debugging Java Applications in Docker"
+nav_exclude: true
+---
+
+
 # Tutorial: Debugging Java Applications in Docker
 
 Java developers can use Docker to build a development environment where they can run, test, and live debug code running within a container. Debugging a node.js application was demonstrated at DockerCon 2016 showing that development using containers can be performed on many platforms using other programming languages.

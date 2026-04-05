@@ -1,3 +1,9 @@
+---
+title: "Getting Started with Windows Containers"
+nav_exclude: true
+---
+
+
 ## Getting Started with Windows Containers
 
 This chapter will cover the basics of using Windows Containers with Docker.

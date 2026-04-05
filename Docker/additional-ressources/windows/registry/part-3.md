@@ -1,3 +1,9 @@
+---
+title: "Part 3 - Running a Secured Registry Container"
+nav_exclude: true
+---
+
+
 # Part 3 - Running a Secured Registry Container
 
 We saw how to run a simple registry container in [Part 2](part-2.md), using the image we built in [Part 1](part-1.md). The registry server con be configured to serve HTTPS traffic on a known domain, so it's straightforward to run a secure registry for private use with a self-signed SSL certificate.

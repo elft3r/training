@@ -1,3 +1,9 @@
+---
+title: "Part 1 - Building ASP.NET Applications with Docker"
+nav_exclude: true
+---
+
+
 
 # Part 1 - Building ASP.NET Applications with Docker
 

@@ -1,3 +1,8 @@
+---
+title: Service Discovery & Load Balancing
+nav_exclude: true
+---
+
 ##Service Discovery & Load Balancing
 Service discovery is increasingly important in a containerized world. To scale apps developers have broken them in to smaller pieces that can be distributed across different machines to provide load balancing and fault tolerance. This presents challenges from a networking perspective. The challenge is mapping a container to its location (the container's IP address). Containers may be created and destroyed frequently and scheduled across different hosts dynamically. Containers must be able to register themsevles with a mapping authority and other services must be able to query this authority to find the location of those services.
 

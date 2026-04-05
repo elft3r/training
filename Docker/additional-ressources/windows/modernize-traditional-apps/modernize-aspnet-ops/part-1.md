@@ -1,3 +1,9 @@
+---
+title: "Packaging ASP.NET Apps as Docker Images"
+nav_exclude: true
+---
+
+
 
 # Packaging ASP.NET Apps as Docker Images
 
