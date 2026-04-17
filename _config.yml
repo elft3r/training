@@ -10,6 +10,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-relative-links
   - jekyll-include-cache
+  - jekyll-readme-index
 
 # Convert .md links to .html in the generated site
 relative_links:
@@ -40,6 +41,46 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "main"
+  - scope:
+      path: "Docker/kickstart"
+    values:
+      sidebar:
+        nav: "docker-kickstart"
+  - scope:
+      path: "Docker/security"
+    values:
+      sidebar:
+        nav: "docker-security"
+  - scope:
+      path: "Docker/networking"
+    values:
+      sidebar:
+        nav: "docker-networking"
+  - scope:
+      path: "Docker/swarm-mode"
+    values:
+      sidebar:
+        nav: "docker-swarm"
+  - scope:
+      path: "Docker/12factor"
+    values:
+      sidebar:
+        nav: "docker-12factor"
+  - scope:
+      path: "Docker/registry"
+    values:
+      sidebar:
+        nav: "docker-registry"
+  - scope:
+      path: "DockerCon"
+    values:
+      sidebar:
+        nav: "dockercon"
+  - scope:
+      path: "Kubernetes"
+    values:
+      sidebar:
+        nav: "kubernetes"
 
 exclude:
   - Kubernetes/website/
