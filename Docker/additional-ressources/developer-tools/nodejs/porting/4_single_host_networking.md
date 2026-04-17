@@ -92,7 +92,7 @@ Let's now run 2 containers in the newly defined network
 $ docker run --name mongo --net mongonet -d mongo:3.2
 
 $ docker run --net mongonet -ti busybox /bin/sh
-/ # / # ping -c 3 mongo
+/ # ping -c 3 mongo
 PING mongo (172.18.0.2): 56 data bytes
 64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.058 ms
 64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.085 ms

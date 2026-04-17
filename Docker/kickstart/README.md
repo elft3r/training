@@ -1,7 +1,7 @@
 ---
 ---
 
-# Docker Kickstarter
+# Docker Kickstart
 
 This Docker tutorial consists of the following sections:
 
