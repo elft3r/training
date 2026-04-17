@@ -1,3 +1,6 @@
+---
+---
+
 # Lab: Distribution and Trust
 
 > **Difficulty**: Intermediate

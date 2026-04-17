@@ -1,0 +1,196 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Docker"
+    url: /Docker/
+    children:
+      - title: "Docker Kickstart"
+        url: /Docker/kickstart/
+      - title: "Docker Security"
+        url: /Docker/security/
+      - title: "Docker Networking"
+        url: /Docker/networking/
+      - title: "Docker Swarm Mode"
+        url: /Docker/swarm-mode/
+      - title: "12-Factor App"
+        url: /Docker/12factor/
+      - title: "Registry"
+        url: /Docker/registry/
+      - title: "Additional Resources"
+        url: /Docker/additional-ressources/
+  - title: "Kubernetes"
+    url: /Kubernetes/
+  - title: "DockerCon"
+    url: /DockerCon/
+  - title: "DevOpsDays"
+    url: /DevOpsDays/
+
+docker-kickstart:
+  - title: "Docker Kickstart"
+    url: /Docker/kickstart/
+    children:
+      - title: "Setup"
+        url: /Docker/kickstart/chapters/setup.html
+      - title: "Running your first container"
+        url: /Docker/kickstart/chapters/alpine.html
+      - title: "Webapps with Docker - Part One"
+        url: /Docker/kickstart/chapters/webapps-part1.html
+      - title: "Images and Volumes"
+        url: /Docker/kickstart/chapters/images-and-volumes.html
+      - title: "Multi-Stage Builds"
+        url: /Docker/kickstart/chapters/multistage-builds.html
+      - title: "Webapps with Docker - Part Two"
+        url: /Docker/kickstart/chapters/webapps-part2.html
+      - title: "Docker & DevOps"
+        url: /Docker/kickstart/chapters/devops.html
+      - title: "Deploying with Docker Compose"
+        url: /Docker/kickstart/chapters/votingapp-compose.html
+      - title: "Deploying to a Swarm"
+        url: /Docker/kickstart/chapters/votingapp-swarm.html
+      - title: "Networking Basics"
+        url: /Docker/kickstart/chapters/networking-basics.html
+      - title: "Bridge Networking"
+        url: /Docker/kickstart/chapters/bridge-network.html
+      - title: "Secret Management"
+        url: /Docker/kickstart/chapters/secrets.html
+      - title: "MongoDB"
+        url: /Docker/kickstart/chapters/mongo.html
+      - title: "MongoDB Part 2"
+        url: /Docker/kickstart/chapters/mongo-2.html
+      - title: "Node-RED"
+        url: /Docker/kickstart/chapters/nodered.html
+      - title: "Next Steps"
+        url: /Docker/kickstart/chapters/nextsteps.html
+
+docker-security:
+  - title: "Docker Security"
+    url: /Docker/security/
+    children:
+      - title: "AppArmor"
+        url: /Docker/security/apparmor/
+      - title: "Capabilities"
+        url: /Docker/security/capabilities/
+      - title: "Cgroups"
+        url: /Docker/security/cgroups/
+      - title: "Networking"
+        url: /Docker/security/networking/
+      - title: "Scanning"
+        url: /Docker/security/scanning/
+      - title: "Seccomp"
+        url: /Docker/security/seccomp/
+      - title: "Secrets"
+        url: /Docker/security/secrets/
+      - title: "Secrets (DDC)"
+        url: /Docker/security/secrets-ddc/
+      - title: "Swarm"
+        url: /Docker/security/swarm/
+      - title: "Trust Basics"
+        url: /Docker/security/trust-basics/
+      - title: "Trust"
+        url: /Docker/security/trust/
+      - title: "User Namespaces"
+        url: /Docker/security/userns/
+
+docker-networking:
+  - title: "Docker Networking"
+    url: /Docker/networking/
+    children:
+      - title: "Network Basics"
+        url: /Docker/networking/A1-network-basics.html
+      - title: "Bridge Networking"
+        url: /Docker/networking/A2-bridge-networking.html
+      - title: "Overlay Networking"
+        url: /Docker/networking/A3-overlay-networking.html
+      - title: "HTTP Routing Mesh"
+        url: /Docker/networking/A4-HTTP%20Routing%20Mesh.html
+      - title: "Tutorials"
+        url: /Docker/networking/tutorials.html
+      - title: "Concepts"
+        url: /Docker/networking/concepts/
+
+docker-12factor:
+  - title: "12-Factor App"
+    url: /Docker/12factor/
+    children:
+      - title: "Application"
+        url: /Docker/12factor/00_application.html
+      - title: "1. Codebase"
+        url: /Docker/12factor/01_codebase.html
+      - title: "2. Dependencies"
+        url: /Docker/12factor/02_dependencies.html
+      - title: "3. Configuration"
+        url: /Docker/12factor/03_configuration.html
+      - title: "4. External Services"
+        url: /Docker/12factor/04_external_services.html
+      - title: "5. Build, Release, Run"
+        url: /Docker/12factor/05_build_release_run.html
+      - title: "6. Processes"
+        url: /Docker/12factor/06_processes.html
+      - title: "7. Port Binding"
+        url: /Docker/12factor/07_port_binding.html
+      - title: "8. Concurrency"
+        url: /Docker/12factor/08_concurrency.html
+      - title: "9. Disposability"
+        url: /Docker/12factor/09_disposability.html
+      - title: "10. Dev/Prod Parity"
+        url: /Docker/12factor/10_dev_prod_parity.html
+      - title: "11. Logs"
+        url: /Docker/12factor/11_logs.html
+      - title: "12. Admin Processes"
+        url: /Docker/12factor/12_admin_processes.html
+
+docker-registry:
+  - title: "Docker Registry"
+    url: /Docker/registry/
+    children:
+      - title: "Part 1"
+        url: /Docker/registry/part-1.html
+      - title: "Part 2"
+        url: /Docker/registry/part-2.html
+      - title: "Part 3"
+        url: /Docker/registry/part-3.html
+
+docker-swarm:
+  - title: "Docker Swarm Mode"
+    url: /Docker/swarm-mode/
+    children:
+      - title: "Beginner Tutorial"
+        url: /Docker/swarm-mode/beginner-tutorial/
+
+dockercon:
+  - title: "DockerCon"
+    url: /DockerCon/
+    children:
+      - title: "Monitoring - cAdvisor"
+        url: /DockerCon/monitoring/cadvisor.html
+      - title: "Monitoring Stack"
+        url: /DockerCon/monitoring/monitoring-stack.html
+      - title: "Monitoring Stats"
+        url: /DockerCon/monitoring/stats.html
+      - title: "Logging - Setup"
+        url: /DockerCon/logging/setup.html
+      - title: "Logging - Getting Started"
+        url: /DockerCon/logging/getting-started.html
+      - title: "Logging - Log Drivers"
+        url: /DockerCon/logging/log-drivers.html
+      - title: "Resources & Links"
+        url: /DockerCon/resources/links.html
+
+kubernetes:
+  - title: "Kubernetes"
+    url: /Kubernetes/
+    children:
+      - title: "Kickstart"
+        url: /Kubernetes/kickstart/
+      - title: "Minikube Quickstart"
+        url: /Kubernetes/minikube/minikube-quickstart.html
+      - title: "Helm Quickstart"
+        url: /Kubernetes/helm/quickstart-helm.html
+      - title: "Download Tools"
+        url: /Kubernetes/jumpstart-downloadtools.html
+      - title: "Additional Resources"
+        url: /Kubernetes/additional-ressources/
+      - title: "kops How-To"
+        url: /Kubernetes/additional-ressources/kops-howto.html
+      - title: "CoScale Quickstart"
+        url: /Kubernetes/third-party-coscale/quickstart-coscale.html

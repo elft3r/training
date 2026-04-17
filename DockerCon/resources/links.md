@@ -1,10 +1,7 @@
 ---
-title: Workshop Links
-parent: Monitoring & Logging
-nav_order: 3
 ---
 
-## DockerCon Monitoring & Logging Workshop Links
+# DockerCon Monitoring & Logging Workshop Links
 Here are some of the links mentioned during the workshop:
 
 * [Awesome Docker Resources](https://awesome-docker.netlify.com)

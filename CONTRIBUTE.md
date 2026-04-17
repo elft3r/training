@@ -1,9 +1,7 @@
 ---
-title: Contributing
-nav_order: 5
 ---
 
-## Contributing to Tutorials
+# Contributing to Tutorials
 
 Thank you so much for your interest in contributing to these tutorials. We want to give back to the Open Source community what we have learned and taught over the years.
 

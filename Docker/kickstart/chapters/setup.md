@@ -1,8 +1,4 @@
 ---
-title: Setup
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 1
 ---
 
 # Setup

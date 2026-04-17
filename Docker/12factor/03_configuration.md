@@ -1,3 +1,6 @@
+---
+---
+
 # 3 - Configuration
 
 Configuration (credentials, database connection string, ...) should be stored in the environment.

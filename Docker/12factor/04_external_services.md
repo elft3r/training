@@ -1,3 +1,6 @@
+---
+---
+
 # 4 - External services
 
 Handle external services as external resources of the application.

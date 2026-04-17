@@ -1,7 +1,4 @@
 ---
-title: Google cAdvisor
-parent: Monitoring & Logging
-nav_order: 1
 ---
 
 # Google cAdvisor (Container Advisor)

@@ -1,8 +1,4 @@
 ---
-title: Docker Security
-parent: Docker
-nav_order: 3
-has_children: true
 ---
 
 # Docker Security

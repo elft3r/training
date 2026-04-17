@@ -1,8 +1,7 @@
 ---
-title: Home
-layout: home
-nav_order: 1
+layout: single
 permalink: /
+toc: false
 ---
 
 # Container, Cloud & DevOps Tutorials and Labs

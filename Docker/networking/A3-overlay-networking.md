@@ -1,3 +1,6 @@
+---
+---
+
 # Overlay networking and service discovery
 
 # Lab Meta

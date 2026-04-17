@@ -1,11 +1,7 @@
 ---
-title: Docker Kickstart
-parent: Docker
-nav_order: 1
-has_children: true
 ---
 
-## Docker Kickstarter
+# Docker Kickstart
 
 This Docker tutorial consists of the following sections:
 

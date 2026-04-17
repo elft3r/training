@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # Part 3 - Running ASP.NET applications as Docker containers
 
 You have a Docker image from [Part 2](part-2.md) which contains the configured application with all its dependencies. To run the website you just need to start a container, but the application needs to connect to a database. The networking stack in Docker means you can use a remote SQL Server instance, not running on Docker, or you can run SQL Server in a Docker container:

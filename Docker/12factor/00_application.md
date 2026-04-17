@@ -1,3 +1,6 @@
+---
+---
+
 # Build the application
 
 To illustrate the 12 factors, we start by creating a simple Node.js application as a HTTP Rest API exposing CRUD verbs on a *message* model.

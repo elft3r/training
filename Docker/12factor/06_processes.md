@@ -1,3 +1,6 @@
+---
+---
+
 # 6 - Processes
 
 An application is made up of several processes.

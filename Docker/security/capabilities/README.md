@@ -1,3 +1,6 @@
+---
+---
+
 # Lab: Capabilities
 
 > **Difficulty**: Advanced

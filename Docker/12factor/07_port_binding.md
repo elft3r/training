@@ -1,3 +1,6 @@
+---
+---
+
 # 7 - Port binding
 
 This factor is related to the exposition of the application to the outside.

@@ -1,8 +1,4 @@
 ---
-title: MongoDB with Node-RED
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 13
 ---
 
 # MongoDB with Node-RED

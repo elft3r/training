@@ -1,8 +1,5 @@
 ---
-title: Docker Swarm Mode
-parent: Docker
-nav_order: 2
-has_children: true
+toc: false
 ---
 
 # Docker Swarm Mode Tutorials

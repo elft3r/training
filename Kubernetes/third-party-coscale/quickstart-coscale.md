@@ -1,3 +1,6 @@
+---
+---
+
 # Getting Started with CoScale
 
 1. Register an account in CoScale: Link: [https://app.coscale.com/app/register/](https://app.coscale.com/app/register/)

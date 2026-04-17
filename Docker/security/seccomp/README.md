@@ -1,3 +1,6 @@
+---
+---
+
 # Lab: Seccomp
 
 > **Difficulty**: Advanced

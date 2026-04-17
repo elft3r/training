@@ -1,7 +1,5 @@
 ---
-title: Docker
-nav_order: 2
-has_children: true
+toc: false
 ---
 
 # Docker Tutorials and Labs

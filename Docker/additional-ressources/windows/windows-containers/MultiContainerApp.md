@@ -1,4 +1,8 @@
-## Multi-Container Applications
+---
+render_with_liquid: false
+---
+
+# Multi-Container Applications
 
 This tutorial walks you through building and running the sample Album Viewer application with Windows containers. The [Album Viewer](https://github.com/RickStrahl/AlbumViewerVNext) app is an ASP.NET Core application, maintained by Microsoft MVP [Rick Strahl](https://weblog.west-wind.com). There is a fork at [dockersamples/dotnet-album-viewer](https://github.com/dockersamples/dotnet-album-viewer "link to forked version of Album Viewer") which uses Docker Windows containers.
 

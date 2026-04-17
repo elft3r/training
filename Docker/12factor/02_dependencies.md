@@ -1,3 +1,6 @@
+---
+---
+
 # 2 - Dependencies
 
 Application's dependencies must be declared and isolated

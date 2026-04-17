@@ -1,10 +1,7 @@
 ---
-title: Monitoring & Logging
-nav_order: 4
-has_children: true
 ---
 
-## Logging & Monitoring Workshop
+# Logging & Monitoring Workshop
 
 Welcome to the Logging & Monitoring Workshop.
 

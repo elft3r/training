@@ -1,8 +1,4 @@
 ---
-title: Docker Networking Basics
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 9
 ---
 
 # Docker Networking Basics

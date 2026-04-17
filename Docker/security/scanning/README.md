@@ -1,3 +1,6 @@
+---
+---
+
 # Security Scanning with Docker Hub
 
 # Lab Meta

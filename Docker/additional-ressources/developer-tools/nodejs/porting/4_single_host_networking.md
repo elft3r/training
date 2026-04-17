@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # Container networking on a single Docker host
 
 ## Docker host creation
@@ -88,7 +92,7 @@ Let's now run 2 containers in the newly defined network
 $ docker run --name mongo --net mongonet -d mongo:3.2
 
 $ docker run --net mongonet -ti busybox /bin/sh
-/ # / # ping -c 3 mongo
+/ # ping -c 3 mongo
 PING mongo (172.18.0.2): 56 data bytes
 64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.058 ms
 64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.085 ms
@@ -107,7 +111,7 @@ Run db and application containers in the new bridge network
 
 ```
 $ docker run --name mongo --net mongonet -d mongo:3.2
-$ docker run --name app --net mongonet -p 8000:1337 -d -e “MONGO_URL=mongodb://mongo/messageApp” message-app:v1
+$ docker run --name app --net mongonet -p 8000:1337 -d -e "MONGO_URL=mongodb://mongo/messageApp" message-app:v1
 ```
 
 Note: MONGO_URL environment variable directly uses **mongo** container’s name

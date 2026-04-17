@@ -1,4 +1,7 @@
-## Kubernetes Kickstarter
+---
+---
+
+# Kubernetes Kickstart
 
 This tutorial consists of the following sections:
 

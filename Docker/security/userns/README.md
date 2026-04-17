@@ -1,3 +1,6 @@
+---
+---
+
 # Lab: User Namespaces
 
 > **Difficulty**: Intermediate

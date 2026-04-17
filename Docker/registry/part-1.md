@@ -1,3 +1,6 @@
+---
+---
+
 # Part 1 - Running a Registry Container in Linux
 
 There are several ways to run a registry container. The simplest is to run an insecure registry over HTTP, but for that we need to configure Docker to explicitly allow insecure access to the registry. 

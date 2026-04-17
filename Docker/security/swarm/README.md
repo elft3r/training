@@ -1,3 +1,6 @@
+---
+---
+
 # Swarm Mode Security
 
 # Lab Meta
