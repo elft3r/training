@@ -253,9 +253,11 @@ This line sets up an anonymous volume in order to increase database performance 
 2. Use `docker container inspect` to view the details of the anonymous volume
 
    {% raw %}
+
    ```console
    $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
    ```
+
    {% endraw %}
 
    This command will return: `in the /mariadb container /var/lib/mysql is mapped to /var/lib/docker/volumes/cd79b3301df29d13a068d624467d6080354b81e34d794b615e6e93dd61f89628/_data`
@@ -375,10 +377,12 @@ This line sets up an anonymous volume in order to increase database performance 
 10. Let's look at the volume again
 
     {% raw %}
+
     ```console
     $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
     in the /mariadb container /var/lib/mysql is mapped to /var/lib/docker/volumes/cd79b3301df29d13a068d624467d6080354b81e34d794b615e6e93dd61f89628/_data
     ```
+
     {% endraw %}
 
     We do see the volume was not affected by the container restart either.
@@ -404,10 +408,12 @@ This line sets up an anonymous volume in order to increase database performance 
 13. List out the volume details for the new container
 
     {% raw %}
+
     ```console
     $ docker container inspect -f "in the {{.Name}} container {{(index .Mounts 0).Destination}} is mapped to {{(index .Mounts 0).Source}}" mariadb
     in the /mariadb container /var/lib/mysql is mapped to /var/lib/docker/volumes/e0ffdc6b4e0cfc6e795b83cece06b5b807e6af1b52c9d0b787e38a48e159404a/_data
     ```
+
     {% endraw %}
 
     Notice this directory is different than before.
@@ -639,4 +645,4 @@ A named volume can be created on the command line, in a docker-compose file, and
 
 ## Next Steps
 
-For the next step in the tutorial, head over to [Webapps with Docker - Part Two](./webapps-part2.md)
+For the next step in the tutorial, head over to [Multi-Stage Builds](./multistage-builds.md)
