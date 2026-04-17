@@ -57,7 +57,7 @@ In this task you will build a small Go web application using a traditional singl
    }
    ```
 
-   Go compiles to a single static binary, which makes it ideal for demonstrating multi-stage builds.
+   Go compiles to a single self-contained binary (and with `CGO_ENABLED=0` it's fully statically linked), which makes it ideal for demonstrating multi-stage builds.
 
 3. Open the single-stage `Dockerfile.single`:
 
@@ -289,7 +289,7 @@ COPY --from=healthchecker /hc/healthcheck /usr/local/bin/healthcheck
 
 EXPOSE 8080
 
-HEALTHCHECK --interval=5s --timeout=3s CMD ["/usr/local/bin/healthcheck"]
+HEALTHCHECK --interval=5s --timeout=5s CMD ["/usr/local/bin/healthcheck"]
 
 CMD ["./hello"]
 ```
