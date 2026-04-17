@@ -17,8 +17,21 @@ relative_links:
   enabled: true
   collections: false
 
-# Search
+# Let README.md files serve as the directory index, even when they carry
+# frontmatter.
+readme_index:
+  with_frontmatter: true
+  remove_originals: true
+
+# Search (lunr - built-in, no external service)
 search: true
+search_full_content: true
+
+# Breadcrumbs for deep sections
+breadcrumbs: true
+
+# Repository (enables "Edit this page" and related theme links)
+repository: "elft3r/training"
 
 # Footer
 footer:

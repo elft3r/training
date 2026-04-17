@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 
 # Packaging ASP.NET Apps as Docker Images
 

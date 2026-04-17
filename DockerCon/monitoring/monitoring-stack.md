@@ -1,5 +1,6 @@
 ---
 title: Prometheus Monitoring Stack
+render_with_liquid: false
 ---
 
 # Deploy the Prometheus Monitoring Stack, understand the components, and monitor containers

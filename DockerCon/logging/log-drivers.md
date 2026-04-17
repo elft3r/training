@@ -1,5 +1,6 @@
 ---
 title: "Docker Swarm & Logging"
+render_with_liquid: false
 ---
 
 # Docker Swarm & Logging
