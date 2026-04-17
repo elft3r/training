@@ -1,4 +1,5 @@
-theme: just-the-docs
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 title: Container, Cloud & DevOps Tutorials
 description: Docker, Kubernetes, Cloud, and DevOps hands-on labs and tutorials
@@ -8,32 +9,37 @@ baseurl: ""
 plugins:
   - jekyll-seo-tag
   - jekyll-relative-links
+  - jekyll-include-cache
 
 # Convert .md links to .html in the generated site
 relative_links:
   enabled: true
   collections: false
 
-# Theme settings
-search_enabled: true
-heading_anchors: true
-
-# Navigation
-nav_sort: case_insensitive
-
-# Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
+# Search
+search: true
 
 # Footer
-footer_content: "Licensed under <a href=\"https://github.com/elft3r/training/blob/main/LICENSE\">Apache 2.0</a>."
+footer:
+  links:
+    - label: "Licensed under Apache 2.0"
+      url: "https://github.com/elft3r/training/blob/main/LICENSE"
 
-# Default layout for all pages
+# Default layout & sidebar nav
 defaults:
   - scope:
       path: ""
     values:
-      layout: default
+      layout: single
+      author_profile: false
+      read_time: false
+      comments: false
+      share: false
+      related: false
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: "main"
 
 exclude:
   - Kubernetes/website/

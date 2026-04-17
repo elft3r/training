@@ -1,0 +1,26 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Docker"
+    url: /Docker/
+    children:
+      - title: "Docker Kickstart"
+        url: /Docker/kickstart/
+      - title: "Docker Security"
+        url: /Docker/security/
+      - title: "Docker Networking"
+        url: /Docker/networking/
+      - title: "Docker Swarm Mode"
+        url: /Docker/swarm-mode/
+      - title: "12-Factor App"
+        url: /Docker/12factor/
+      - title: "Registry"
+        url: /Docker/registry/
+      - title: "Additional Resources"
+        url: /Docker/additional-ressources/
+  - title: "Kubernetes"
+    url: /Kubernetes/
+  - title: "DockerCon"
+    url: /DockerCon/
+  - title: "DevOpsDays"
+    url: /DevOpsDays/
