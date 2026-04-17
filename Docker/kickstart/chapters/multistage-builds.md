@@ -226,10 +226,31 @@ COPY --from=0 /app/hello .
 
 ### Practical example: adding a health check
 
-Let's extend our Dockerfile to add a health-check binary from a third stage. Create a new file called `Dockerfile.healthcheck`:
+Let's extend our Dockerfile to add a health-check binary from a third stage. The example app directory already contains a small `healthcheck.go` program:
 
 ```
-$ cat > Dockerfile.healthcheck <<'EOF'
+$ cat healthcheck.go
+package main
+
+import (
+    "net/http"
+    "os"
+)
+
+func main() {
+    resp, err := http.Get("http://localhost:8080/")
+    if err != nil || resp.StatusCode != 200 {
+        os.Exit(1)
+    }
+}
+```
+
+This small program makes an HTTP request to our app and exits with a non-zero status if the request fails — exactly what Docker's `HEALTHCHECK` instruction needs.
+
+Now look at the three-stage Dockerfile that combines the main app and the health-check binary:
+
+```
+$ cat Dockerfile.healthcheck
 # Stage 1: Build the application
 FROM golang:1.23 AS builder
 
@@ -244,8 +265,9 @@ FROM golang:1.23 AS healthchecker
 
 WORKDIR /hc
 
-RUN printf 'package main\nimport ("net/http"; "os")\nfunc main() { resp, err := http.Get("http://localhost:8080/"); if err != nil || resp.StatusCode != 200 { os.Exit(1) } }\n' > healthcheck.go && \
-    CGO_ENABLED=0 go build -o healthcheck healthcheck.go
+COPY healthcheck.go .
+
+RUN CGO_ENABLED=0 go build -o healthcheck healthcheck.go
 
 # Stage 3: Create the minimal production image
 FROM alpine:3.21
@@ -260,12 +282,11 @@ EXPOSE 8080
 HEALTHCHECK --interval=5s --timeout=3s CMD ["/usr/local/bin/healthcheck"]
 
 CMD ["./hello"]
-EOF
 ```
 
 This Dockerfile has three stages:
 - `builder` — compiles the main application
-- `healthchecker` — compiles a health-check tool
+- `healthchecker` — compiles the health-check tool
 - The final unnamed stage — combines both binaries into a minimal image
 
 Build and test it:
