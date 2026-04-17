@@ -1,5 +1,4 @@
 ---
-title: "Docker Stats, Top, and other built-in Monitoring Tools"
 ---
 
 # Docker Stats, Top, and other built-in Monitoring Tools

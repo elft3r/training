@@ -1,5 +1,4 @@
 ---
-title: "12 - Admin processes"
 ---
 
 # 12 - Admin processes

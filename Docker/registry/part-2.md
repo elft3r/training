@@ -1,5 +1,4 @@
 ---
-title: "Part 2 - Running a Secured Registry Container in Linux"
 ---
 
 # Part 2 - Running a Secured Registry Container in Linux

@@ -1,5 +1,4 @@
 ---
-title: "Docker Swarm Tutorial"
 ---
 
 # Docker Swarm Tutorial

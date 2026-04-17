@@ -1,5 +1,4 @@
 ---
-title: "Part 3 - Using Basic Authentication with a Secured Registry in Linux"
 ---
 
 # Part 3 - Using Basic Authentication with a Secured Registry in Linux

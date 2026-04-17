@@ -1,5 +1,4 @@
 ---
-title: "12 Factor Application"
 ---
 
 # 12 Factor Application

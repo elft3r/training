@@ -1,5 +1,4 @@
 ---
-title: "JumpStart Guide"
 ---
 
 # JumpStart Guide

@@ -1,5 +1,4 @@
 ---
-title: "Swarm Mode Security"
 ---
 
 # Swarm Mode Security

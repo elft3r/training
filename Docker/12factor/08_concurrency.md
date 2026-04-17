@@ -1,5 +1,4 @@
 ---
-title: "8 - Concurrency"
 ---
 
 # 8 - Concurrency

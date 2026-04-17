@@ -1,5 +1,4 @@
 ---
-title: "11 - Logs"
 ---
 
 # 11 - Logs

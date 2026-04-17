@@ -1,5 +1,4 @@
 ---
-title: "Lab: Capabilities"
 ---
 
 # Lab: Capabilities

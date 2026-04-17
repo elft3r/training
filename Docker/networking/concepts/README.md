@@ -1,5 +1,4 @@
 ---
-title: "Concepts"
 ---
 
 ## <a name="challenges"></a>Challenges of Networking Containers and Microservices

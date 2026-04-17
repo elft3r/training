@@ -1,5 +1,4 @@
 ---
-title: "Minikube Quickstart"
 ---
 
 # Minikube Quickstart

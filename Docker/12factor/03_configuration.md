@@ -1,5 +1,4 @@
 ---
-title: "3 - Configuration"
 ---
 
 # 3 - Configuration

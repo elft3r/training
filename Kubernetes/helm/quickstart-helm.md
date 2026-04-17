@@ -1,5 +1,4 @@
 ---
-title: "Helm Installation"
 ---
 
 # Helm Installation

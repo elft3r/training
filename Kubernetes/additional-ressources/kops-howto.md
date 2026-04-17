@@ -1,5 +1,4 @@
 ---
-title: "Installing Kubernetes on AWS with kops"
 ---
 
 

@@ -1,5 +1,4 @@
 ---
-title: "HTTP Routing Mesh (HRM)"
 ---
 
 # HTTP Routing Mesh (HRM)

@@ -1,5 +1,4 @@
 ---
-title: "9 - Disposability"
 ---
 
 # 9 - Disposability

@@ -1,5 +1,4 @@
 ---
-title: "Additional Docker Ressources"
 ---
 
 # Additional Docker Ressources

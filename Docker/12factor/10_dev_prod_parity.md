@@ -1,5 +1,4 @@
 ---
-title: "10 - Dev / Prod parity"
 ---
 
 # 10 - Dev / Prod parity

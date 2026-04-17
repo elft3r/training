@@ -1,5 +1,4 @@
 ---
-title: "Getting Started with CoScale"
 ---
 
 # Getting Started with CoScale

@@ -1,5 +1,4 @@
 ---
-title: "4 - External services"
 ---
 
 # 4 - External services

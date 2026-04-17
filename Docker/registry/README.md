@@ -1,5 +1,4 @@
 ---
-title: "Linux Registry Lab"
 ---
 
 # Linux Registry Lab

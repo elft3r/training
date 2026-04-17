@@ -1,5 +1,4 @@
 ---
-title: "Lab: Distribution and Trust"
 ---
 
 # Lab: Distribution and Trust

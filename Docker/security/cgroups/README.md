@@ -1,5 +1,4 @@
 ---
-title: "Lab: Control Groups (cgroups)"
 ---
 
 # Lab: Control Groups (cgroups)

@@ -1,5 +1,4 @@
 ---
-title: "Build the application"
 ---
 
 # Build the application

@@ -1,5 +1,4 @@
 ---
-title: "6 - Processes"
 ---
 
 # 6 - Processes

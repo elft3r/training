@@ -1,5 +1,4 @@
 ---
-title: "Bridge networking"
 ---
 
 # Bridge networking

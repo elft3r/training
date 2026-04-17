@@ -1,5 +1,4 @@
 ---
-title: "Lab: Seccomp"
 ---
 
 # Lab: Seccomp

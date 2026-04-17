@@ -1,5 +1,4 @@
 ---
-title: "7 - Port binding"
 ---
 
 # 7 - Port binding

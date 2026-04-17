@@ -1,5 +1,4 @@
 ---
-title: "Additional Kubernetes Ressources"
 ---
 
 # Additional Kubernetes Ressources

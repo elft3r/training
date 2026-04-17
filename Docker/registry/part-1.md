@@ -1,5 +1,4 @@
 ---
-title: "Part 1 - Running a Registry Container in Linux"
 ---
 
 # Part 1 - Running a Registry Container in Linux

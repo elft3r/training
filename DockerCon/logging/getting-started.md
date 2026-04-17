@@ -1,5 +1,4 @@
 ---
-title: "Our First Logs"
 ---
 
 # Our First Logs

@@ -1,5 +1,4 @@
 ---
-title: "Lab: AppArmor"
 ---
 
 # Lab: AppArmor

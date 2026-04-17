@@ -1,5 +1,4 @@
 ---
-title: "2 - Dependencies"
 ---
 
 # 2 - Dependencies
