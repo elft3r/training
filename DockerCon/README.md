@@ -1,7 +1,5 @@
 ---
 title: Monitoring & Logging
-nav_order: 4
-has_children: true
 ---
 
 ## Logging & Monitoring Workshop

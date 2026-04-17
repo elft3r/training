@@ -1,8 +1,5 @@
 ---
 title: Webapps with Docker Part Deux
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 5
 ---
 
 # Webapps with Docker Part Deux

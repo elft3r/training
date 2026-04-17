@@ -1,8 +1,5 @@
 ---
 title: Deploying an app to a Swarm
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 8
 ---
 
 # Deploying an app to a Swarm

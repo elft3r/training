@@ -1,8 +1,5 @@
 ---
 title: Docker Images and Volumes
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 4
 ---
 
 # Docker Images and Volumes

@@ -1,8 +1,5 @@
 ---
 title: Docker Networking
-parent: Docker
-nav_order: 4
-has_children: true
 ---
 
 # Designing Scalable, Portable Docker Container Networks

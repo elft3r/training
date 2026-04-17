@@ -1,8 +1,5 @@
 ---
 title: Docker and DevOps
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 6
 ---
 
 # Docker and DevOps

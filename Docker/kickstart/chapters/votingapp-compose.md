@@ -1,8 +1,5 @@
 ---
 title: Deploying an app with Docker Compose
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 7
 ---
 
 # Deploying an app with Docker Compose

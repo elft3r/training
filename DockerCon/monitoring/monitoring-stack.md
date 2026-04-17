@@ -1,7 +1,5 @@
 ---
 title: Prometheus Monitoring Stack
-parent: Monitoring & Logging
-nav_order: 2
 ---
 
 # Deploy the Prometheus Monitoring Stack, understand the components, and monitor containers

@@ -1,8 +1,5 @@
 ---
 title: Deploying MongoDB
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 12
 ---
 
 # Deploying MongoDB

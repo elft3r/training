@@ -1,8 +1,5 @@
 ---
 title: Managing Docker Secrets
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 11
 ---
 
 # Managing Docker Secrets

@@ -1,8 +1,5 @@
 ---
 title: Node-RED with Docker
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 14
 ---
 
 # Node-RED with Docker

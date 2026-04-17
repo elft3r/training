@@ -1,7 +1,5 @@
 ---
 title: DevOpsDays
-parent: Docker
-nav_order: 5
 ---
 
 ## DevOpsDays Docker Training

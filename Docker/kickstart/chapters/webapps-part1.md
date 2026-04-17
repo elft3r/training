@@ -1,8 +1,5 @@
 ---
 title: Deploying Webapps with Docker
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 3
 ---
 
 # Deploying Webapps with Docker

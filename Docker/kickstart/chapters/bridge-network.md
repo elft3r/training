@@ -1,8 +1,5 @@
 ---
 title: Bridge Networking
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 10
 ---
 
 # Bridge Networking

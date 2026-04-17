@@ -1,8 +1,5 @@
 ---
 title: Next Steps
-parent: Docker Kickstart
-grand_parent: Docker
-nav_order: 15
 ---
 
 # Next Steps
