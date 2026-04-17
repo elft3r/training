@@ -1,3 +1,6 @@
+---
+---
+
 # Multi-Stage Builds
 
 Now that you understand Docker images, layers, and volumes, it's time to learn one of the most important techniques for building production-ready images: **multi-stage builds**.
@@ -23,10 +26,9 @@ In this task you will build a small Go web application using a traditional singl
 
    > **Note:** If you cloned the repository to a different location, adjust the path accordingly (e.g., `cd ~/Training/Docker/kickstart/multistage-app`).
 
-2. Have a look at the Go application:
+2. Open `main.go` in the example app directory. It is a simple HTTP server that responds with a greeting, hostname, and platform information:
 
-   ```console
-   $ cat main.go
+   ```go
    package main
 
    import (
@@ -55,12 +57,11 @@ In this task you will build a small Go web application using a traditional singl
    }
    ```
 
-   This is a simple HTTP server that responds with a greeting, hostname, and platform information. Go compiles to a single static binary, which makes it ideal for demonstrating multi-stage builds.
+   Go compiles to a single static binary, which makes it ideal for demonstrating multi-stage builds.
 
-3. Look at the single-stage Dockerfile:
+3. Open the single-stage `Dockerfile.single`:
 
-   ```console
-   $ cat Dockerfile.single
+   ```dockerfile
    FROM golang:1.23
 
    WORKDIR /app
@@ -121,10 +122,9 @@ In this task you will build a small Go web application using a traditional singl
 
 Now let's refactor the build to use a multi-stage Dockerfile that separates the **build** environment from the **runtime** environment.
 
-1. Look at the multi-stage Dockerfile:
+1. Open the multi-stage `Dockerfile`:
 
-   ```console
-   $ cat Dockerfile
+   ```dockerfile
    # Stage 1: Build the application
    FROM golang:1.23 AS builder
 
@@ -228,10 +228,9 @@ COPY --from=0 /app/hello .
 
 ### Practical example: adding a health check
 
-Let's extend our Dockerfile to add a health-check binary from a third stage. The example app directory already contains a small `healthcheck.go` program:
+Let's extend our Dockerfile to add a health-check binary from a third stage. The example app directory already contains a small `healthcheck.go` program that makes an HTTP request to our app and exits with a non-zero status if the request fails — exactly what Docker's `HEALTHCHECK` instruction needs:
 
-```console
-$ cat healthcheck.go
+```go
 package main
 
 import (
@@ -259,12 +258,9 @@ func main() {
 }
 ```
 
-This small program makes an HTTP request to our app and exits with a non-zero status if the request fails — exactly what Docker's `HEALTHCHECK` instruction needs.
+Now open `Dockerfile.healthcheck`, the three-stage Dockerfile that combines the main app and the health-check binary:
 
-Now look at the three-stage Dockerfile that combines the main app and the health-check binary:
-
-```console
-$ cat Dockerfile.healthcheck
+```dockerfile
 # Stage 1: Build the application
 FROM golang:1.23 AS builder
 
