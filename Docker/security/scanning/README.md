@@ -1,3 +1,7 @@
+---
+title: "Security Scanning with Docker Hub"
+---
+
 # Security Scanning with Docker Hub
 
 # Lab Meta

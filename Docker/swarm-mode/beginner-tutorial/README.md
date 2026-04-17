@@ -1,3 +1,7 @@
+---
+title: "Docker Swarm Tutorial"
+---
+
 # Docker Swarm Tutorial
 > **Note:** This tutorial uses Docker Machine to simulate multiple machines on your desktop. There's an easier way to learn swarm mode, and that is using [Play with Docker](http://training.play-with-docker.com/swarm-mode-intro/). This tutorial is preserved for legacy reasons, and also in case you really want to learn to do this on your own machine.
 

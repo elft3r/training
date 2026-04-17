@@ -1,3 +1,7 @@
+---
+title: "Lab: AppArmor"
+---
+
 # Lab: AppArmor
 
 > **Difficulty**: Advanced

@@ -1,3 +1,7 @@
+---
+title: "Lab: Capabilities"
+---
+
 # Lab: Capabilities
 
 > **Difficulty**: Advanced

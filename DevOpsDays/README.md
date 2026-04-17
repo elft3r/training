@@ -1,5 +1,6 @@
 ---
 title: DevOpsDays
+toc: false
 ---
 
 ## DevOpsDays Docker Training

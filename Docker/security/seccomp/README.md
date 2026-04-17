@@ -1,3 +1,7 @@
+---
+title: "Lab: Seccomp"
+---
+
 # Lab: Seccomp
 
 > **Difficulty**: Advanced

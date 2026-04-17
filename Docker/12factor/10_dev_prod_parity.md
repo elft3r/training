@@ -1,3 +1,7 @@
+---
+title: "10 - Dev / Prod parity"
+---
+
 # 10 - Dev / Prod parity
 
 The different environments must be as close as possible.

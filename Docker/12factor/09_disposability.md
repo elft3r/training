@@ -1,3 +1,7 @@
+---
+title: "9 - Disposability"
+---
+
 # 9 - Disposability
 
 Each process of an application must be disposable.

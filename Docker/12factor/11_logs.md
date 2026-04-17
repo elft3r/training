@@ -1,3 +1,7 @@
+---
+title: "11 - Logs"
+---
+
 # 11 - Logs
 
 Logs need to be handle as a timeseries of textual events

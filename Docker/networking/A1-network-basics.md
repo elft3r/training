@@ -1,3 +1,7 @@
+---
+title: "Docker Networking Basics"
+---
+
 # Docker Networking Basics
 
 # Lab Meta

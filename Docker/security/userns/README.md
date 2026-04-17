@@ -1,3 +1,7 @@
+---
+title: "Lab: User Namespaces"
+---
+
 # Lab: User Namespaces
 
 > **Difficulty**: Intermediate

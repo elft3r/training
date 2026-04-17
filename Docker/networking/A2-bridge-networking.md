@@ -1,3 +1,7 @@
+---
+title: "Bridge networking"
+---
+
 # Bridge networking
 
 # Lab Meta

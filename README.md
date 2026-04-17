@@ -2,6 +2,7 @@
 title: Home
 layout: single
 permalink: /
+toc: false
 ---
 
 # Container, Cloud & DevOps Tutorials and Labs

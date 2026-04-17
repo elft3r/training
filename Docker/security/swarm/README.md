@@ -1,3 +1,7 @@
+---
+title: "Swarm Mode Security"
+---
+
 # Swarm Mode Security
 
 # Lab Meta

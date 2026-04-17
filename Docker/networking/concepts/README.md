@@ -1,3 +1,7 @@
+---
+title: "Concepts"
+---
+
 ## <a name="challenges"></a>Challenges of Networking Containers and Microservices
 
 Microservices practices have increased the scale of applications which has put even more importance on the methods of connectivity and isolation that we provide to applications. The Docker networking philosophy is application driven. It aims to provide options and flexibility to the network operators as well as the right level of abstraction to the application developers. 

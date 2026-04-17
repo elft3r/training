@@ -1,3 +1,7 @@
+---
+title: "Overlay networking and service discovery"
+---
+
 # Overlay networking and service discovery
 
 # Lab Meta

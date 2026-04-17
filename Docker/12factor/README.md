@@ -1,3 +1,7 @@
+---
+title: "12 Factor Application"
+---
+
 # 12 Factor Application
 
 Today, a lot of applications are services deployed in the cloud, on infrastructure of cloud providers such as Amazon AWS, Google Compute Engine, DigitalOcean, Rackspace, OVH, ...

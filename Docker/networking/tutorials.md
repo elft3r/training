@@ -1,3 +1,7 @@
+---
+title: "Tutorials"
+---
+
 
 ### <a name="pets"></a>Tutorial Application: The Pets App
 

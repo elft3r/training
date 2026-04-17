@@ -1,3 +1,7 @@
+---
+title: "Docker Content Trust Basics"
+---
+
 # Docker Content Trust Basics
 
 # Lab Meta
