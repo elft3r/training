@@ -7,8 +7,13 @@ import (
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	client := &http.Client{Timeout: 5 * time.Second}
-	resp, err := client.Get("http://localhost:8080/")
+	resp, err := client.Get("http://localhost:" + port + "/")
 	if err != nil {
 		os.Exit(1)
 	}

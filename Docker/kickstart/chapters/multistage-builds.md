@@ -17,7 +17,7 @@ In this task you will build a small Go web application using a traditional singl
 
 1. Navigate to the example app directory inside the training repository:
 
-   ```
+   ```console
    $ cd Docker/kickstart/multistage-app
    ```
 
@@ -25,7 +25,7 @@ In this task you will build a small Go web application using a traditional singl
 
 2. Have a look at the Go application:
 
-   ```
+   ```console
    $ cat main.go
    package main
 
@@ -44,12 +44,14 @@ In this task you will build a small Go web application using a traditional singl
 
        http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
            hostname, _ := os.Hostname()
-           fmt.Fprintf(w, "Hello from Go!\nHostname: %s\nPlatform: %s/%s\n",
-               hostname, runtime.GOOS, runtime.GOARCH)
+           fmt.Fprintf(w, "Hello from Go!\nHostname: %s\nPlatform: %s/%s\n", hostname, runtime.GOOS, runtime.GOARCH)
        })
 
        fmt.Printf("Listening on :%s\n", port)
-       http.ListenAndServe(":"+port, nil)
+       if err := http.ListenAndServe(":"+port, nil); err != nil {
+           fmt.Fprintf(os.Stderr, "server failed: %v\n", err)
+           os.Exit(1)
+       }
    }
    ```
 
@@ -57,7 +59,7 @@ In this task you will build a small Go web application using a traditional singl
 
 3. Look at the single-stage Dockerfile:
 
-   ```
+   ```console
    $ cat Dockerfile.single
    FROM golang:1.23
 
@@ -76,7 +78,7 @@ In this task you will build a small Go web application using a traditional singl
 
 4. Build the image using the single-stage Dockerfile:
 
-   ```
+   ```console
    $ docker image build --tag hello-single:1.0 --file Dockerfile.single .
    Sending build context to Docker daemon  4.096kB
    ...
@@ -86,7 +88,7 @@ In this task you will build a small Go web application using a traditional singl
 
 5. Check the image size:
 
-   ```
+   ```console
    $ docker image ls hello-single
    REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
    hello-single   1.0       a1b2c3d4e5f6   10 seconds ago   838MB
@@ -96,13 +98,13 @@ In this task you will build a small Go web application using a traditional singl
 
 6. Verify the app works:
 
-   ```
+   ```console
    $ docker container run --detach --publish 8080:8080 --name hello-single hello-single:1.0
    ```
 
 7. Test the app:
 
-   ```
+   ```console
    $ curl http://localhost:8080
    Hello from Go!
    Hostname: a1b2c3d4e5f6
@@ -111,7 +113,7 @@ In this task you will build a small Go web application using a traditional singl
 
 8. Clean up:
 
-   ```
+   ```console
    $ docker container rm --force hello-single
    ```
 
@@ -121,7 +123,7 @@ Now let's refactor the build to use a multi-stage Dockerfile that separates the 
 
 1. Look at the multi-stage Dockerfile:
 
-   ```
+   ```console
    $ cat Dockerfile
    # Stage 1: Build the application
    FROM golang:1.23 AS builder
@@ -153,7 +155,7 @@ Now let's refactor the build to use a multi-stage Dockerfile that separates the 
 
 2. Build the multi-stage image:
 
-   ```
+   ```console
    $ docker image build --tag hello-multi:1.0 .
    Sending build context to Docker daemon  4.096kB
    ...
@@ -163,7 +165,7 @@ Now let's refactor the build to use a multi-stage Dockerfile that separates the 
 
 3. Compare the image sizes:
 
-   ```
+   ```console
    $ docker image ls --filter "reference=hello-*"
    REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
    hello-multi    1.0       f6e5d4c3b2a1   5 seconds ago    12.1MB
@@ -174,13 +176,13 @@ Now let's refactor the build to use a multi-stage Dockerfile that separates the 
 
 4. Verify the multi-stage image works exactly the same:
 
-   ```
+   ```console
    $ docker container run --detach --publish 8080:8080 --name hello-multi hello-multi:1.0
    ```
 
 5. Test the app:
 
-   ```
+   ```console
    $ curl http://localhost:8080
    Hello from Go!
    Hostname: f6e5d4c3b2a1
@@ -191,7 +193,7 @@ Now let's refactor the build to use a multi-stage Dockerfile that separates the 
 
 6. Clean up:
 
-   ```
+   ```console
    $ docker container rm --force hello-multi
    ```
 
@@ -205,7 +207,7 @@ In the previous task you already saw `AS builder` and `COPY --from=builder`. Let
 
 Each `FROM` instruction in a Dockerfile starts a new build stage. By default, stages are numbered starting at 0. Giving stages meaningful names with `AS` makes your Dockerfile easier to read and maintain:
 
-```
+```dockerfile
 FROM golang:1.23 AS builder
 FROM alpine:3.21 AS runtime
 ```
@@ -214,7 +216,7 @@ FROM alpine:3.21 AS runtime
 
 The `COPY --from=<stage>` instruction copies files from a previous build stage (or even from an external image) into the current stage. You can reference stages by name or number:
 
-```
+```dockerfile
 # By name (preferred)
 COPY --from=builder /app/hello .
 
@@ -228,7 +230,7 @@ COPY --from=0 /app/hello .
 
 Let's extend our Dockerfile to add a health-check binary from a third stage. The example app directory already contains a small `healthcheck.go` program:
 
-```
+```console
 $ cat healthcheck.go
 package main
 
@@ -239,8 +241,13 @@ import (
 )
 
 func main() {
+    port := os.Getenv("PORT")
+    if port == "" {
+        port = "8080"
+    }
+
     client := &http.Client{Timeout: 5 * time.Second}
-    resp, err := client.Get("http://localhost:8080/")
+    resp, err := client.Get("http://localhost:" + port + "/")
     if err != nil {
         os.Exit(1)
     }
@@ -256,7 +263,7 @@ This small program makes an HTTP request to our app and exits with a non-zero st
 
 Now look at the three-stage Dockerfile that combines the main app and the health-check binary:
 
-```
+```console
 $ cat Dockerfile.healthcheck
 # Stage 1: Build the application
 FROM golang:1.23 AS builder
@@ -298,15 +305,15 @@ This Dockerfile has three stages:
 
 Build and test it:
 
-```
+```console
 $ docker image build --tag hello-hc:1.0 --file Dockerfile.healthcheck .
 ```
 
-```
+```console
 $ docker container run --detach --publish 8080:8080 --name hello-hc hello-hc:1.0
 ```
 
-```
+```console
 $ docker container ls
 CONTAINER ID   IMAGE         COMMAND     STATUS                    PORTS
 a1b2c3d4e5f6   hello-hc:1.0  "./hello"  Up 10 seconds (healthy)   0.0.0.0:8080->8080/tcp
@@ -316,7 +323,7 @@ Notice the `(healthy)` status — Docker is running the health check we copied f
 
 Clean up:
 
-```
+```console
 $ docker container rm --force hello-hc
 ```
 
@@ -326,7 +333,7 @@ Sometimes you want to build only up to a certain stage — for example, to run t
 
 1. Build only the `builder` stage:
 
-   ```
+   ```console
    $ docker image build --target builder --tag hello-dev:1.0 .
    ```
 
@@ -334,7 +341,7 @@ Sometimes you want to build only up to a certain stage — for example, to run t
 
 2. Compare sizes:
 
-   ```
+   ```console
    $ docker image ls --filter "reference=hello-*"
    REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
    hello-dev      1.0       c3d4e5f6a7b8   5 seconds ago    838MB
@@ -346,7 +353,7 @@ Sometimes you want to build only up to a certain stage — for example, to run t
 
 3. Clean up all images and containers from this tutorial. If any of these containers or images do not exist, Docker may print an error message. You can ignore those errors.
 
-   ```
+   ```console
    $ docker container rm --force hello-single hello-multi hello-hc
    $ docker image rm hello-single:1.0 hello-multi:1.0 hello-dev:1.0 hello-hc:1.0
    ```
