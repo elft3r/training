@@ -2,7 +2,7 @@
 toc: false
 ---
 
-## DevOpsDays Docker Training
+# DevOpsDays Docker Training
 
 Welcome to the Docker Introduction Training.
 

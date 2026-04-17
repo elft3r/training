@@ -1,7 +1,7 @@
 ---
 ---
 
-## Logging & Monitoring Workshop
+# Logging & Monitoring Workshop
 
 Welcome to the Logging & Monitoring Workshop.
 
