@@ -92,7 +92,7 @@ In this task you will build a small Go web application using a traditional singl
    hello-single   1.0       a1b2c3d4e5f6   10 seconds ago   838MB
    ```
 
-   The image is over **800 MB**! That's because it contains the entire Go toolchain, compiler, standard library sources, and all the other tools from the `golang:1.23` base image — none of which are needed to *run* our small application.
+   The image is roughly **800 MB** in this example. The exact size will vary by platform/architecture and over time as the `golang:1.23` base image changes, but it is still much larger than necessary because it contains the entire Go toolchain, compiler, standard library sources, and other build-time tools that are not needed to *run* our small application.
 
 6. Verify the app works:
 
@@ -235,11 +235,18 @@ package main
 import (
     "net/http"
     "os"
+    "time"
 )
 
 func main() {
-    resp, err := http.Get("http://localhost:8080/")
-    if err != nil || resp.StatusCode != 200 {
+    client := &http.Client{Timeout: 5 * time.Second}
+    resp, err := client.Get("http://localhost:8080/")
+    if err != nil {
+        os.Exit(1)
+    }
+    defer resp.Body.Close()
+
+    if resp.StatusCode != 200 {
         os.Exit(1)
     }
 }
@@ -337,11 +344,11 @@ Sometimes you want to build only up to a certain stage — for example, to run t
 
    The `hello-dev` image is the same size as the single-stage build because it contains the full Go image, but the `hello-multi` production image remains tiny.
 
-3. Clean up all images and containers from this tutorial:
+3. Clean up all images and containers from this tutorial. If any of these containers or images do not exist, Docker may print an error message. You can ignore those errors.
 
    ```
-   $ docker container rm --force hello-single hello-multi hello-hc 2>/dev/null
-   $ docker image rm hello-single:1.0 hello-multi:1.0 hello-dev:1.0 hello-hc:1.0 2>/dev/null
+   $ docker container rm --force hello-single hello-multi hello-hc
+   $ docker image rm hello-single:1.0 hello-multi:1.0 hello-dev:1.0 hello-hc:1.0
    ```
 
 ## Terminology
