@@ -1,5 +1,4 @@
 ---
-title: MongoDB with Node-RED
 ---
 
 # MongoDB with Node-RED

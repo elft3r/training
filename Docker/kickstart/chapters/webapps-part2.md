@@ -1,5 +1,4 @@
 ---
-title: Webapps with Docker Part Deux
 ---
 
 # Webapps with Docker Part Deux

@@ -1,5 +1,4 @@
 ---
-title: Docker Kickstart
 ---
 
 ## Docker Kickstarter

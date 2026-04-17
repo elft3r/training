@@ -1,5 +1,4 @@
 ---
-title: Prometheus Monitoring Stack
 render_with_liquid: false
 ---
 

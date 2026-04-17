@@ -1,5 +1,4 @@
 ---
-title: Deploying Webapps with Docker
 ---
 
 # Deploying Webapps with Docker

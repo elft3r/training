@@ -1,5 +1,4 @@
 ---
-title: Docker Swarm Mode
 toc: false
 ---
 

@@ -1,5 +1,4 @@
 ---
-title: Deploying an app to a Swarm
 ---
 
 # Deploying an app to a Swarm

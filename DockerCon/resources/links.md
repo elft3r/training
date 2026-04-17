@@ -1,5 +1,4 @@
 ---
-title: Workshop Links
 ---
 
 ## DockerCon Monitoring & Logging Workshop Links

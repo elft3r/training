@@ -1,5 +1,4 @@
 ---
-title: Review Notes
 nav_exclude: true
 ---
 

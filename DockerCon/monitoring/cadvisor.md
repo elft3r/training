@@ -1,5 +1,4 @@
 ---
-title: Google cAdvisor
 ---
 
 # Google cAdvisor (Container Advisor)

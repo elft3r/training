@@ -1,5 +1,4 @@
 ---
-title: Deploying an app with Docker Compose
 ---
 
 # Deploying an app with Docker Compose

@@ -1,5 +1,4 @@
 ---
-title: Docker Security
 ---
 
 # Docker Security

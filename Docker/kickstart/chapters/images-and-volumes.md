@@ -1,5 +1,4 @@
 ---
-title: Docker Images and Volumes
 ---
 
 # Docker Images and Volumes

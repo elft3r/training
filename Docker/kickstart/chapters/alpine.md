@@ -1,5 +1,4 @@
 ---
-title: Our First Containers
 ---
 
 # Our First Containers

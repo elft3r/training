@@ -1,5 +1,4 @@
 ---
-title: Contributing
 ---
 
 ## Contributing to Tutorials

@@ -1,5 +1,4 @@
 ---
-title: Next Steps
 ---
 
 # Next Steps

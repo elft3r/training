@@ -1,5 +1,4 @@
 ---
-title: Deploying MongoDB
 ---
 
 # Deploying MongoDB

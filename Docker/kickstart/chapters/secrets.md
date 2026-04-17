@@ -1,5 +1,4 @@
 ---
-title: Managing Docker Secrets
 ---
 
 # Managing Docker Secrets

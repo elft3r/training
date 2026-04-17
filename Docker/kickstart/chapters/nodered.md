@@ -1,5 +1,4 @@
 ---
-title: Node-RED with Docker
 ---
 
 # Node-RED with Docker

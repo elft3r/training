@@ -1,5 +1,4 @@
 ---
-title: Docker Networking
 ---
 
 # Designing Scalable, Portable Docker Container Networks

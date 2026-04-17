@@ -1,5 +1,4 @@
 ---
-title: Monitoring & Logging
 ---
 
 ## Logging & Monitoring Workshop

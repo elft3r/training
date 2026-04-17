@@ -1,5 +1,4 @@
 ---
-title: DevOpsDays
 toc: false
 ---
 

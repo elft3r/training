@@ -1,5 +1,4 @@
 ---
-title: Bridge Networking
 ---
 
 # Bridge Networking

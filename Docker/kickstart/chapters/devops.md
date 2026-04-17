@@ -1,5 +1,4 @@
 ---
-title: Docker and DevOps
 ---
 
 # Docker and DevOps
